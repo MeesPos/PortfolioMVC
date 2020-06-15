@@ -1,83 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-
-body {
-    font-family: "Nunito", "Open Sans", Arial, Helvetica, sans-serif;
-    background: rgba(20, 58, 135, 0.8);
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-    background: #fff;
+/* Navbar */
+.menu a {
+  clear: left;
+  text-decoration: none;
+  margin-right: 40px;
+  line-height: 70px;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
-header {
-    padding: 20px;
-    background: rgba(0, 13, 39);
-    color: #fff;
+#active {
+  color: #D93A50;
 }
 
-header h1 {
-    margin-bottom: 0;
+.menu a:last-child {
+  margin-right: 0;
 }
 
-nav {
-    padding: 20px;
-    background: rgb(162, 184, 232);
-    color: #fff;
+#label {
+  margin: 0 0 0 20px;
+  font-size: 26px;
+  line-height: 70px;
+  display: none;
 }
 
-.content {
-    background: #ffffff;
-    min-height: 100px;
-    padding: 20px;
+#toggle {
+  display: none;
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-}
-
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+  #label {
     display: block;
-    padding: 5px 10px;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-}
+    cursor: pointer;
+    width: 24px;
+    float: left;
+  }
 
-nav ul li .active, nav ul li a:hover {
-    color: #000;
-    background: #fff
-}
-
-
-aside {
-    background: rgb(162, 184, 232);
-    min-height: 100px;
-    padding: 20px;
-}
-
-.top-10 ol {
+  .menu {
+    text-align: center;
+    width: 100%;
+    background-color: white !important;
+    display: none;
     margin: 0;
-    padding: 0 20px;
+  }
+
+  .menu a {
+    display: block;
+    border-bottom: 1px solid #ececec;
+    margin: 0px;
+  }
+
+  #toggle:checked + .menu {
+    display: block;
+  }
+}
+header {
+  height: 90vh;
+  background-color: #080B2A;
+  position: relative;
+  width: 100%;
+  display: flex;
 }
 
-footer {
-    padding: 20px;
-    color: #fff;
-    background: rgba(0, 13, 39);
+header:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  clip-path: polygon(100% 50%, 0 100%, 100% 100%);
 }
 
-@media screen and (min-width: 900px) {
-    main {
-        grid-template-columns: 1fr 350px;
-    }
+#header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
+
+.name {
+  text-align: right;
+  font-size: 55px;
+  margin: 0 auto;
+  margin-top: 27vh;
+  margin-left: 10vw;
+}
+.name > h2 {
+  color: #D93A50;
+}
+.name > h1 {
+  color: white;
+}
+
+.rocket-full {
+  position: absolute;
+  right: 15%;
+  top: 30%;
+}
+
+.rocket-opp {
+  position: absolute;
+  width: 480px;
+  right: 11.3%;
+  top: 18.5%;
+  opacity: 10%;
+}
+
+/*# sourceMappingURL=style.css.map */

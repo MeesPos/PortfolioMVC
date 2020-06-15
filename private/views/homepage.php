@@ -1,27 +1,37 @@
-<?php $this->layout('website');?>
+<!DOCTYPE html>
+<html lang="en">
 
-<?php $this->start('sidebar')?>
-<div class="top-10">
-	<h3>Top 10 Buren</h3>
-	<ol>
-		<li>Pieter</li>
-		<li>Achmed</li>
-		<li>Rosa</li>
-		<li>Alper</li>
-		<li>Daan</li>
-		<li>Sjoerd</li>
-		<li>Mo</li>
-		<li>Chantal</li>
-		<li>Floor</li>
-		<li>Duneya</li>
-	</ol>
-</div>
-<?php $this->stop()?>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
 
-<h1>Welkom</h1>
+</head>
 
-<p>Hier komt later veel meer informatie uit de database</p>
+<body>
+	<header>
+		<nav>
+			<?php if ($this->section('navigation')) : ?>
+				<?php echo $this->section('navigation') ?>
+			<?php else : ?>
+				<?php echo $this->fetch('_navigation') ?>
+			<?php endif ?>
+		</nav>
 
+		<section id="header">
+			<div class="name">
+				<h2>SOFTWARE</h2>
+				<h1>MEES POSTMA</h1>
+				<h2>DEVELOPER</h2>
+			</div>
 
+			<div class="rocket">
+				<img src="<?php echo site_url('/img/rocket.png')?>" alt="Rocket Full" class="rocket-full">
+				<img src="<?php echo site_url('/img/rocket.png')?>" alt="Rocket Full" class="rocket-opp">
+			</div>
+		</section>
+	</header>
+</body>
 
-
+</html>
