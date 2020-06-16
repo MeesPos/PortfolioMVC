@@ -4,7 +4,16 @@
 *{
     margin: 0;
     padding: 0;
+    outline: 0!important;
+    text-decoration: none!important;
+    list-style-type: none!important;
+}
+
+body, html{
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 @import 'nav';

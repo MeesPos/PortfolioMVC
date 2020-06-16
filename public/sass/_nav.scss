@@ -1,13 +1,19 @@
 /* Navbar */
 
+header{
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
 .menu a{
     clear: left;
     text-decoration: none;
-    margin-right: 40px;
-    line-height: 70px;
-    color: white;
+    margin-right: 100px;
+    margin-top: 100px;
+    color: #606c7c;
+    transition: ease-in .2s;
     font-size: 20px;
-    text-transform: uppercase;;
 }
 
 #active{
@@ -16,6 +22,35 @@
 
 .menu a:last-child{
     margin-right: 0;
+}
+
+.menu a:hover{
+    color: #ec4357;
+}
+
+.menu{
+    float: left;
+}
+
+.contact{
+    cursor: pointer;
+    width: 200px;
+    margin-top: .7em;
+    height: 50px;
+    padding: .5em;
+    transition: .3s all ease;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    background: white;
+    box-shadow: 2px 4px 9px 1px rgba(0,0,0,0.5);
+    margin-left: 30vw;
+}
+
+.contact > a{
+    color: #ec4357;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #label{
@@ -29,6 +64,13 @@
     display: none;
 }
 
+nav{
+    background: transparent;
+    position: absolute;
+    z-index: 1000;
+    margin-top: 20px;
+}
+
 @media only screen and (max-width: 800px) and (orientation: portrait) { 
     #label{
         display: block;
@@ -40,7 +82,6 @@
     .menu{
         text-align: center;
         width: 100%;
-        background-color: white!important;
         display: none;
         margin: 0;
     }
