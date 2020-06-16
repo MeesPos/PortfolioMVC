@@ -1,3 +1,5 @@
+// Header
+
 #header{
     position: relative;
     z-index: 999;
@@ -75,4 +77,15 @@
     margin-top: 15vh;
     margin-left: 7vw;
     z-index: 20;
+}
+
+// About me
+
+#aboutme{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.aboutani{
+    max-width: 600px;
 }
