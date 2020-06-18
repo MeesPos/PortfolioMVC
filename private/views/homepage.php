@@ -104,7 +104,7 @@
 			</div>
 		</div>
 
-		<button class="moreinfo">Lees Meer</button>
+		<button class="moreinfo myworkbut">Zie al mijn werk</button>
 	</section>
 
 	<section id="waaromik">
@@ -150,9 +150,64 @@
 		</div>
 	</section>
 
-	<section id="blog">
-				
+	<div class="blog-left-gradient"></div>
+	<section id="blogsection">
+		<div class="hero">
+			<img src="<?php echo site_url('/img/blog.png') ?>" class="blogani" alt="">
+		</div>
+		<div class="blogs">
+			<h2>WHY ME?</h2>
+			<div class="blogs-bot"></div>
+			<div id="blog">
+				<div class="blog1">
+					<img src="<?php echo site_url('/img/laptop.jpg') ?>" class="blog-pic">
+					<h3 class="topic">Laptop</h3>
+					<h2>Hoe start ik zo'n laptop op</h2>
+					<p>Het is natuurlijk erg lastig om een laptop op te starten, hiermee ga ik je helpen!</p>
+					<button class="moreinfo blogbutton">Lees Meer</button>
+				</div>
+
+				<div class="blog1">
+					<img src="<?php echo site_url('/img/laptop.jpg') ?>" class="blog-pic">
+					<h3 class="topic">Laptop</h3>
+					<h2>Hoe start ik zo'n laptop op</h2>
+					<p>Het is natuurlijk erg lastig om een laptop op te starten, hiermee ga ik je helpen!</p>
+					<button class="moreinfo blogbutton">Lees Meer</button>
+				</div>
+
+				<div class="blog1">
+					<img src="<?php echo site_url('/img/laptop.jpg') ?>" class="blog-pic">
+					<h3 class="topic">Laptop</h3>
+					<h2>Hoe start ik zo'n laptop op</h2>
+					<p>Het is natuurlijk erg lastig om een laptop op te starten, hiermee ga ik je helpen!</p>
+					<button class="moreinfo blogbutton">Lees Meer</button>
+				</div>
+			</div>
+		</div>
 	</section>
+
+	<section id="contact">
+		<div class="contact-right-gradient"></div>
+		<div class="contact-section">
+			<div class="contactinfo">
+				<h2 class="koffie">BAKJE KOFFIE DOEN?</h2>
+				<h2 class="contact-maken">CONTACT OPNEMEN</h2>
+				<div class="border-bot"></div>
+				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					<br>Quibusdam ipsa mollitia totam, dicta accusantium<br> sit doloremque ipsam exercitationem
+					blanditiis!</p>
+				<button class="moreinfo">Contact</button>
+			</div>
+
+			<div class="contactanimation">
+				<img class="contactani" src="<?php echo site_url('/img/contact.png') ?>" alt="">
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<img src="<?php echo site_url('/img/sit-footer.png') ?>" class="sitfooter" alt="">
+	</footer>
 
 </body>
 
