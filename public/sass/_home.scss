@@ -1,91 +1,396 @@
-// Header
-
-#header{
-    position: relative;
-    z-index: 999;
-    width: 100%;
-    padding: 1.5em 0;
-    overflow: hidden;
-    min-height: 600px;
-    height: 100vh;
+#header {
+  position: relative;
+  z-index: 999;
+  width: 100%;
+  padding: 1.5em 0;
+  overflow: hidden;
+  min-height: 600px;
+  height: 100vh;
 }
 
-.information{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.name{
-    font-size: 55px;
-    margin-bottom: -3vh;
-    color: #011C66;
-    font-weight: bold;
+.name {
+  font-size: 55px;
+  margin-bottom: -3vh;
+  color: #011C66;
+  font-weight: bold;
 }
 
-.swdev{
-    color: #011C66;
-    font-weight: bold;
-    font-size: 40px;
-    margin-bottom: .5vh;
+.swdev {
+  color: #011C66;
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 0.5vh;
 }
 
-.nameme{
-    margin-top: 27vh;
-    margin-left: 10.5vw;
+.nameme {
+  margin-top: 27vh;
+  margin-left: 10.5vw;
 }
 
-.border-bot{
-    border: 3px solid #ec4357;
-    width: 50px;
-    opacity: 15%;
-    margin-bottom: 1.5vh;
+.border-bot {
+  border: 3px solid #ec4357;
+  width: 50px;
+  opacity: 15%;
+  margin-bottom: 1.5vh;
 }
 
-.description{
-    opacity: 70%;
+.description {
+  opacity: 70%;
 }
 
-.moreinfo{
-    border: none;
-    font-weight: 500;
-    display: block;
-    width: 100%;
-    max-width: 210px;
-    margin-top: 1em;
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    border-radius: 3px;
-    background: #ec4357;
-    padding: 1em;
-    cursor: pointer;
+.moreinfo {
+  border: none;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  max-width: 210px;
+  margin-top: 1em;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  border-radius: 3px;
+  background: #ec4357;
+  padding: 1em;
+  cursor: pointer;
 }
 
-.intro-right-gradient{
-    position: absolute;
-    z-index: -10;
-    top: -30%;
-    right: -20%;
-    width: 1000px;
-    height: 1000px;
-    border-radius: 50%;
-    background: linear-gradient(#ee9ca7, #ec4357);
+.intro-right-gradient {
+  position: absolute;
+  z-index: -10;
+  top: -30%;
+  right: -20%;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  background: linear-gradient(#ee9ca7, #ec4357);
 }
 
-.webani{
-    max-width: 600px;
-    margin-top: 15vh;
-    margin-left: 7vw;
-    z-index: 20;
+.webani {
+  max-width: 600px;
+  margin-top: 15vh;
+  margin-left: 7vw;
+  z-index: 20;
 }
 
-// About me
-
-#aboutme{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+#aboutme {
+  margin-top: -17vh;
 }
 
-.aboutani{
-    max-width: 600px;
+.aboutme {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.aboutani {
+  max-width: 800px;
+  margin-left: 7.5vw;
+}
+
+.about-left-gradient {
+  position: absolute;
+  z-index: -10;
+  top: 75%;
+  left: -20%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: linear-gradient(#ee9ca7, #ec4357);
+}
+
+.aboutinfo {
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+
+.aboutinfo>h2 {
+  color: #011C66;
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 0.5vh;
+}
+
+#mywork{
+  margin-top: 12vh;
+  position: relative;
+}
+
+.worktitel{
+  text-align: center;
+}
+
+.workborder{
+  border: 3px solid #ec4357;
+  width: 150px;
+  opacity: 15%;
+  margin: 0 auto;
+  margin-bottom: 1.5vh;
+}
+
+.worktitel > h2{
+  color: #011C66;
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: .5vh;
+}
+
+#projects{
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+#wrapper {
+  position: relative;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+}
+
+.card {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#2C3E50), to(#16A085));
+  background-image: linear-gradient(0deg, #2C3E50 0%, #16A085 100%);
+  width: 350px;
+  height: 220px;
+  margin: 60px;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 45px;
+}
+
+.card-text {
+  color: #FFF;
+  background-color: rgba(236, 67, 87, 0.65);
+  position: absolute;
+  padding: 20px;
+  z-index: 10;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  -webkit-transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card a:hover .card-text {
+  background-color: rgba(238, 156, 167, 0.86);
+}
+
+.card-meta {
+  font-size: 0.6875em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-meta:before {
+  content: '';
+  height: 1px;
+  width: 30px;
+  background-color: #fff;
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translate(0, -10px);
+          transform: translate(0, -10px);
+  -webkit-transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card a:hover .card-meta:before {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+  -webkit-transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-title {
+  margin: 8px 0;
+  font-weight: 300;
+  font-size: 1.275em;
+  margin-bottom: 1.5em;
+}
+
+.card-image {
+  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Why me */
+
+.whyani{
+  max-width: 800px;
+  margin-top: 4vh;
+}
+
+.waarom-right-gradient{
+  position: absolute;
+  z-index: -10;
+  top: 195%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: linear-gradient(#ee9ca7, #ec4357);
+}
+
+.whyme{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.whyinfo{
+  margin-left: 8.5vw;
+  margin-top: 14vh;
+  margin-right: 2vw;
+}
+
+.whyinfo > h2{
+  font-size: 40px;
+  color: #011C66;
+  font-weight: bold;
+  margin-bottom: .5vh;
+  text-align: center;
+}
+
+.standpunten{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+
+.standpunten b{
+  font-size: 18px;
+}
+
+.whyme-bot{
+  border: 3px solid #ec4357;
+  width: 150px;
+  opacity: 15%;
+  margin: 0 auto;
+  margin-bottom: 1.5vh;
+}
+
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  #wrapper{
+    display: grid!important;
+    grid-template-columns: 1fr!important;
+    grid-column: 1!important;
+    margin-left: -8px!important;
+  }
+
+  #projects{
+    margin: 0 auto!important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .card{
+    width: 260px;
+    height: 160px;
+  }
+
+  .card-text {
+    height: 100%;
+  }
+
+  .card-meta:before {
+    content: '';
+    height: 0.75px;
+    width: 23px;
+  }
+
+  .card-meta {
+    margin-bottom: -10px!important;
+    font-size: 0.6875em;
+  }
+
+  .card-title{
+    font-size: 1.4em;
+  }
+}
+
+@media only screen and (width: 768px) {
+  .card{
+    width: 200px;
+    height: 130px;
+  }
+
+  .card-text {
+    height: 100%;
+  }
+
+  .card-meta:before {
+    content: '';
+    height: 0.75px;
+    width: 20px;
+  }
+
+  .card-meta {
+    margin-bottom: -10px!important;
+    font-size: 0.6875em;
+  }
+
+  .card-title{
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 568px) and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .card{
+    width: 200px;
+    height: 130px;
+  }
+
+  .card-text {
+    height: 100%;
+  }
+
+  .card-meta:before {
+    content: '';
+    height: 0.75px;
+    width: 20px;
+  }
+
+  .card-title{
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .card{
+    width: 180px;
+    height: 120px;
+  }
+
+  .card-text {
+    height: 100%;
+  }
+
+  .card-meta:before {
+    content: '';
+    height: 0.65px;
+    width: 15px!important;
+  }
+
+  .card-title{
+    font-size: 0.86em;
+  }
 }
