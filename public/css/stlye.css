@@ -418,7 +418,7 @@ nav {
 }
 
 .blogs {
-  margin-top: 3vh;
+  margin-top: 15vh;
 }
 
 .blogs-bot {
@@ -496,13 +496,13 @@ nav {
 .blogani {
   max-width: 500px !important;
   margin-left: 8vw;
-  margin-top: -5vh;
+  margin-top: 8vh;
 }
 
 .contact-right-gradient {
   position: absolute;
   z-index: -10;
-  top: 345%;
+  top: 335%;
   right: -20%;
   width: 800px;
   height: 800px;
@@ -547,69 +547,8 @@ footer {
 .sitfooter {
   position: absolute;
   max-width: 500px;
-  top: 410%;
+  top: 393%;
   left: 0.5%;
-}
-
-#footer-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.footer-bot {
-  border: 3px solid #ec4357;
-  width: 150px;
-  opacity: 15%;
-  margin-bottom: 2vh;
-}
-
-.socials {
-  margin-top: 3vh;
-  margin-left: 20%;
-}
-
-.socialtitel {
-  font-size: 20px;
-  color: #011C66;
-}
-
-.social {
-  font-size: 30px;
-  color: #011C66;
-}
-
-.fa-facebook-f, .fa-instagram {
-  margin-left: 2vw;
-  font-weight: bold;
-}
-
-.footer-items {
-  color: #011C66;
-  font-weight: bold;
-  font-size: 17px;
-}
-
-.footer-menu {
-  margin-top: 3vh;
-  margin-left: 20%;
-}
-
-.aboutme-footer {
-  margin-top: 3vh;
-  margin-left: 20%;
-}
-
-.aboutme-info > p {
-  font-size: 17px;
-  color: #011C66;
-}
-
-.copyright {
-  font-size: 20px;
-  color: #011C66;
-  font-weight: bold;
-  margin-left: 6.7%;
-  margin-top: -3vh;
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -715,4 +654,4 @@ footer {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=stlye.css.map */

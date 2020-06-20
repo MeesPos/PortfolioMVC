@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
-
+	<script src="https://kit.fontawesome.com/a82e000026.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -156,7 +156,7 @@
 			<img src="<?php echo site_url('/img/blog.png') ?>" class="blogani" alt="">
 		</div>
 		<div class="blogs">
-			<h2>WHY ME?</h2>
+			<h2>TUTORIALS</h2>
 			<div class="blogs-bot"></div>
 			<div id="blog">
 				<div class="blog1">
@@ -207,6 +207,48 @@
 
 	<footer>
 		<img src="<?php echo site_url('/img/sit-footer.png') ?>" class="sitfooter" alt="">
+		<section id="footer-info">
+			<div class="socials">
+				<div class="socialtitel">
+					<h2>MY SOCIALS</h2>
+					<div class="footer-bot"></div>
+				</div>
+
+				<div class="socialbuttons">
+					<a href="https://www.linkedin.com/in/mees-postma-a911b1196/" target="_blank"><i class="fab fa-linkedin social"></i></a>
+					<a href="https://www.facebook.com/meespostma2002" target="_blank"><i class="fab fa-facebook-f social"></i></a>
+					<a href="https://www.instagram.com/meespostma_/" target="_blank"><i class="fab fa-instagram social"></i></a>
+				</div>
+			</div>
+
+			<div class="footer-menu">
+				<div class="socialtitel">
+					<h2>SITE MENU</h2>
+					<div class="footer-bot"></div>
+				</div>
+				<a class="footer-items" href="<?php echo url('home') ?>">Home</a><br>
+				<a class="footer-items">Over Mij</a><br>
+				<a class="footer-items">Projecten</a><br>
+				<a class="footer-items">Tutorials</a><br>
+				<a class="footer-items">Contact</a>
+			</div>
+
+			<div class="aboutme-footer">
+				<div class="socialtitel">
+					<h2>ABOUT ME</h2>
+					<div class="footer-bot"></div>
+				</div>
+
+				<div class="aboutme-info">
+					<p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit.
+						Dolore modi beatae inventore. <br>Eaque libero atque suscipit,
+						itaque totam numquam  <br>quae! Voluptatesadipisci laboriosam
+						ex maiores,<br> quibusdam magnam asperiores ea ad?</p>
+				</div>
+			</div>
+		</section>
+
+		<p class="copyright">&copy; by Mees Postma</a></p>
 	</footer>
 
 </body>
