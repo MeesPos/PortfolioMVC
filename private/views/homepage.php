@@ -30,7 +30,7 @@
 				<h2 class="swdev">SOFTWARE DEVELOPER</h2>
 				<div class="border-bot"></div>
 				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					<br>Quibusdam ipsa mollitia totam, dicta accusantium<br> sit doloremque ipsam exercitationem
+					Quibusdam ipsa mollitia totam, dicta accusantium sit doloremque ipsam exercitationem
 					blanditiis!</p>
 				<button class="moreinfo">Meer Info</button>
 			</div>

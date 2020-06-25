@@ -41,6 +41,7 @@
 
 .description {
   opacity: 70%;
+  padding-right: 16vw;
 }
 
 .moreinfo {
@@ -604,5 +605,57 @@ footer{
 
   .card-title{
     font-size: 0.86em;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #header{
+    height: 150vh!important;
+  }
+
+  .intro-right-gradient{
+    width: 200px;
+    height: 200px;
+    top: -6%;
+    left: -18%;
+  }
+
+  #label{
+    margin-left: 10vw;
+    font-size: 40px;
+  }
+
+  .information{
+    grid-template-columns: 1fr;
+  }
+
+  .name{
+    font-size: 47px;
+  }
+
+  .swdev{
+    font-size: 30px;
+  }
+
+  .nameme{
+    margin-left: 5vw;
+    margin-top: 15vh;
+  }
+
+  .description{
+    padding-right: 5vw;
+  }
+
+  .webani{
+    max-width: 80vw;
+    margin-top: 4vh;
+    margin-left: 10vw;
+  }
+
+  .about-left-gradient{
+    width: 300px;
+    height: 300px;
+    left: 60%;
+    top: 62%;
   }
 }

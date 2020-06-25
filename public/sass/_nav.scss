@@ -59,6 +59,7 @@ header{
     font-size: 26px;
     line-height: 70px;
     display: none;
+    color: white;
 }
 
 #toggle{
@@ -75,8 +76,7 @@ nav{
 @media only screen and (max-width: 800px) and (orientation: portrait) { 
     #label{
         display: block;
-        cursor: pointer;
-        width: 24px;
+        width: 40px;
         float: left;
     }
   
