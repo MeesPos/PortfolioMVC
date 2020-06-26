@@ -20,8 +20,6 @@
 		</nav>
 	</header>
 
-
-
 	<section id="header">
 		<div class="intro-right-gradient"></div>
 		<div class="information">
@@ -53,10 +51,9 @@
 				<h2>ABOUT ME</h2>
 				<div class="border-bot"></div>
 				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					<br>Quibusdam ipsa mollitia totam, dicta accusantium<br> sit doloremque ipsam exercitationem
-					blanditiis!<br>
+					Quibusdam ipsa mollitia totam, dicta accusantium sit doloremque ipsam exercitationem blanditiis!
 					Lorem ipsum dolor sit amet, consectetur adipisicing.
-					<br>Quibusdam ipsa mollitia totam, dicta accusantium<br> sit doloremque ipsam exercitationem
+					Quibusdam ipsa mollitia totam, dicta accusantium sit doloremque ipsam exercitationem
 					blanditiis!</p>
 				</p>
 				<button class="moreinfo">Lees Meer</button>
@@ -150,11 +147,7 @@
 		</div>
 	</section>
 
-	<div class="blog-left-gradient"></div>
 	<section id="blogsection">
-		<div class="hero">
-			<img src="<?php echo site_url('/img/blog.png') ?>" class="blogani" alt="">
-		</div>
 		<div class="blogs">
 			<h2>TUTORIALS</h2>
 			<div class="blogs-bot"></div>
@@ -188,13 +181,14 @@
 
 	<section id="contact">
 		<div class="contact-right-gradient"></div>
+		<div class="mobile-contact-gradient"></div>
 		<div class="contact-section">
 			<div class="contactinfo">
 				<h2 class="koffie">BAKJE KOFFIE DOEN?</h2>
 				<h2 class="contact-maken">CONTACT OPNEMEN</h2>
 				<div class="border-bot"></div>
 				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					<br>Quibusdam ipsa mollitia totam, dicta accusantium<br> sit doloremque ipsam exercitationem
+					Quibusdam ipsa mollitia totam, dicta accusantium sit doloremque ipsam exercitationem
 					blanditiis!</p>
 				<button class="moreinfo">Contact</button>
 			</div>
@@ -242,7 +236,7 @@
 				<div class="aboutme-info">
 					<p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit.
 						Dolore modi beatae inventore. <br>Eaque libero atque suscipit,
-						itaque totam numquam  <br>quae! Voluptatesadipisci laboriosam
+						itaque totam numquam <br>quae! Voluptatesadipisci laboriosam
 						ex maiores,<br> quibusdam magnam asperiores ea ad?</p>
 				</div>
 			</div>

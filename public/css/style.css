@@ -409,16 +409,11 @@ nav {
   margin-bottom: 1.5vh;
 }
 
-#blogsection {
-  display: grid;
-  grid-template-columns: 30% 70%;
-}
-
 #blog {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-bottom: 10vh;
-  margin-right: 2vw;
+  margin-top: 6vh;
 }
 
 .blogs {
@@ -484,23 +479,6 @@ nav {
   margin-top: 1vh;
   margin-bottom: -0.5vw;
   color: #ec4357;
-}
-
-.blog-left-gradient {
-  position: absolute;
-  z-index: -10;
-  top: 265%;
-  left: -20%;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  background: linear-gradient(#ee9ca7, #ec4357);
-}
-
-.blogani {
-  max-width: 500px !important;
-  margin-left: 8vw;
-  margin-top: -5vh;
 }
 
 .contact-right-gradient {
@@ -614,6 +592,10 @@ footer {
   font-weight: bold;
   margin-left: 6.7%;
   margin-top: -3vh;
+}
+
+.mobile-contact-gradient {
+  display: none;
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -767,6 +749,158 @@ footer {
     height: 300px;
     left: 60%;
     top: 62%;
+  }
+
+  .aboutme {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .abouthero {
+    grid-row: 2/2;
+  }
+
+  .aboutani {
+    max-width: 95vw;
+    margin-top: -7.5vh;
+    margin-left: 2vw;
+  }
+
+  .aboutinfo {
+    margin-top: -37vh;
+    margin-left: 5vw;
+  }
+
+  .waarom-right-gradient {
+    width: 300px;
+    height: 300px;
+    top: 150%;
+    left: -35%;
+  }
+
+  #projects {
+    margin-left: -10.5vw !important;
+  }
+
+  .whyme {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .whymehero {
+    grid-row: 1/2;
+  }
+
+  .whyani {
+    max-width: 90vw;
+    margin-left: 3vw;
+    margin-top: 10vh;
+  }
+
+  .contact-right-gradient {
+    width: 300px;
+    height: 300px;
+    top: 325%;
+  }
+
+  .whyinfo {
+    margin-top: -12vh;
+    margin-left: 0;
+  }
+
+  .standpunten {
+    grid-gap: 30px;
+  }
+
+  .standpunten {
+    margin-left: 4vw;
+  }
+
+  #blog {
+    grid-template-columns: 1fr;
+    margin-top: -5vh;
+  }
+
+  .blog1 {
+    margin-top: 10vh;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .koffie {
+    font-size: 33.5px;
+  }
+
+  .contact-maken {
+    font-size: 35px;
+  }
+
+  .contactinfo {
+    margin-left: 3vw;
+  }
+
+  .contactani {
+    max-width: 90vw;
+    margin-top: 12vh;
+  }
+
+  .mobile-contact-gradient {
+    display: block;
+    position: absolute;
+    z-index: -10;
+    top: 693%;
+    left: -24%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(#ee9ca7, #ec4357);
+  }
+
+  .contact-section {
+    margin-top: -20vh;
+  }
+
+  footer {
+    margin-top: 35vh;
+  }
+
+  .aboutme-footer {
+    display: none;
+  }
+
+  #footer-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .socials {
+    margin-left: 0;
+  }
+
+  .footer-menu {
+    margin-left: 0;
+  }
+
+  .sitfooter {
+    top: 737%;
+    width: 80vw;
+  }
+
+  .footer-bot {
+    margin: 0 auto;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+  }
+
+  footer {
+    height: 55vh;
+  }
+
+  .copyright {
+    margin-left: 5%;
+    margin-top: 2vh;
   }
 }
 
