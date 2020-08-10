@@ -1,17 +1,33 @@
-<section id="nav">
-    <div id="navbar">
-        <div class="nav">
-            <label for="toggle" id="label">&#9776;</label>
-            <input type="checkbox" id="toggle">
-            <div class="menu sticky">
-                <a class="nav-items" href="<?php echo url('home') ?>" <?php if (current_route_is('home')) : ?> id="active" <?php endif ?>>Home</a>
-                <a class="nav-items">Over Mij</a>
-                <a class="nav-items">Projecten</a>
-                <a class="nav-items">Tutorials</a>
-                <button class="contact">
-                    <a class="nav-items">Contact</a>
-                </button>
-            </div>
-        </div>
+<nav id="navbar">
+    <div id="logo">
+        <a href="#">
+
+        </a>
     </div>
-</section>
+
+    <div id="navbar-right">
+        <ul class="navbar-ul" id="menu-menu">
+            <li class="menu-items menu-item navbar-ul">
+                <a href="<?php echo url('home') ?>" <?php if (current_route_is('home')) : ?> class="active" <?php endif ?>>Home</a>
+            </li>
+
+            <li class="menu-items menu-item navbar-ul">
+                <a href="<?php echo url('projecten') ?>" <?php if (current_route_is('projecten')) : ?> class="active" <?php endif ?>>Projecten</a>
+            </li>
+
+            <li class="menu-items menu-item navbar-ul">
+                <a href="<?php echo url('tutorials') ?>" <?php if (current_route_is('tutorials')) : ?> class="active" <?php endif ?>>Tutorials</a>
+            </li>
+            
+            <li class="menu-items menu-item navbar-ul contactNav">
+                <a href="<?php echo url('contact') ?>" <?php if (current_route_is('contact')) : ?> class="active" <?php endif ?>>Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+</nav>

@@ -1,0 +1,80 @@
+#homeHeader{
+    width: 100vw;
+    height: 100vh;
+    background-color: $blue;
+}
+
+.headerSVG{
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 900px;
+    max-height: 900px;
+}
+
+#homeInfo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.heroHeader{
+    z-index: 2;
+    margin: 0 auto;
+    margin-right: 5vw;
+}
+
+.heroHeader > img{
+    max-width: 700px;
+    margin-top: 11.5vh;
+}
+
+.introductionHeader{
+    font-weight: bold;
+    color: white;
+    margin-top: 35vh;
+    margin-left: 10vw;
+}
+
+.introductionHeader > h2 > span{
+    color: $aqua;
+}
+
+.introductionHeader > p{
+    font-weight: normal;
+    width: 460px;
+    margin-bottom: 20px;
+}
+
+.introductionHeader > h1{
+    font-size: 39.5px;
+}
+
+.introductionHeader > h2{
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.leesHeader{
+    width: 180px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: $aqua;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contactHeader{
+    margin-right: 25px;
+    width: 180px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 5px solid white;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
