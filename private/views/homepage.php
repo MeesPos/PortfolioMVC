@@ -32,11 +32,11 @@
 				Hier leer ik om Software developer te worden. Buiten school beheer
 				ik ook mijn eigen bedrijf samen met een vriend van mij. Voor meer
 				informatie kijk bij mijn Ervaringen!</p>
-				<a href="#">
+				<a href="#" class="ruimtebutton">
 					<button class="leesHeader">Lees meer</button>
 				</a>
 
-				<a href="#" style="margin-left: 25px;">
+				<a href="#">
 					<button class="contactHeader">Contact</button>
 				</a>
 			</div>

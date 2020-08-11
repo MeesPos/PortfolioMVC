@@ -8,8 +8,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    max-width: 900px;
-    max-height: 900px;
+    width: 46vw;
 }
 
 #homeInfo{
@@ -20,11 +19,12 @@
 .heroHeader{
     z-index: 2;
     margin: 0 auto;
-    margin-right: 5vw;
+    margin-right: 3vw;
+    margin-top: -2vh;
 }
 
 .heroHeader > img{
-    max-width: 700px;
+    width: 36vw;
     margin-top: 11.5vh;
 }
 
@@ -77,4 +77,118 @@
     background: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.ruimtebutton{
+    margin-right: 25px;
+}
+
+@media screen and (max-width: 1200px){
+    .headerSVG{
+        width: 60vw;
+    }
+    
+    .heroHeader > img{
+        display: none;
+    }
+
+    .heroHeader{
+        margin: 0;
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    #navbar-right{
+        margin-right: -13vw;
+    }
+
+    .introductionHeader{
+        grid-column: 2/2;
+        z-index: 2;
+        margin-left: 2vw;
+        margin-top: 20vh;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .headerSVG{
+        width: 75vw;
+    }
+
+    .introductionHeader{
+        margin-left: -12vw;
+    }
+    
+    #navbar-right{
+        margin-right: -4.5vw;
+    }
+
+    .contactHeader{
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .introductionHeader > h1{
+        font-size: 25px;
+    }
+
+    .introductionHeader > h2{
+        font-size: 25.3px;
+    }
+
+    .introductionHeader > p{
+        width: 310px;
+    }
+
+    .contactHeader{
+        font-size: 17.5px;
+        width: 145px;
+        height: 60px;
+    }
+
+    .leesHeader{
+        font-size: 17.5px;
+        width: 145px;
+        height: 60px;
+    }
+
+    .introductionHeader{
+        margin-top: 15vh!important;
+    }
+
+    .ruimtebutton{
+        margin-right: 17px!important;
+    }
+
+    .headerSVG{
+        width: 150vw!important;
+    }
+}
+
+// Galaxy Fold
+@media screen and (max-width: 319px){
+    .introductionHeader > p{
+        width: 270px;
+        margin-bottom: 10px;
+    }
+
+    .introductionHeader > h1{
+        font-size: 22px;
+    }
+
+    .introductionHeader > h2{
+        font-size: 22.3px;
+        margin-bottom: 10px;
+    }
+
+    .leesHeader{
+        width: 125px;
+        height: 55px;
+    }
+
+    .contactHeader{
+        width: 125px;
+        height: 55px;
+    }
 }
