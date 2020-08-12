@@ -1,0 +1,53 @@
+#projecten{
+    background-color: $blue;
+    margin-top: 8vh;
+    height: 80vh;
+}
+
+#projecten > h2{
+    padding-top: 4vh;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#projecten > p{
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+
+.projects{
+    margin-top: 8vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.projectHome{
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.2);
+    text-decoration: none;
+    height: 340px;
+}
+
+.projectImg{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: -50px;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.2);
+}
+
+.projectHome > h3{
+    text-align: center!important;
+    margin-top: 25px;
+    color: $blue;
+    font-size: 25px;
+    font-weight: bold;
+}

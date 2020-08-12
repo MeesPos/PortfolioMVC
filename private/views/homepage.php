@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
-	<script src="https://kit.fontawesome.com/a82e000026.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -29,9 +28,9 @@
 				<h1>Hallo, ik ben Mees Postma</h1>
 				<h2><span>Web</span> & <span>Software</span> developer</h2>
 				<p>Mijn naam is Mees Postma, ik studeer op het Mediacollege.
-				Hier leer ik om Software developer te worden. Buiten school beheer
-				ik ook mijn eigen bedrijf samen met een vriend van mij. Voor meer
-				informatie kijk bij mijn Ervaringen!</p>
+					Hier leer ik om Software developer te worden. Buiten school beheer
+					ik ook mijn eigen bedrijf samen met een vriend van mij. Voor meer
+					informatie kijk bij mijn Ervaringen!</p>
 				<a href="#" class="ruimtebutton">
 					<button class="leesHeader">Lees meer</button>
 				</a>
@@ -46,6 +45,46 @@
 			</div>
 		</div>
 	</header>
+
+	<section id="about">
+		<div class="heroAbout">
+			<img src="<?php echo site_url('/img/aboutMan.png') ?>" alt="Mees Postma, Over mij Illustration">
+		</div>
+
+		<div class="aboutMe">
+			<h2>Over mij</h2>
+			<h3>Mees Postma - Software developer</h3>
+			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+				Voluptatem dolor quam ipsum quia dolores. Nihil quasi error
+				quidem natus, praesentium asperiores cumque. Cumque necessitatibus
+				rem provident repellendus eius, repudiandae consequuntur. Lorem ipsum
+				dolor sit amet consectetur adipisicing elit. Ipsam cupiditate
+				consequatur at, officiis libero, explicabo architecto ipsum, modi
+				dolores natus exercitationem non tempore earum blanditiis nam
+				dignissimos officia placeat laborum?</p>
+			<a href="#">
+				<button>Lees Meer</button>
+			</a>
+		</div>
+	</section>
+
+	<section id="projecten">
+		<h2>Mijn Projecten</h2>
+		<p>Zie een kort overzicht van mijn werk</p>
+		<div class="projects">
+			<?php foreach ($project as $row) : ?>
+				<a href="#" class="projectHome">
+					<div class="projectImage">
+						<img class="projectImg" src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="">
+					</div>
+
+					<div class="projectInfo">
+						<h3><?php echo $row['projectnaam'] ?></h3>
+					</div>
+				</a>
+			<?php endforeach ?>
+		</div>
+	</section>
 
 	<?php if ($this->section('footer')) : ?>
 		<?php echo $this->section('footer') ?>

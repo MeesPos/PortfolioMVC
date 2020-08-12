@@ -131,6 +131,33 @@
     #homeInfo{
         grid-template-columns: 0!important;
     }
+
+    .contactNav > a{
+        padding: 0;
+        background: none;
+        font-weight: 400;
+    }
+
+    #about{
+        grid-template-columns: 1fr!important;
+        width: 100vw;
+    }
+
+    .heroAbout > img{
+        max-width: 60vw!important;
+        margin-top: 3.5vh!important;
+    }
+
+    .aboutMe{
+        margin: 0 auto;
+        text-align: center!important;
+        margin-top: 5vh!important;
+    }
+
+    .aboutMe > p{
+        max-width: 100%!important;
+        width: 70vw;
+    }
 }
 
 @media screen and (max-width: 400px) {

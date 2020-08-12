@@ -1,0 +1,64 @@
+#about{
+    display: grid;
+    grid-template-columns: 45vw 1fr;
+}
+
+.aboutMe > h2{
+    color: $darkblue;
+    font-weight: bold;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.aboutMe > h3{
+    color: $aqua;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.aboutMe > p{
+    max-width: 50vw;
+    min-width: 30vw;
+    margin: 10px 0;
+}
+
+.aboutMe > a > button{
+    width: 180px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: $aqua;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.heroAbout{
+    margin: 0 auto;
+}
+
+.heroAbout > img{
+    max-width: 60vw;
+    margin-top: 7vh;
+}
+
+.aboutMe{
+    margin-top: 25vh;
+}
+
+@media screen and (max-width: 1370px){
+    .heroAbout > img{
+        max-width: 40vw;
+    }
+
+    .aboutMe{
+        margin-top: 20vh;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .aboutMe{
+        margin-top: 13vh;
+    }
+}
