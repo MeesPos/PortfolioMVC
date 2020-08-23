@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Home | Mees Postma</title>
 	<link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
 </head>
 
@@ -73,18 +73,27 @@
 		<p>Zie een kort overzicht van mijn werk</p>
 		<div class="projects">
 			<?php foreach ($project as $row) : ?>
-				<a href="#" class="projectHome">
-					<div class="projectImage">
-						<img class="projectImg" src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="">
+				<div class="card" onclick="this.classList.toggle('expanded')">
+					<img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" class="label" alt="Project (Nummer) van Mees Postma">
+					<div class="text">
+						<div class="text-content">
+							<h1 class="title"><?php echo $row['projectnaam'] ?></h1>
+							<div class="body-text"><?php echo $row['samenvatting'] ?></div>
+							<a href="#" class="leesMeerProject">Lees meer ></a>
+						</div>
 					</div>
-
-					<div class="projectInfo">
-						<h3><?php echo $row['projectnaam'] ?></h3>
-					</div>
-				</a>
+					<svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="80">
+						<path d="M5 30L50 5l45 25" fill="none" stroke="#fff" stroke-width="10" /></svg>
+				</div>
 			<?php endforeach ?>
 		</div>
+
+		<a href="#" class="meerProjecten">
+			<button>Zie meer</button>
+		</a>
 	</section>
+
+	<section style="height: 100vh;"></section>
 
 	<?php if ($this->section('footer')) : ?>
 		<?php echo $this->section('footer') ?>

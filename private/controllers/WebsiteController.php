@@ -14,7 +14,7 @@ class WebsiteController {
 
 	public function home() {
 
-		$getProjects = getProjects();
+		$getProjects = getProjectsHome();
 
 		$template_engine = get_template_engine();
 		echo $template_engine->render('homepage', ['project' => $getProjects]);

@@ -459,7 +459,8 @@ body, html {
 #projecten {
   background-color: #4834D4;
   margin-top: 8vh;
-  height: 80vh;
+  height: 800px;
+  text-align: center;
 }
 
 #projecten > h2 {
@@ -483,31 +484,114 @@ body, html {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.projectHome {
-  width: 80%;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  height: 340px;
-}
-
-.projectImg {
-  display: block;
-  margin: 0 auto;
-  width: 90%;
-  margin-top: -50px;
-  border-radius: 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
 .projectHome > h3 {
   text-align: center !important;
   margin-top: 25px;
   color: #4834D4;
   font-size: 25px;
   font-weight: bold;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+  height: 300px;
+  margin: 20px;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.025);
+  text-align: center;
+  transition: height 1000ms;
+  width: 450px;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .card {
+    left: calc(50% - 20px);
+    transform: translateX(-50%);
+  }
+}
+.card.expanded {
+  height: 480px;
+}
+
+.label {
+  margin-top: -10px;
+  width: 100%;
+  border-radius: 8px;
+  transform: translateY(10px);
+  transition: transform 1000ms;
+}
+
+.card.expanded .label {
+  transform: translateY(0);
+}
+
+.text {
+  clip-path: polygon(0% 100%, 0 -65%, 50% -5%, 100% -65%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 0 -65%, 50% -5%, 100% -65%, 100% 100%);
+  transition: clip-path 1000ms;
+}
+
+.card.expanded .text {
+  clip-path: polygon(0% 100%, 0 -100%, 50% -15%, 100% -100%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 0 -100%, 50% -15%, 100% -100%, 100% 100%);
+}
+
+.text-content {
+  transform: translateY(-160px);
+  transition: transform 1000ms;
+}
+
+.card.expanded .text-content {
+  transform: translateY(-15px);
+}
+
+.chevron {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 40px);
+  transform-origin: 50%;
+  transform: rotate(180deg);
+  transition: transform 1000ms;
+}
+
+.card.expanded .chevron {
+  transform: rotate(0deg);
+}
+
+.title {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 900;
+  margin: 20px 0 12px;
+}
+
+.body-text {
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.leesMeerProject {
+  color: #4834D4;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.meerProjecten > button {
+  width: 180px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background-color: #7ED6DF;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5vh;
+  z-index: 999;
 }
 
 /*# sourceMappingURL=style.css.map */
