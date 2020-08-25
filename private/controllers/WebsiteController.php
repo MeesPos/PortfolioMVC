@@ -15,9 +15,10 @@ class WebsiteController {
 	public function home() {
 
 		$getProjects = getProjectsHome();
+		$getTutorials = getTutorialsHome();
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('homepage', ['project' => $getProjects]);
+		echo $template_engine->render('homepage', ['project' => $getProjects, 'tutorial' => $getTutorials]);
 
 	}
 

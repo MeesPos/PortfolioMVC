@@ -7,3 +7,11 @@ function getProjectsHome() {
     
     return $statement->fetchAll();
 }
+
+function getTutorialsHome() {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `tutorials` ORDER BY rand() LIMIT 4';
+    $statement  = $connection->query($sql);
+
+    return $statement->fetchAll();
+}

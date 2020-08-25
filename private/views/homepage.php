@@ -73,7 +73,7 @@
 		<p>Zie een kort overzicht van mijn werk</p>
 		<div class="projects">
 			<?php foreach ($project as $row) : ?>
-				<div class="card" onclick="this.classList.toggle('expanded')">
+				<div class="cardProject" onclick="this.classList.toggle('expanded')">
 					<img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" class="label" alt="Project (Nummer) van Mees Postma">
 					<div class="text">
 						<div class="text-content">
@@ -93,7 +93,15 @@
 		</a>
 	</section>
 
-	<section style="height: 100vh;"></section>
+	<section id="blogs">
+		<h2>Tutorials</h2>
+		<div class="tutorials">
+			<?php foreach ($tutorial as $row) : ?>
+				<?php echo $row['titel']; ?>
+				<?php echo $row['samenvatting']; ?><br>
+			<?php endforeach; ?>
+		</div>
+	</section>
 
 	<?php if ($this->section('footer')) : ?>
 		<?php echo $this->section('footer') ?>

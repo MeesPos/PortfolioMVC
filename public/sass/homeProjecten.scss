@@ -1,7 +1,7 @@
 #projecten{
     background-color: $blue;
     margin-top: 8vh;
-    height: 800px;
+    min-height: 660px;
     text-align: center;
 }
 
@@ -34,7 +34,7 @@
     font-weight: bold;
 }
 
-.card {
+.cardProject {
   background: white;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -49,13 +49,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 767px) {
-  .card {
-    left: calc(50% - 20px);
-    transform: translateX(-50%);
-  }
-}
-.card.expanded {
+.cardProject.expanded {
   height: 480px;
 }
 
@@ -67,17 +61,17 @@
   transition: transform 1000ms;
 }
 
-.card.expanded .label {
+.cardProject.expanded .label {
   transform: translateY(0);
 }
 
 .text {
-  clip-path: polygon(0% 100%, 0 -65%, 50% -5%, 100% -65%, 100% 100%);
-  -webkit-clip-path: polygon(0% 100%, 0 -65%, 50% -5%, 100% -65%, 100% 100%);
+  clip-path: polygon(0% 100%, 0 -15%, 50% -5%, 100% -15%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 0 -15%, 50% -5%, 100% -15%, 100% 100%);
   transition: clip-path 1000ms;
 }
 
-.card.expanded .text {
+.cardProject.expanded .text {
   clip-path: polygon(0% 100%, 0 -100%, 50% -15%, 100% -100%, 100% 100%);
   -webkit-clip-path: polygon(0% 100%, 0 -100%, 50% -15%, 100% -100%, 100% 100%);
 }
@@ -87,7 +81,7 @@
   transition: transform 1000ms;
 }
 
-.card.expanded .text-content {
+.cardProject.expanded .text-content {
   transform: translateY(-15px);
 }
 
@@ -100,7 +94,7 @@
   transition: transform 1000ms;
 }
 
-.card.expanded .chevron {
+.cardProject.expanded .chevron {
   transform: rotate(0deg);
 }
 
@@ -133,5 +127,58 @@
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5vh;
+  position: relative;
   z-index: 999;
+  margin-bottom: 5vh;
+}
+
+@media screen and (max-width: 1400px) and (min-width: 951px){
+  .projects{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cardProject:nth-child(3n){
+    display: none;
+  }
+}
+
+@media screen and (max-width: 950px){
+  .projects{
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+    margin-top: 4vh;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .cardProject{
+    width: 350px;
+    height: 230px;
+  }
+
+  .cardProject.expanded{
+    height: 430px;
+  }
+
+  .title{
+    font-size: 22px;
+    margin: 15px 0 9px;
+  }
+}
+
+@media screen and (max-width: 390px){
+  .cardProject{
+    width: 300px;
+    height: 200px;
+  }
+
+  .cardProject.expanded{
+    height: 410px;
+  }
+
+  .body-text{
+    padding: 0 10px;
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
 }

@@ -35,7 +35,7 @@
 }
 
 .blackMenu > li> a{
-    color: black!important;
+    color: black;
 }
 
 .burger{
@@ -63,7 +63,7 @@
     background-color: $aqua;
     border-radius: 5px;
     padding: 15px 55px;
-    color: white;
+    color: white!important;
     font-weight: bold;
     margin-top: 6px;
 }
