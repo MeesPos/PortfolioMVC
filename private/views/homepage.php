@@ -97,9 +97,37 @@
 		<h2>Tutorials</h2>
 		<div class="tutorials">
 			<?php foreach ($tutorial as $row) : ?>
-				<?php echo $row['titel']; ?>
-				<?php echo $row['samenvatting']; ?><br>
+				<div class="blogCard">
+					<img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?>">
+					<div class="blogInfo">
+						<a href="#" class="categorie">Laptop</a>
+						<h3><?php echo $row['titel'] ?></h3>
+						<p><?php echo $row['samenvatting'] ?></p>
+						<a href="#" class="leesMeer">Lees meer</a>
+					</div>
+				</div>
 			<?php endforeach; ?>
+		</div>
+
+		<a href="#" class="meerProjecten blogsButton">
+			<button>Zie meer</button>
+		</a>
+	</section>
+
+	<section id="contact">
+		<div class="contactMe">
+			<h2>Meer informatie?</h2>
+			<h3>Neem contact met me op!</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
+				lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
+				velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
+			<a href="#" class="meerProjecten contactButton">
+				<button>Contact</button>
+			</a>
+		</div>
+
+		<div class="heroAbout contactHero">
+			<img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
 		</div>
 	</section>
 

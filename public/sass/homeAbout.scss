@@ -55,10 +55,26 @@
     .aboutMe{
         margin-top: 20vh;
     }
+
+    .contactMe{
+        margin-top: 15vh!important;
+    }
 }
 
 @media screen and (max-width: 1000px){
     .aboutMe{
         margin-top: 13vh;
+    }
+
+    .contactMe{
+        margin-top: 12vh!important;
+    }
+
+    .contactMe > h2{
+        font-size: 35px!important;
+    }
+
+    .contactMe > h3{
+        font-size: 26px!important;
     }
 }

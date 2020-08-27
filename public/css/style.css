@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: sans-serif;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body, html {
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
 }
 
 #navbar {
@@ -132,7 +135,7 @@ body, html {
   }
 
   .headerSVG {
-    width: 120vw !important;
+    width: 100vw !important;
     margin: 0 auto;
   }
 
@@ -201,6 +204,31 @@ body, html {
 
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
+}
+
+footer {
+  margin-top: 10vh;
+  background-color: #4834D4;
+}
+
+#footerLinks {
+  color: white;
+  width: 65vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-left: 20vw;
+  padding-top: 2.5vh;
+}
+
+.footer-links > a {
+  color: white;
+}
+
+.copyright {
+  margin-left: 20vw;
+  color: white;
+  margin-top: 2vh;
+  padding-bottom: 2.5vh;
 }
 
 #homeHeader {
@@ -450,10 +478,26 @@ body, html {
   .aboutMe {
     margin-top: 20vh;
   }
+
+  .contactMe {
+    margin-top: 15vh !important;
+  }
 }
 @media screen and (max-width: 1000px) {
   .aboutMe {
     margin-top: 13vh;
+  }
+
+  .contactMe {
+    margin-top: 12vh !important;
+  }
+
+  .contactMe > h2 {
+    font-size: 35px !important;
+  }
+
+  .contactMe > h3 {
+    font-size: 26px !important;
   }
 }
 #projecten {
@@ -586,7 +630,7 @@ body, html {
   cursor: pointer;
   margin-top: 5vh;
   position: relative;
-  z-index: 999;
+  z-index: 1;
   margin-bottom: 5vh;
 }
 
@@ -642,7 +686,262 @@ body, html {
   color: #4834D4;
   text-transform: uppercase;
   font-size: 50px;
-  margin-top: 4vh;
+  margin: 4vh 0;
+}
+
+.tutorials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.blogCard {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.blogCard > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.categorie {
+  background-color: red;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.blogInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+  min-height: 250px;
+}
+
+.blogInfo > h3 {
+  margin: 10px 0;
+}
+
+.blogCard > p {
+  font-size: 14px;
+  margin: 0 0 40px 0;
+  font-weight: 500;
+  color: #464444;
+}
+
+.blogDetails {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: auto;
+}
+
+.blogDetails > p {
+  margin: 0 auto;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+.leesMeer {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #4834D4;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.blogsButton > button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 6vh;
+}
+
+.blogsButton {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .tutorials {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .blogCard:nth-child(4n) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .tutorials {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blogCard:nth-child(3n) {
+    display: none;
+  }
+}
+@media screen and (max-width: 675px) {
+  .tutorials {
+    grid-template-columns: 1fr;
+  }
+
+  .blogCard:nth-child(3n) {
+    display: block;
+  }
+
+  .blogCard {
+    margin: 20px auto;
+  }
+}
+@media screen and (max-width: 310px) {
+  .blogCard {
+    width: 270px;
+  }
+}
+#contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 6vh;
+}
+
+.contactMe > h2 {
+  font-size: 50px;
+  color: #00117F;
+  text-transform: uppercase;
+}
+
+.contactMe > h3 {
+  font-size: 35px;
+  color: #00117F;
+}
+
+.contactMe > p {
+  max-width: 550px;
+}
+
+.contactButton > button {
+  margin-top: 1.5vh !important;
+}
+
+.contactMe {
+  margin: 0 auto;
+  margin-top: 20vh;
+}
+
+.contactHero > img {
+  margin: 0 auto;
+  margin-right: 5vw;
+}
+
+@media screen and (max-width: 850px) {
+  #contact {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .contactMe {
+    grid-row: 2/2;
+  }
+
+  .contactHero > img {
+    max-width: 60vw !important;
+  }
+
+  .contactMe {
+    text-align: center;
+  }
+
+  .contactMe > p {
+    max-width: 100% !important;
+    width: 70vw;
+  }
+
+  .contactMe > h2 {
+    font-size: 50px !important;
+  }
+
+  .contactMe > h3 {
+    font-size: 35px !important;
+  }
+
+  .contactMe {
+    margin-top: 5vh !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .aboutMe > h2 {
+    font-size: 40px !important;
+  }
+
+  .aboutMe > h3 {
+    font-size: 20px !important;
+  }
+
+  #projecten > h2 {
+    font-size: 35px;
+  }
+
+  #projecten > p {
+    font-size: 17px;
+  }
+
+  #blogs > h2 {
+    font-size: 35px;
+  }
+
+  .contactMe > h2 {
+    font-size: 35px !important;
+  }
+
+  .contactMe > h3 {
+    font-size: 25px !important;
+  }
+
+  #footerLinks {
+    grid-template-columns: 1fr;
+    margin: 0 !important;
+    text-align: center;
+    width: 100vw !important;
+  }
+
+  .footer-links {
+    margin: 10px 0;
+  }
+
+  .footer-links > h3 {
+    font-size: 25px;
+  }
+
+  .footer-links > a {
+    font-size: 18px;
+  }
+
+  .copyright {
+    margin: 0 !important;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 2.5vh;
+  }
+}
+@media screen and (max-width: 800px) {
+  #footerLinks {
+    width: 95vw;
+    margin-left: 7vw;
+  }
+
+  .copyright {
+    margin-left: 7vw;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

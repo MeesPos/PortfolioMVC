@@ -1,0 +1,66 @@
+@media screen and (max-width: 500px){
+    .aboutMe > h2{
+        font-size: 40px!important;
+    }
+
+    .aboutMe > h3{
+        font-size: 20px!important;
+    }
+
+    #projecten > h2{
+        font-size: 35px;
+    }
+
+    #projecten > p{
+        font-size: 17px;
+    }
+
+    #blogs > h2{
+        font-size: 35px;
+    }
+
+    .contactMe > h2{
+        font-size: 35px!important;
+    }
+
+    .contactMe > h3{
+        font-size: 25px!important;
+    }
+
+    #footerLinks{
+        grid-template-columns: 1fr;
+        margin: 0!important;
+        text-align: center;
+        width: 100vw!important;
+    }
+
+    .footer-links{
+        margin: 10px 0;
+    }
+    
+    .footer-links > h3{
+        font-size: 25px;
+    }
+
+    .footer-links > a{
+        font-size: 18px;
+    }
+
+    .copyright{
+        margin: 0!important;
+        text-align: center;
+        font-size: 16px;
+        padding-top: 2.5vh;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #footerLinks{
+        width: 95vw;
+        margin-left: 7vw;
+    }
+
+    .copyright{
+        margin-left: 7vw;
+    }
+}

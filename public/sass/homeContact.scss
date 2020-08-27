@@ -1,0 +1,70 @@
+#contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 6vh;
+}
+
+.contactMe > h2{
+    font-size: 50px;
+    color: $darkblue;
+    text-transform: uppercase;
+}
+
+.contactMe > h3{
+    font-size: 35px;
+    color: $darkblue;
+}
+
+.contactMe > p{
+    max-width: 550px;
+}
+
+.contactButton > button{
+    margin-top: 1.5vh!important;
+}
+
+.contactMe{
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+.contactHero > img{
+    margin: 0 auto;
+    margin-right: 5vw;
+}
+
+@media screen and (max-width: 850px){
+    #contact{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .contactMe{
+        grid-row: 2/2;
+    }
+
+    .contactHero > img{
+        max-width: 60vw !important;
+    }
+
+    .contactMe{
+        text-align: center;
+    }
+
+    .contactMe > p{
+        max-width: 100%!important;
+        width: 70vw;
+    }
+
+    .contactMe > h2{
+        font-size: 50px!important;
+    }
+
+    .contactMe > h3{
+        font-size: 35px!important;
+    }
+
+    .contactMe{
+        margin-top: 5vh!important;
+    }
+}
