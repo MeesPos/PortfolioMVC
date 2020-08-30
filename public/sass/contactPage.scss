@@ -1,0 +1,113 @@
+#contactMij{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.gegevens{
+    margin: 0 auto;
+    margin-top: 12vh;
+}
+
+.gegevens > h2{
+    text-transform: uppercase;
+    font-size: 35px;
+    color: $darkblue;
+}
+
+.gegevens > p{
+    max-width: 500px;
+    padding-top: 20px;
+}
+
+.gegevensCo{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding-bottom: 25px;
+}
+
+.gegevensValue{
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.gegevensCo > a{
+    color: black;
+}
+
+.gegevensValues{
+    margin-top: 5vh;
+}
+
+.formTitle{
+    font-size: 25px;
+    color: $darkblue;
+    text-transform: uppercase;
+}
+
+.contactForm{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width: 400px;
+    height: 360px;
+    margin: 0 auto;
+    margin-top: 6vh;
+}
+
+.contactForm > form{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contactForm > form > input{
+    width: 300px;
+    border: 2px solid $blue;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+.contactForm > form > input[type=text], .contactForm > form > textarea{
+   padding: 12px 20px; 
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.contactForm > form > textarea{
+    width: 300px;
+    border: 2px solid $blue;
+    height: 100px;
+    margin-bottom: 8px;
+}
+
+.contactForm > form > input[type=submit]{
+    background-color: $blue;
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    height: 45px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,.2);
+}
+
+.contactForm > form > h2{
+    text-transform: uppercase;
+    color: $darkblue;
+    margin-bottom: 15px;
+    margin-top: -20px;
+}
+
+.contactForm > i{
+    color: green;
+    font-size: 100px;
+    margin-top: 25%;
+}
+
+.contactForm{
+    text-align: center;
+}
+
+.contactForm > h2{
+    color: $darkblue;
+}

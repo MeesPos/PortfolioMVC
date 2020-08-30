@@ -22,5 +22,11 @@ class WebsiteController {
 
 	}
 
-}
+	public function about() {
 
+		$getSkills = getSkills();
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('about', ['skills' => $getSkills]);
+	}
+}

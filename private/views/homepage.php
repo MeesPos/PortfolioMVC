@@ -30,8 +30,8 @@
 				<p>Mijn naam is Mees Postma, ik studeer op het Mediacollege.
 					Hier leer ik om Software developer te worden. Buiten school beheer
 					ik ook mijn eigen bedrijf samen met een vriend van mij. Voor meer
-					informatie kijk bij mijn Ervaringen!</p>
-				<a href="#" class="ruimtebutton">
+					informatie kijk verder op mijn website.</p>
+				<a href="#about" class="ruimtebutton">
 					<button class="leesHeader">Lees meer</button>
 				</a>
 
@@ -62,7 +62,7 @@
 				consequatur at, officiis libero, explicabo architecto ipsum, modi
 				dolores natus exercitationem non tempore earum blanditiis nam
 				dignissimos officia placeat laborum?</p>
-			<a href="#">
+			<a href="<?php echo url('over'); ?>">
 				<button>Lees Meer</button>
 			</a>
 		</div>

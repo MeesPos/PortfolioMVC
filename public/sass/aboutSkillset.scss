@@ -1,0 +1,64 @@
+#skillset{
+    margin-top: 10vh;
+}
+
+#skillset > h2{
+    color: $darkblue;
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#skillset > p{
+    text-align: center;
+    width: 75vw;
+    margin: 0 auto;
+}
+
+.skills{
+    width: 75vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+.skill{
+    display: grid;
+    grid-template-columns: 40px auto;
+    width: 80px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+.icon{
+    font-size: 24px;
+    color: $blue;
+}
+
+.skill-name{
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.skill-niveau{
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1250px){
+    .skills{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .skills{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .skills{
+        grid-template-columns: 1fr;
+    }
+}

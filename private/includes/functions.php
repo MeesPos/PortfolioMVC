@@ -81,5 +81,31 @@ function current_route_is( $name ) {
 	}
 
 	return false;
+}
 
+function getSwiftMailer()
+{
+	$mail_config = get_config('MAIL');
+	$transport   = new \Swift_SmtpTransport($mail_config['SMTP_HOST'], $mail_config['SMTP_PORT']);
+
+	if (!empty($mail_config['SMTP_USER'])) {
+		$transport->setUsername($mail_config['SMTP_USER']);
+		$transport->setPassword($mail_config['SMTP_PASSWORD']);
+	}
+
+	$mailer = new \Swift_Mailer($transport);
+
+	return $mailer;
+}
+
+function createEmailMessage($to, $subject, $from_name, $from_email)
+{
+
+	// Create a message
+	$message = new \Swift_Message($subject);
+	$message->setFrom([$from_email => $from_email]);
+	$message->setTo($to);
+
+	// Send the message
+	return $message;
 }

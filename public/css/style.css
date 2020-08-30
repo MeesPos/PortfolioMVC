@@ -880,6 +880,261 @@ footer {
     margin-top: 5vh !important;
   }
 }
+#subHeader {
+  background-color: #4834D4;
+  height: 40vh;
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: white;
+}
+
+#subHeader > h1 {
+  padding-top: 14vh;
+}
+
+#introductie {
+  display: grid;
+  grid-template-columns: 45vw 1fr;
+}
+
+.introductionAboutMe > h3 {
+  color: black;
+  font-weight: bold;
+  font-size: 33px;
+  text-transform: uppercase;
+  padding-bottom: 0.5vh;
+}
+
+.introductionAboutMe > h2 {
+  color: #00117F;
+  font-weight: bold;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.introductionAboutMe > p {
+  max-width: 45vw;
+  min-width: 25vw;
+  margin: 10px 0;
+}
+
+.heroAboutMe {
+  margin: 0 auto;
+}
+
+.heroAboutMe > img {
+  max-width: 35vw;
+  margin-top: 7vh;
+}
+
+.introductionAboutMe {
+  margin-top: 14vh;
+}
+
+@media screen and (max-width: 1500px) {
+  .heroAboutMe > img {
+    margin-top: 15vh;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #introductie {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    text-align: center;
+  }
+
+  .heroAboutMe > img {
+    margin-top: 7vh;
+    max-width: 60vw;
+  }
+
+  .introductionAboutMe > p {
+    max-width: 70vw;
+    margin: 0 auto;
+  }
+
+  #skillset > p {
+    width: 85vw;
+    margin: 10px auto !important;
+  }
+}
+#skillset {
+  margin-top: 10vh;
+}
+
+#skillset > h2 {
+  color: #00117F;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#skillset > p {
+  text-align: center;
+  width: 75vw;
+  margin: 0 auto;
+}
+
+.skills {
+  width: 75vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: 40px auto;
+  width: 80px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+.icon {
+  font-size: 24px;
+  color: #4834D4;
+}
+
+.skill-name {
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.skill-niveau {
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1250px) {
+  .skills {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 850px) {
+  .skills {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 550px) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
+}
+#contactMij {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.gegevens {
+  margin: 0 auto;
+  margin-top: 12vh;
+}
+
+.gegevens > h2 {
+  text-transform: uppercase;
+  font-size: 35px;
+  color: #00117F;
+}
+
+.gegevens > p {
+  max-width: 500px;
+  padding-top: 20px;
+}
+
+.gegevensCo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding-bottom: 25px;
+}
+
+.gegevensValue {
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+.gegevensCo > a {
+  color: black;
+}
+
+.gegevensValues {
+  margin-top: 5vh;
+}
+
+.formTitle {
+  font-size: 25px;
+  color: #00117F;
+  text-transform: uppercase;
+}
+
+.contactForm {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  width: 400px;
+  height: 360px;
+  margin: 0 auto;
+  margin-top: 6vh;
+}
+
+.contactForm > form {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contactForm > form > input {
+  width: 300px;
+  border: 2px solid #4834D4;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.contactForm > form > input[type=text], .contactForm > form > textarea {
+  padding: 12px 20px;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.contactForm > form > textarea {
+  width: 300px;
+  border: 2px solid #4834D4;
+  height: 100px;
+  margin-bottom: 8px;
+}
+
+.contactForm > form > input[type=submit] {
+  background-color: #4834D4;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contactForm > form > h2 {
+  text-transform: uppercase;
+  color: #00117F;
+  margin-bottom: 15px;
+  margin-top: -20px;
+}
+
+.contactForm > i {
+  color: green;
+  font-size: 100px;
+  margin-top: 25%;
+}
+
+.contactForm {
+  text-align: center;
+}
+
+.contactForm > h2 {
+  color: #00117F;
+}
+
 @media screen and (max-width: 500px) {
   .aboutMe > h2 {
     font-size: 40px !important;
@@ -933,6 +1188,28 @@ footer {
     text-align: center;
     font-size: 16px;
     padding-top: 2.5vh;
+  }
+
+  .introductionAboutMe > h3 {
+    font-size: 25px;
+  }
+
+  .introductionAboutMe > h2 {
+    font-size: 38px;
+  }
+
+  .heroAboutMe > img {
+    max-width: 90vw;
+    margin-top: 5vh;
+  }
+
+  .introductionAboutMe {
+    margin-top: 5vh;
+  }
+
+  #subHeader > h1 {
+    font-size: 60px;
+    padding-top: 20vh;
   }
 }
 @media screen and (max-width: 800px) {

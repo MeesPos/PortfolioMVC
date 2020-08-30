@@ -15,3 +15,11 @@ function getTutorialsHome() {
 
     return $statement->fetchAll();
 }
+
+function getSkills() {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `skills`';
+    $statement  = $connection->query($sql);
+
+    return $statement->fetchAll();
+}
