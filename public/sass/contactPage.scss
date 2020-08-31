@@ -1,7 +1,7 @@
 #contactMij{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 60vw;
+    width: 1150px;
     margin: 0 auto;
 }
 
@@ -52,6 +52,7 @@
     height: 360px;
     margin: 0 auto;
     margin-top: 6vh;
+    text-align: center;
 }
 
 .contactForm > form{
@@ -104,10 +105,45 @@ textarea:focus, input:focus{
     margin-top: 25%;
 }
 
-.contactForm{
-    text-align: center;
-}
-
 .contactForm > h2{
     color: $darkblue;
+}
+
+@media screen and (max-width: 1150px){
+    #contactMij{
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .contactForm{
+        box-shadow: none;
+        width: auto;
+    }
+
+    .gegevens > h2{
+        font-size: 28px;
+    }
+
+    #contactMij{
+        grid-template-columns: 1fr;
+        width: 75vw;
+    }
+
+    .gegevens{
+        text-align: center;
+    }
+
+    .gegevensValue{
+        text-align: left;
+    }
+
+    .contactForm > form > input{
+        width: 75vw;
+    }
+
+    .contactForm > form > textarea{
+        width: 75vw;
+        height: 150px;
+    }
 }

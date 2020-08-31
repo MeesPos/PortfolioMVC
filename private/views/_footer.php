@@ -4,12 +4,12 @@
     <div id="footerLinks">
         <div class="footer-links">
             <h3>Contact</h3>
-            <a href="#">Contact me</a>
+            <a href="<?php echo url('contact') ?>">Contact</a>
         </div>
 
         <div class="footer-links">
             <h3>Informatie</h3>
-            <a href="#">Over mij</a><br>
+            <a href="<?php echo url('over') ?>">Over mij</a><br>
             <a href="#">Projecten</a><br>
             <a href="#">Tutorials</a>
         </div>

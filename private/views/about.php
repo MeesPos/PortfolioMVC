@@ -74,7 +74,7 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
 				lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
 				velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
-			<a href="#" class="meerProjecten contactButton">
+			<a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
 				<button>Contact</button>
 			</a>
 		</div>
