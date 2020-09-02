@@ -21,8 +21,8 @@
 
         <div class="footer-links">
             <h3>Social Media</h3>
-            <a href="#">LinkedIn</a><br>
-            <a href="#">Facebook</a>
+            <a href="https://www.linkedin.com/in/mees-postma-a911b1196/" target="_blank">LinkedIn</a><br>
+            <a href="https://www.facebook.com/meespostma2002" target="_blank">Facebook</a>
         </div>
     </div>
 
