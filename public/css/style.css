@@ -1169,6 +1169,31 @@ textarea:focus, input:focus {
     height: 150px;
   }
 }
+.buttons > button {
+  border: none;
+  background-color: #eeeeee;
+  color: black;
+  padding: 9px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.7s;
+  outline: none;
+}
+
+.buttons {
+  text-align: center;
+}
+
+#projects {
+  margin-top: 5vh;
+}
+
+.activeProject {
+  background-color: #4834D4 !important;
+  color: white !important;
+}
+
 @media screen and (max-width: 500px) {
   .aboutMe > h2 {
     font-size: 40px !important;

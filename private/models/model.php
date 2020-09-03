@@ -23,3 +23,11 @@ function getSkills() {
 
     return $statement->fetchAll();
 }
+
+function getAllProjects() {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `projecten`';
+    $statement  = $connection->query($sql);
+
+    return $statement->fetchAll();
+}

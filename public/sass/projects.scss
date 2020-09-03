@@ -1,0 +1,24 @@
+.buttons > button{
+    border: none;
+    background-color: $gray;
+    color: black;
+    padding: 9px 20px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .7s;
+    outline: none;
+}
+
+.buttons{
+    text-align: center;
+}
+
+#projects{
+    margin-top: 5vh;
+}
+
+.activeProject{
+    background-color: $blue!important;
+    color: white!important;
+}
