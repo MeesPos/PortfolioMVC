@@ -4,6 +4,12 @@
     font-family: sans-serif;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+        ::before {
+            box-sizing: border-box;
+        ::after {
+            box-sizing: border-box;
+        }
+    }
 }
 
 body, html{

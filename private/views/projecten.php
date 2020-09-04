@@ -21,17 +21,24 @@
 
     <section id="projects">
         <div class="buttons">
-            <button id='all'>Alles</button>
+            <button id='all' class="activeProject">Alles</button>
             <button id='btn-websites'>Websites</button>
             <button id='btn-city'>Naam</button>
             <button id='btn-nature'>Naam</button>
         </div>
 
-        <div class="projectShuffle">
+        <div class="projectShuffle containerProject">
             <?php foreach ($projects as $row) : ?>
-                <div class="picture-item" data-groups='["<?php echo $row['categorie']; ?>"]'>
-                    <img src="https://mk0designbombsg12amh.kinstacdn.com/wp-content/uploads/2018/04/kuon-yagi.jpg" alt="" srcset="">
-                    <?php echo $row['projectnaam'] ?>
+                <div class="picture-item column" data-groups='["<?php echo $row['categorie']; ?>"]'>
+                    <div class="aspect aspect--16x9">
+                        <div class="aspect__inner">
+                            <img class="projectPicture" src="https://mk0designbombsg12amh.kinstacdn.com/wp-content/uploads/2018/04/kuon-yagi.jpg" alt="<?php echo $row['projectnaam'] ?> Image, Mees Postma">
+                            <div class="projectInfo">
+                                <h4><?php echo $row['projectnaam'] ?></h4>
+                                <p><?php echo $row['categorie'] ?>Tst</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
 
