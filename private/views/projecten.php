@@ -32,11 +32,15 @@
                 <div class="picture-item column" data-groups='["<?php echo $row['categorie']; ?>"]'>
                     <div class="aspect aspect--16x9">
                         <div class="aspect__inner">
-                            <img class="projectPicture" src="https://mk0designbombsg12amh.kinstacdn.com/wp-content/uploads/2018/04/kuon-yagi.jpg" alt="<?php echo $row['projectnaam'] ?> Image, Mees Postma">
-                            <div class="projectInfo">
-                                <h4><?php echo $row['projectnaam'] ?></h4>
-                                <p><?php echo $row['categorie'] ?>Tst</p>
-                            </div>
+                            <a href="#">
+                                <div class="projectCard">
+                                    <img class="projectPicture" src="https://mk0designbombsg12amh.kinstacdn.com/wp-content/uploads/2018/04/kuon-yagi.jpg" alt="<?php echo $row['projectnaam'] ?> Image, Mees Postma">
+                                    <div class="projectInfo">
+                                        <h4><?php echo $row['projectnaam'] ?></h4>
+                                        <p><?php echo $row['categorie'] ?>Tst</p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -52,6 +56,7 @@
         <?php echo $this->fetch('_footer') ?>
     <?php endif ?>
 
+    <script src="https://kit.fontawesome.com/a82e000026.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js"></script>
     <script src="<?php echo site_url('/js/shuffle.js') ?>"></script>

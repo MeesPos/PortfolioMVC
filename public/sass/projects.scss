@@ -4,6 +4,7 @@
     color: black;
     padding: 9px 20px;
     border-radius: 4px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
     transition: .7s;
@@ -22,6 +23,7 @@
 
 #projects{
     margin-top: 5vh;
+    min-height: 28vh;
 }
 
 .activeProject{
@@ -34,7 +36,7 @@
     width: 100%;
     height: 0;
     padding-bottom: 100%;
-    // overflow: hidden;
+    overflow: hidden;
 }
 
 .aspect__inner {
@@ -101,7 +103,37 @@ figure:nth-child(2n+1){
 }
 
 .projectInfo{
-    margin-bottom: 30px!important;
+    padding: 15px 40px;
+    display: table;
+}
+
+.projectCard{
+    width: 80%;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.projectInfo > h4{
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: black!important;
+}
+
+.projectCard > img{
+    border-radius: 20px 20px 0 0;
+}
+
+.projectInfo > p{
+    text-transform: uppercase;
+    color: $blue;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.aspect__inner > a{
+    width: 80%;
 }
 
 @media screen and (max-width: 1100px){
