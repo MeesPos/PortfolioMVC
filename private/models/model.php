@@ -31,3 +31,16 @@ function getAllProjects() {
 
     return $statement->fetchAll();
 }
+
+function getAllProjectDetails($naam) {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `projecten` WHERE `projectnaam` = :naam';
+    $statement  = $connection->prepare($sql);
+
+    $params = [
+        'naam' => $naam
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}

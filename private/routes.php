@@ -21,6 +21,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	// Projecten Routes
 	SimpleRouter::get( '/projecten', 'ProjectenController@projecten')->name( 'projecten' );
+	SimpleRouter::get( '/projecten/{naam}', 'ProjectenController@projectenDetail')->name( 'projectenDetail' );
 
 	// STOP: Tot hier al je eigen URL's zetten
 	SimpleRouter::get( '/not-found', function () {
@@ -31,7 +32,6 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 } );
 
-
 // Dit zorgt er voor dat bij een niet bestaande route, de 404 pagina wordt getoond
 SimpleRouter::error( function ( Request $request, \Exception $exception ) {
 	if ( $exception instanceof NotFoundHttpException && $exception->getCode() === 404 ) {
@@ -39,4 +39,3 @@ SimpleRouter::error( function ( Request $request, \Exception $exception ) {
 	}
 
 } );
-

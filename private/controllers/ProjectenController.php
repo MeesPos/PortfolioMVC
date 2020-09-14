@@ -18,4 +18,12 @@ class ProjectenController {
         $template_engine = get_template_engine();
 		echo $template_engine->render('projecten', ['projects' => $projects]);
     }
+
+    public function projectenDetail($naam) {
+
+        $projectDetails = getAllProjectDetails($naam);
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('projectDetail', ['projectDetails' => $projectDetails]);
+    }
 }

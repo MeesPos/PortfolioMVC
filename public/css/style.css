@@ -1229,6 +1229,11 @@ textarea:focus, input:focus {
   padding-bottom: 56.25%;
 }
 
+@media screen and (max-width: 1600px) {
+  .aspect--16x9 {
+    padding-bottom: 70.25%;
+  }
+}
 .aspect--9x80 {
   padding-bottom: calc(112.5% + 8px);
 }
@@ -1269,7 +1274,7 @@ figure:nth-child(2n+1) {
   width: 33.3333%;
   padding-left: 4px;
   padding-right: 4px;
-  margin-top: 8px;
+  margin-top: 28px;
 }
 
 .col-span {
