@@ -19,8 +19,9 @@
 }
 
 .container {
-    max-width: 30em;
+    max-width: 40em;
     padding: 1em;
+    margin: 0 auto;
 }
 
 .ir {
@@ -84,4 +85,21 @@
         opacity: $thumb-opacity-active;
         }
     }
+}
+
+.overProject{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.projectSamenvatting{
+    max-width: 50%;
+}
+
+.projectSpecificaties{
+    max-width: 50%;
+}
+
+.madeItem{
+    display: inline-block;
 }

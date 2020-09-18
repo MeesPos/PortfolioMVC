@@ -1355,8 +1355,9 @@ figure:nth-child(2n+1) {
 }
 
 .container {
-  max-width: 30em;
+  max-width: 40em;
   padding: 1em;
+  margin: 0 auto;
 }
 
 .ir {
@@ -1422,6 +1423,23 @@ figure:nth-child(2n+1) {
 }
 .gallery__thumbs a.is-active {
   opacity: 0.2;
+}
+
+.overProject {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.projectSamenvatting {
+  max-width: 50%;
+}
+
+.projectSpecificaties {
+  max-width: 50%;
+}
+
+.madeItem {
+  display: inline-block;
 }
 
 @media screen and (max-width: 500px) {

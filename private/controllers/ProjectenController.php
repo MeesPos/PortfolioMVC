@@ -22,8 +22,9 @@ class ProjectenController {
     public function projectenDetail($naam) {
 
         $projectDetails = getAllProjectDetails($naam);
+        $madeWith       = getMadeWith();
 
         $template_engine = get_template_engine();
-        echo $template_engine->render('projectDetail', ['projectDetails' => $projectDetails]);
+        echo $template_engine->render('projectDetail', ['projectDetails' => $projectDetails, 'madeWith' => $madeWith]);
     }
 }
