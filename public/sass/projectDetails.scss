@@ -1,8 +1,8 @@
 #projectInfo{
-    width: 90vw;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+    width: 80vw;
+    justify-content: center!important;
 }
 
 .projectDetails{
@@ -90,10 +90,29 @@
 .overProject{
     font-size: 40px;
     text-transform: uppercase;
+    font-weight: 400;
+}
+
+.gemaaktMet > h3, .madeItem, .taal > h3, .taal > p{
+    display: inline-block;
+}
+
+.specificatiesProj > div{
+    margin-top: 3vh;
+}
+
+.gemaaktMet > h3, .taal > h3{
+    font-weight: 400;
+}
+
+.madeItem, .taal > p{
+    font-weight: bold;
 }
 
 .projectSamenvatting{
     max-width: 50%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
 }
 
 .projectSpecificaties{
@@ -102,4 +121,58 @@
 
 .madeItem{
     display: inline-block;
+}
+
+.soortProject{
+    font-weight: 400;
+    opacity: .5;
+}
+
+.gemaaktButtons > a{
+    padding: 0 15px;
+    & > button{
+        background-color: $blue;
+        border: none;
+        cursor: pointer;
+        padding: 16px 22px;
+        color: white;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 15px;
+        & > i{
+            padding-right: 5px;
+        }
+    }
+}
+
+.gemaaktButtons{
+    text-align: center;
+    max-width: 50%;
+    margin-top: 3vh;
+}
+
+.projectInfoText{
+    margin: auto 0;
+}
+
+#meerinfo{
+    background-color: $lichtGrijs;
+    width: 100vw;
+    & > .infoContent{
+        width: 75vw;
+        margin: 0 auto;
+        & > h2{
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 40px;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+        } & > p{
+            padding-bottom: 3vh;
+        }
+    }
+}
+
+.projectDetail > footer{
+    margin-top: 0!important;
 }
