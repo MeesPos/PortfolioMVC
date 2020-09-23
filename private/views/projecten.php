@@ -32,7 +32,7 @@
                 <div class="picture-item column" data-groups='["<?php echo $row['categorie']; ?>"]'>
                     <div class="aspect aspect--16x9">
                         <div class="aspect__inner">
-                            <a href="<?php echo url('projectenDetail') . $row['projectnaam']; ?>">
+                            <a href="<?php echo url('projectenDetail') . $row['link']; ?>">
                                 <div class="projectCard">
                                     <img class="projectPicture" src="https://mk0designbombsg12amh.kinstacdn.com/wp-content/uploads/2018/04/kuon-yagi.jpg" alt="<?php echo $row['projectnaam'] ?> Image, Mees Postma">
                                     <div class="projectInfo">

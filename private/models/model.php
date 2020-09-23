@@ -32,13 +32,13 @@ function getAllProjects() {
     return $statement->fetchAll();
 }
 
-function getAllProjectDetails($naam) {
+function getAllProjectDetails($link) {
     $connection = dbConnect();
-    $sql        = 'SELECT * FROM `projecten` WHERE `projectnaam` = :naam';
+    $sql        = 'SELECT * FROM `projecten` WHERE `link` = :link';
     $statement  = $connection->prepare($sql);
 
     $params = [
-        'naam' => $naam
+        'link' => $link
     ];
 
     $statement->execute($params);
@@ -52,6 +52,14 @@ function getMadeWith() {
     INNER JOIN `maakmethodes`
     ON `projecten`.`id` = `maakmethodes`.`project_ID`
     WHERE `projecten`.`id` = `maakmethodes`.`project_ID`';
+    $statement  = $connection->query($sql);
+
+    return $statement->fetchAll();
+}
+
+function getTutorials() {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `tutorials`';
     $statement  = $connection->query($sql);
 
     return $statement->fetchAll();

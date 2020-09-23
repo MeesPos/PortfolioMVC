@@ -8,9 +8,6 @@ SimpleRouter::setDefaultNamespace( 'Website\Controllers' );
 
 SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
-	// START: Zet hier al eigen routes
-	// Lees de docs, daar zie je hoe je routes kunt maken: https://github.com/skipperbent/simple-php-router#routes
-
 	SimpleRouter::get( '/', 'WebsiteController@home' )->name( 'home' );
 	SimpleRouter::get( '/over-mij', 'WebsiteController@about' )->name( 'over' );
 
@@ -21,9 +18,11 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	// Projecten Routes
 	SimpleRouter::get( '/projecten', 'ProjectenController@projecten')->name( 'projecten' );
-	SimpleRouter::get( '/projecten/{naam}', 'ProjectenController@projectenDetail')->name( 'projectenDetail' );
+	SimpleRouter::get( '/projecten/{link}', 'ProjectenController@projectenDetail')->name( 'projectenDetail' );
 
-	// STOP: Tot hier al je eigen URL's zetten
+	// Tutorial Routes
+	SimpleRouter::get( '/tutorials', 'TutorialController@tutorials')->name( 'tutorials' );
+
 	SimpleRouter::get( '/not-found', function () {
 		http_response_code( 404 );
 
@@ -32,7 +31,6 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 } );
 
-// Dit zorgt er voor dat bij een niet bestaande route, de 404 pagina wordt getoond
 SimpleRouter::error( function ( Request $request, \Exception $exception ) {
 	if ( $exception instanceof NotFoundHttpException && $exception->getCode() === 404 ) {
 		response()->redirect( site_url() . '/not-found' );

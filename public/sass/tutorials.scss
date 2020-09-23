@@ -1,0 +1,51 @@
+.cato{
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 8vh;
+    & > h2 {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-left: 2vw;
+        margin-bottom: 3vh;
+    }
+}
+
+.blog-grid{
+    width: 80%;
+    margin: 0 auto;
+    & > img{
+        border-radius: 10px;
+    }& > h3{
+        font-size: 16px;
+        margin-top: 20px;
+    }& > h4{
+        font-size: 15px;
+        margin-top: 2.5px;
+        margin-bottom: 10px;
+        opacity: .5;
+        font-weight: bold;
+    }& > a{
+        margin-top: 20px;
+        color: $blue!important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cato{
+        & > h2{
+            font-size: 30px;
+            margin-left: 4.5vw;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cato{
+        & > h2{
+            font-size: 25px;
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+}

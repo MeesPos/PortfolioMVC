@@ -88,6 +88,24 @@
             <p><?php echo $row['content']; ?></p>
         </div>
     </section>
+
+    <section id="contact">
+		<div class="contactMe">
+			<h2>Meer informatie?</h2>
+			<h3>Neem contact met me op!</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
+				lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
+				velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
+			<a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
+				<button>Contact</button>
+			</a>
+		</div>
+
+		<div class="heroAbout contactHero">
+			<img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
+		</div>
+    </section>
+    
     <?php if ($this->section('footer')) : ?>
         <?php echo $this->section('footer') ?>
     <?php else : ?>

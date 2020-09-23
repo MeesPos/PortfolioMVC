@@ -19,9 +19,9 @@ class ProjectenController {
 		echo $template_engine->render('projecten', ['projects' => $projects]);
     }
 
-    public function projectenDetail($naam) {
+    public function projectenDetail($link) {
 
-        $projectDetails = getAllProjectDetails($naam);
+        $projectDetails = getAllProjectDetails($link);
         $madeWith       = getMadeWith();
 
         $template_engine = get_template_engine();
