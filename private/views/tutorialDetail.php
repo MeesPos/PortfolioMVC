@@ -19,13 +19,13 @@
 
     <header id="subHeader">
         <?php foreach ($tutorial as $row) : ?>
-            <h1><?php echo $row['titel']; ?></h1>
         <?php endforeach; ?>
     </header>
 
     <section id="blogContent">
         <div class="blogTekst">
             <?php foreach ($tutorial as $row) : ?>
+                <h1><?php echo $row['titel']; ?></h1>
                 <p><?php echo $row['content']; ?></p>
             <?php endforeach; ?>
         </div>

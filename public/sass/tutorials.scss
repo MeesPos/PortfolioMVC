@@ -33,11 +33,16 @@
 
 #blogContent{
     display: grid;
-    grid-template-columns: 70vw 30vw;
+    grid-template-columns: 65vw 35vw;
     & > .blogTekst{
-        width: 90%;
-        margin-left: 5%;
+        width: 80%;
+        margin-left: 15%;
         margin-top: 5vh;
+        & > h1{
+            margin-bottom: 20px;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
     } & > aside{
         margin-top: 5vh;
         & > .aboutmeAside{
@@ -76,7 +81,19 @@
 }
 
 #tutorialAside{
-    width: 25vw;
+    width: 75%;
+}
+
+@media screen and (max-width: 1300px) {
+    #blogContent > .blogTekst{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    #blogContent > aside > .aboutmeAside{
+        max-width: 100%;
+        float: right;
+    }
 }
 
 @media screen and (max-width: 800px) {
