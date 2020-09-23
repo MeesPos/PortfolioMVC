@@ -1613,6 +1613,60 @@ figure:nth-child(2n+1) {
   color: #4834D4 !important;
 }
 
+#blogContent {
+  display: grid;
+  grid-template-columns: 70vw 30vw;
+}
+#blogContent > .blogTekst {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5vh;
+}
+#blogContent > aside {
+  margin-top: 5vh;
+}
+#blogContent > aside > .aboutmeAside {
+  text-align: center;
+  max-width: 75%;
+  margin: 0 auto;
+  background-color: #F8F8F8;
+  padding: 25px;
+}
+#blogContent > aside > .aboutmeAside > img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+#blogContent > aside > .aboutmeAside > h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+#blogContent > aside > .aboutmeAside > a {
+  font-weight: bold;
+}
+#blogContent > aside > .aboutmeAside > p {
+  margin-bottom: 20px;
+}
+#blogContent > aside > .overBericht {
+  max-width: 75%;
+  margin: 0 auto;
+  background-color: #F8F8F8;
+  padding: 25px;
+  margin-top: 5vh;
+}
+#blogContent > aside > .overBericht > h2 {
+  text-align: center;
+}
+#blogContent > aside > .overBericht > p {
+  padding: 15px 0;
+}
+
+#tutorialAside {
+  width: 25vw;
+}
+
 @media screen and (max-width: 800px) {
   .cato > h2 {
     font-size: 30px;

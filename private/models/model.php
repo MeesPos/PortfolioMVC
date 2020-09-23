@@ -64,3 +64,16 @@ function getTutorials() {
 
     return $statement->fetchAll();
 }
+
+function getTutorialsByLink($link) {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `tutorials` WHERE `link` = :link';
+    $statement  = $connection->prepare($sql);
+
+    $params = [
+        'link' => $link
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}

@@ -22,6 +22,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	// Tutorial Routes
 	SimpleRouter::get( '/tutorials', 'TutorialController@tutorials')->name( 'tutorials' );
+	SimpleRouter::get( '/tutorials/{link}', 'TutorialController@tutorialDetail')->name( 'tutorialDetail' );
 
 	SimpleRouter::get( '/not-found', function () {
 		http_response_code( 404 );

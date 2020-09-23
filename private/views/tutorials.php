@@ -30,8 +30,7 @@
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
                         <h4><?php echo $row['categorie']; ?></h4>
-                        <a href="">Lees meer ></a>
-                    </div>
+                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>                    </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
@@ -46,7 +45,7 @@
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
                         <h4><?php echo $row['categorie']; ?></h4>
-                        <a href="">Lees meer ></a>
+                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -62,8 +61,7 @@
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
                         <h4><?php echo $row['categorie']; ?></h4>
-                        <a href="">Lees meer ></a>
-                    </div>
+                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>                    </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
@@ -78,8 +76,7 @@
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
                         <h4><?php echo $row['categorie']; ?></h4>
-                        <a href="">Lees meer ></a>
-                    </div>
+                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>                    </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>

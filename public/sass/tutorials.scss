@@ -31,6 +31,54 @@
     }
 }
 
+#blogContent{
+    display: grid;
+    grid-template-columns: 70vw 30vw;
+    & > .blogTekst{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5vh;
+    } & > aside{
+        margin-top: 5vh;
+        & > .aboutmeAside{
+            text-align: center;
+            max-width: 75%;
+            margin: 0 auto;
+            background-color: $lichtGrijs;
+            padding: 25px;
+            & > img{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 20px;
+            } & > h2{
+                font-size: 22px;
+                margin-bottom: 20px;
+            } & > a{
+                font-weight: bold;
+            } & > p{
+                margin-bottom: 20px;
+            }
+        } & > .overBericht{
+            max-width: 75%;
+            margin: 0 auto;
+            background-color: $lichtGrijs;
+            padding: 25px;
+            margin-top: 5vh;
+            & > h2{
+                text-align: center;
+            } > p{
+                padding: 15px 0;
+            }
+        }
+    }
+}
+
+#tutorialAside{
+    width: 25vw;
+}
+
 @media screen and (max-width: 800px) {
     .cato{
         & > h2{

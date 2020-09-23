@@ -19,5 +19,13 @@ class TutorialController {
 		$template_engine = get_template_engine();
 		echo $template_engine->render('tutorials', ['tutorial' => $getTutorials]);
 
-	}
+    }
+    
+    public function tutorialDetail($link) {
+
+        $getTutorials = getTutorialsByLink($link);
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('tutorialDetail', ['tutorial' => $getTutorials]);
+    }
 }
