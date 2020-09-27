@@ -1,194 +1,35 @@
 #homeHeader{
-    width: 100vw;
     height: 100vh;
-    background-color: $blue;
-}
-
-.headerSVG{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 46vw;
-}
-
-#homeInfo{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.heroHeader{
-    z-index: 2;
-    margin: 0 auto;
-    margin-right: 3vw;
-    margin-top: -2vh;
-}
-
-.heroHeader > img{
-    width: 36vw;
-    margin-top: 11.5vh;
-}
-
-.introductionHeader{
-    font-weight: bold;
-    color: white;
-    margin-top: 35vh;
-    margin-left: 10vw;
-}
-
-.introductionHeader > h2 > span{
-    color: $aqua;
-}
-
-.introductionHeader > p{
-    font-weight: normal;
-    width: 460px;
-    margin-bottom: 20px;
-}
-
-.introductionHeader > h1{
-    font-size: 39.5px;
-}
-
-.introductionHeader > h2{
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.leesHeader{
-    width: 180px;
-    height: 60px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border: none;
-    background-color: $aqua;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contactHeader{
-    margin-right: 25px;
-    width: 180px;
-    height: 60px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border: 5px solid white;
-    background: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.ruimtebutton{
-    margin-right: 25px;
-}
-
-@media screen and (max-width: 1200px){
-    .headerSVG{
-        width: 60vw;
-    }
-    
-    .heroHeader > img{
-        display: none;
-    }
-
-    .heroHeader{
-        margin: 0;
-        margin-top: 0;
-        margin-right: 0;
-    }
-
-    #navbar-right{
-        margin-right: -13vw;
-    }
-
-    .introductionHeader{
-        grid-column: 2/2;
-        z-index: 2;
-        margin-left: 2vw;
-        margin-top: 20vh;
-    }
-}
-
-@media screen and (max-width: 1000px){
-    .headerSVG{
-        width: 75vw;
-    }
-
-    .introductionHeader{
-        margin-left: -12vw;
-    }
-    
-    #navbar-right{
-        margin-right: -4.5vw;
-    }
-
-    .contactHeader{
-        margin-right: 0;
-    }
-}
-
-@media screen and (max-width: 550px){
-    .introductionHeader > h1{
-        font-size: 25px;
-    }
-
-    .introductionHeader > h2{
-        font-size: 25.3px;
-    }
-
-    .introductionHeader > p{
-        width: 310px;
-    }
-
-    .contactHeader{
-        font-size: 17.5px;
-        width: 145px;
-        height: 60px;
-    }
-
-    .leesHeader{
-        font-size: 17.5px;
-        width: 145px;
-        height: 60px;
-    }
-
-    .introductionHeader{
-        margin-top: 15vh!important;
-    }
-
-    .ruimtebutton{
-        margin-right: 17px!important;
-    }
-
-    .headerSVG{
-        width: 150vw!important;
-    }
-}
-
-// Galaxy Fold
-@media screen and (max-width: 319px){
-    .introductionHeader > p{
-        width: 270px;
-        margin-bottom: 10px;
-    }
-
-    .introductionHeader > h1{
-        font-size: 22px;
-    }
-
-    .introductionHeader > h2{
-        font-size: 22.3px;
-        margin-bottom: 10px;
-    }
-
-    .leesHeader{
-        width: 125px;
-        height: 55px;
-    }
-
-    .contactHeader{
-        width: 125px;
-        height: 55px;
+    grid-template-columns: 70% 30%;
+    & > .shapeRight{
+        width: 30vw;
+        height: 100vh;
+        background-color: $blue;
+        float: right;
+        & > img{
+            margin-left: -30vw;
+            max-width: 75vw;
+        }
+    } & > .infoMe{
+        max-width: 30vw;
+        margin: auto 0;
+        margin-left: 2.5vw;
+        & > h1{
+            font-size: 77px;
+            color: $darkblue;
+        } & > p{
+            font-size: 17px;
+            color: $darkblue;
+        } & > a > button {
+            background-color: $blue;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 55px;
+            font-weight: 500;
+            font-size: 15px;
+            margin-top: 2vh;
+        }
     }
 }

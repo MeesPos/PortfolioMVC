@@ -16,33 +16,20 @@
 	<?php endif ?>
 
 	<header id="homeHeader">
-		<svg xmlns="http://www.w3.org/2000/svg" class="headerSVG" viewBox="0 0 997.42 947.862">
-			<g id="Laag_2" data-name="Laag 2" transform="translate(0)">
-				<g id="Laag_1" data-name="Laag 1">
-					<path id="Path_2" data-name="Path 2" d="M124.88,0C112.61.41,75.55,87.37,69.31,99.79-75.38,387.44.56,836.74,353,925.5c162.13,40.83,351.23,22.1,508.91-26.73,12.9-4,135.51-39,135.51-51.79V.2Z" fill="#00117f" />
-				</g>
-			</g>
-		</svg>
-		<div id="homeInfo">
-			<div class="introductionHeader">
-				<h1>Hallo, ik ben Mees Postma</h1>
-				<h2><span>Web</span> & <span>Software</span> developer</h2>
-				<p>Mijn naam is Mees Postma, ik studeer op het Mediacollege.
-					Hier leer ik om Software developer te worden. Buiten school beheer
-					ik ook mijn eigen bedrijf samen met een vriend van mij. Voor meer
-					informatie kijk verder op mijn website.</p>
-				<a href="#about" class="ruimtebutton">
-					<button class="leesHeader">Lees meer</button>
-				</a>
+		<div class="infoMe">
+			<h1>Mees Postma</h1>
+			<p>Mijn naam is Mees Postma, ik studeer op het
+				Mediacollege. Hier leer ik om Software developer
+				te worden. Buitenschool beheer ik ook mijn eigen
+				bedrijf samen met een vriend van mij. Voor meer
+				informatie kijk verder op mijn website.</p>
+			<a href="#">
+				<button>Lees meer</button>
+			</a>
+		</div>
 
-				<a href="#">
-					<button class="contactHeader">Contact</button>
-				</a>
-			</div>
-
-			<div class="heroHeader">
-				<img src="<?php echo site_url('/img/headerMan.png') ?>" alt="Mees Postma, Header Illustration">
-			</div>
+		<div class="shapeRight">
+			<img src="<?php echo site_url('/img/headerMan.png') ?>" alt="Mees Postma, Header Illustration">
 		</div>
 	</header>
 
@@ -103,7 +90,7 @@
 						<a href="#" class="categorie">Laptop</a>
 						<h3><?php echo $row['titel'] ?></h3>
 						<p><?php echo $row['samenvatting'] ?></p>
-						<a href="#" class="leesMeer">Lees meer</a>
+						<a href="<?php echo url('tutorialDetail') . $row['link']; ?>" class="leesMeer">Lees meer</a>
 					</div>
 				</div>
 			<?php endforeach; ?>
