@@ -7,11 +7,13 @@ const stickyNav = () => {
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             document.getElementById("navbar").style.backgroundColor = 'white';
             document.getElementById("navbar").style.boxShadow = '0 3px 6px rgba(0,0,0,.2)';
-            document.getElementById("menu-menu").classList.add("blackMenu");
+            document.getElementById("contactNav").style.backgroundColor = '#4834D4';
+            document.getElementById("contactNav").style.color = 'white';
         } else {
             document.getElementById("navbar").style.backgroundColor = 'transparent';
             document.getElementById("navbar").style.boxShadow = 'none';
-            document.getElementById("menu-menu").classList.remove("blackMenu");
+            document.getElementById("contactNav").style.backgroundColor = 'white';
+            document.getElementById("contactNav").style.color = '#00117F';
         }
     }
 }

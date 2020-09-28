@@ -1,14 +1,16 @@
 <nav id="navbar">
     <div id="logo">
-        <a href="#">
 
-        </a>
     </div>
 
-    <div id="navbar-right">
+    <div id="navbar-left">
         <ul class="navbar-ul" id="menu-menu">
             <li class="menu-items menu-item">
                 <a href="<?php echo url('home') ?>" <?php if (current_route_is('home')) : ?> class="active" <?php endif ?>>Home</a>
+            </li>
+
+            <li class="menu-items menu-item">
+                <a href="<?php echo url('over') ?>" <?php if (current_route_is('over')) : ?> class="active" <?php endif ?>>Over mij</a>
             </li>
 
             <li class="menu-items menu-item">
@@ -18,9 +20,9 @@
             <li class="menu-items menu-item">
                 <a href="<?php echo url('tutorials') ?>" <?php if (current_route_is('tutorials')) : ?> class="active" <?php endif ?>>Tutorials</a>
             </li>
-            
+
             <li class="menu-items menu-item contactNav">
-                <a href="<?php echo url('contact') ?>" <?php if (current_route_is('contact')) : ?> class="active" <?php endif ?>>Contact</a>
+                <a id="contactNav" href="<?php echo url('contact') ?>" <?php if (current_route_is('contact')) : ?> class="active" <?php endif ?>>Contact</a>
             </li>
         </ul>
     </div>
