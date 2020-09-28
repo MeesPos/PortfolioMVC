@@ -77,3 +77,25 @@ function getTutorialsByLink($link) {
     $statement->execute($params);
     return $statement->fetchAll();
 }
+
+function userRegisteredCheck($username) {
+
+    $connection = dbConnect();
+    $sql =  'SELECT * FROM `gebruikers` WHERE `username`= :username';
+    $statement = $connection->prepare($sql);
+    $statement->execute(['username' => $username]);
+
+    return ($statement->rowCount() === 0);
+}
+
+function getLoginUserInfo($username) {
+
+    $connection = dbConnect();
+    $sql =  'SELECT * FROM `gebruikers` WHERE `username`= :username';
+
+    $statement = $connection->prepare( $sql );
+    $statement->execute( ['username' => $username] );
+    if($statement->rowCount() === 1){
+    return  $statement->fetch() ;
+} return false;
+}

@@ -109,3 +109,27 @@ function createEmailMessage($to, $subject, $from_name, $from_email)
 	// Send the message
 	return $message;
 }
+
+function validate($data) {
+	$errors = [];
+
+	$username   = filter_var($data['username']);
+	$wachtwoord = trim($data['wachtwoord']);
+
+	if ($username === false) {
+		$errors['username'] = 'Geen geldige gebruikersnaam!';
+	}
+
+	if (empty($wachtwoord) || strlen($wachtwoord) < 6) {
+		$errors['wachtwoord'] = 'Geen geldig wachtwoord!';
+	}
+	$data = [
+		'username' => $data['username'],
+		'wachtwoord' => $wachtwoord
+	];
+
+	return [
+		'data' => $data,
+		'errors' => $errors
+	];
+}
