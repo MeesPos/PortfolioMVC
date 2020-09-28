@@ -62,6 +62,11 @@
     margin-left: 50vw;
 }
 
+.subPage > #navbar > #navbar-left > #menu-menu > .contactNav > a{
+    background-color: $blue!important;
+    color: white!important;
+}
+
 @media screen and (max-width: 1700px){
     #navbar-left{
         margin-left: 0vw;

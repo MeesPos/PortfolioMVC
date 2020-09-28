@@ -85,6 +85,11 @@ a {
   margin-left: 50vw;
 }
 
+.subPage > #navbar > #navbar-left > #menu-menu > .contactNav > a {
+  background-color: #4834D4 !important;
+  color: white !important;
+}
+
 @media screen and (max-width: 1700px) {
   #navbar-left {
     margin-left: 0vw;
@@ -892,18 +897,38 @@ footer {
   }
 }
 #subHeader {
-  background-color: #4834D4;
+  background-color: #F8F8F8;
   height: 40vh;
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
   text-transform: uppercase;
-  color: white;
+  color: #00117F;
+  display: table;
+  width: 100vw;
 }
 
-#subHeader > h1 {
-  padding-top: 14vh;
+.subContent {
+  padding: 2.5vw 0;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
 }
 
+@media screen and (max-width: 1000px) {
+  .subContent > h1 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .subContent > h1 {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .subContent > h1 {
+    font-size: 18px;
+  }
+}
 #introductie {
   display: grid;
   grid-template-columns: 45vw 1fr;
@@ -1576,10 +1601,6 @@ figure:nth-child(2n+1) {
   .gemaaktButtons > a > button {
     margin-top: 2vh;
   }
-
-  #subHeader > h1 {
-    font-size: 40px !important;
-  }
 }
 .cato {
   width: 90vw;
@@ -1793,11 +1814,6 @@ figure:nth-child(2n+1) {
 
   .introductionAboutMe {
     margin-top: 5vh;
-  }
-
-  #subHeader > h1 {
-    font-size: 60px;
-    padding-top: 20vh;
   }
 }
 @media screen and (max-width: 800px) {

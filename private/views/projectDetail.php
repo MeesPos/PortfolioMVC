@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 </head>
 
-<body class="projectDetail">
+<body class="projectDetail subPage">
     <?php if ($this->section('navigation')) : ?>
         <?php echo $this->section('navigation') ?>
     <?php else : ?>
@@ -17,9 +17,10 @@
     <?php endif ?>
 
     <header id="subHeader">
-        <?php foreach ($projectDetails as $row) { ?>
-            <h1><?php echo $row['projectnaam']; ?></h1><?php
-                                                    } ?>
+        <div class="subContent">
+            <?php foreach ($projectDetails as $row) { ?>
+                <h1><?php echo $row['projectnaam']; ?></h1><?php } ?>
+        </div>
     </header>
 
     <section id="projectInfo">
@@ -90,22 +91,22 @@
     </section>
 
     <section id="contact">
-		<div class="contactMe">
-			<h2>Meer informatie?</h2>
-			<h3>Neem contact met me op!</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
-				lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
-				velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
-			<a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
-				<button>Contact</button>
-			</a>
-		</div>
+        <div class="contactMe">
+            <h2>Meer informatie?</h2>
+            <h3>Neem contact met me op!</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
+                lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
+                velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
+            <a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
+                <button>Contact</button>
+            </a>
+        </div>
 
-		<div class="heroAbout contactHero">
-			<img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
-		</div>
+        <div class="heroAbout contactHero">
+            <img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
+        </div>
     </section>
-    
+
     <?php if ($this->section('footer')) : ?>
         <?php echo $this->section('footer') ?>
     <?php else : ?>
@@ -117,6 +118,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js"></script>
     <script src="https://kit.fontawesome.com/a82e000026.js"></script>
     <script src="<?php echo site_url('/js/gallery.js') ?>"></script>
-</body=>
+    </body=>
 
 </html>

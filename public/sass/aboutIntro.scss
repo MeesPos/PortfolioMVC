@@ -1,14 +1,37 @@
 #subHeader{
-    background-color: $blue;
+    background-color: $lichtGrijs;
     height: 40vh;
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
     text-transform: uppercase;
-    color: white;
+    color: $darkblue;
+    display: table;
+    width: 100vw;
 }
 
-#subHeader > h1{
-    padding-top: 14vh;
+.subContent{
+    padding: 2.5vw 0;
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1000px) {
+    .subContent > h1{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .subContent > h1{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .subContent > h1{
+        font-size: 18px;
+    }
 }
 
 #introductie{

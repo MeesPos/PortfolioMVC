@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </head>
 
-<body class="tutorialsBody">
+<body class="tutorialsBody subPage">
     <?php if ($this->section('navigation')) : ?>
         <?php echo $this->section('navigation') ?>
     <?php else : ?>
@@ -18,8 +18,10 @@
     <?php endif ?>
 
     <header id="subHeader">
-        <?php foreach ($tutorial as $row) : ?>
-        <?php endforeach; ?>
+        <div class="subContent">
+            <?php foreach ($tutorial as $row) : ?>
+            <?php endforeach; ?>
+        </div>
     </header>
 
     <section id="blogContent">

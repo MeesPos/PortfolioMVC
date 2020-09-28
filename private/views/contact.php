@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/a82e000026.js"></script>
 </head>
 
-<body>
+<body class="subPage">
     <?php if ($this->section('navigation')) : ?>
         <?php echo $this->section('navigation') ?>
     <?php else : ?>
@@ -17,7 +17,9 @@
     <?php endif ?>
 
     <header id="subHeader">
-        <h1>Contact</h1>
+        <div class="subContent">
+            <h1>Contact</h1>
+        </div>
     </header>
 
     <section id="contactMij">

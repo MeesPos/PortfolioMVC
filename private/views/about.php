@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/a82e000026.js"></script>
 </head>
 
-<body>
+<body class="subPage">
     <?php if ($this->section('navigation')) : ?>
         <?php echo $this->section('navigation') ?>
     <?php else : ?>
@@ -17,7 +17,9 @@
     <?php endif ?>
 
     <header id="subHeader">
-        <h1>Over mij</h1>
+        <div class="subContent">
+            <h1>Over mij</h1>
+        </div>
     </header>
 
     <section id="introductie">
@@ -35,7 +37,7 @@
                 <br>
                 Buiten school ben ik ook bezig met mijn eigen bedrijf genaamd <a target="_blank" href="https://www.hubsor.nl/">Hubsor</a>
                 samen met <a target="_blank" href="http://cornellvdstraaten.nl/">Cornell van der Straaten</a>. Wij hadden allebei interesse
-                in het beginnen van een eigen bedrijf. Op Hubsor verkopen we online diensten zoals: Websites, SEO Optimalisatie & Online 
+                in het beginnen van een eigen bedrijf. Op Hubsor verkopen we online diensten zoals: Websites, SEO Optimalisatie & Online
                 marketing services. Voor meer informatie, bezoek de website van <a target="_blank" href="https://www.hubsor.nl/"></a>.<br>
                 <br>
                 Ik wist al een paar jaar voordat ik met mijn opleiding begon dat ik iets wou doen met websites.
@@ -52,7 +54,7 @@
             programmeertalen kennen. Maar ik leer ook andere vaardigheden, zie hier een overzicht van mijn skills.
         </p>
         <div class="skills">
-            <?php foreach($skills as $row) : ?>
+            <?php foreach ($skills as $row) : ?>
                 <div class="skill">
                     <div class="icon">
                         <i class="<?php echo $row['fa-class'] ?>"></i>
@@ -68,21 +70,21 @@
     </section>
 
     <section id="contact">
-		<div class="contactMe">
-			<h2>Meer informatie?</h2>
-			<h3>Neem contact met me op!</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
-				lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
-				velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
-			<a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
-				<button>Contact</button>
-			</a>
-		</div>
+        <div class="contactMe">
+            <h2>Meer informatie?</h2>
+            <h3>Neem contact met me op!</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
+                lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
+                velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
+            <a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
+                <button>Contact</button>
+            </a>
+        </div>
 
-		<div class="heroAbout contactHero">
-			<img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
-		</div>
-	</section>
+        <div class="heroAbout contactHero">
+            <img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
+        </div>
+    </section>
 
     <?php if ($this->section('footer')) : ?>
         <?php echo $this->section('footer') ?>

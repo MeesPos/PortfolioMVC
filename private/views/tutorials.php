@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </head>
 
-<body>
+<body class="subPage">
     <?php if ($this->section('navigation')) : ?>
         <?php echo $this->section('navigation') ?>
     <?php else : ?>
@@ -18,7 +18,9 @@
     <?php endif ?>
 
     <header id="subHeader">
-        <h1>Tutorials</h1>
+        <div class="subContent">
+            <h1>Tutorials</h1>
+        </div>
     </header>
 
     <div class="codeerCato cato">
@@ -30,7 +32,8 @@
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
                         <h4><?php echo $row['categorie']; ?></h4>
-                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>                    </div>
+                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>
+                    </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
@@ -61,7 +64,8 @@
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
                         <h4><?php echo $row['categorie']; ?></h4>
-                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>                    </div>
+                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>
+                    </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
@@ -76,27 +80,28 @@
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
                         <h4><?php echo $row['categorie']; ?></h4>
-                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>                    </div>
+                        <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>
+                    </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
     </div>
 
     <section id="contact">
-		<div class="contactMe">
-			<h2>Meer informatie?</h2>
-			<h3>Neem contact met me op!</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
-				lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
-				velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
-			<a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
-				<button>Contact</button>
-			</a>
-		</div>
+        <div class="contactMe">
+            <h2>Meer informatie?</h2>
+            <h3>Neem contact met me op!</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
+                lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
+                velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
+            <a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
+                <button>Contact</button>
+            </a>
+        </div>
 
-		<div class="heroAbout contactHero">
-			<img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
-		</div>
+        <div class="heroAbout contactHero">
+            <img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
+        </div>
     </section>
 
     <?php if ($this->section('footer')) : ?>

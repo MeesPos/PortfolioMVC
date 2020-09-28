@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
 </head>
 
-<body>
+<body class="subPage">
     <?php if ($this->section('navigation')) : ?>
         <?php echo $this->section('navigation') ?>
     <?php else : ?>
@@ -16,7 +16,9 @@
     <?php endif ?>
 
     <header id="subHeader">
-        <h1>Projecten</h1>
+        <div class="subContent">
+            <h1>Projecten</h1>
+        </div>
     </header>
 
     <section id="projects">
