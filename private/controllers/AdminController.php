@@ -12,27 +12,29 @@ namespace Website\Controllers;
  */
 class AdminController
 {
-    public function adminLogin() {
+    public function loginPage() {
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('adminLogin');
+    }
+
+    public function adminLogin()
+    {
         $result = validate($_POST);
 
         if (count($result['errors']) === 0) {
             if (!userRegisteredCheck($result['data']['username'])) {
                 $userInfo = getLoginUserInfo($result['data']['username']);
-                if ($userInfo['code'] === null) {
-                    if (password_verify($result['data']['wachtwoord'], $userInfo['wachtwoord'])) {
-                        $_SESSION['user_id'] = $userInfo['id'];
-
-                        $overviewURL = url('');
-                        redirect($overviewURL);
-                    } else {
-                        $result['errors']['wachtwoord'] = 'Onjuist wachtwoord, probeer het overnieuw!';
-                    }
+                if (password_verify($result['data']['wachtwoord'], $userInfo['wachtwoord'])) {
+                    $_SESSION['user_id'] = $userInfo['id'];
+                    $overviewURL = url('home');
+                    redirect($overviewURL);
                 } else {
-                    $result['errors']['username'] = 'Onbekende gebruikersnaam!';
+                    $result['errors']['wachtwoord'] = 'Onjuist wachtwoord, probeer het overnieuw!';
                 }
+            } else {
+                $result['errors']['username'] = 'Onbekende gebruikersnaam!';
             }
-        } else {
-            $result['errors']['wrong'] = 'Fout wachtwoord of onbekend gebruikersnaam!';
         }
 
         $template_engine = get_template_engine();

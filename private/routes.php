@@ -25,7 +25,8 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/tutorials/{link}', 'TutorialController@tutorialDetail')->name( 'tutorialDetail' );
 
 	// Admin Routes
-	SimpleRouter::get( '/admin/login', 'AdminController@adminLogin')->name( 'adminLogin' );
+	SimpleRouter::get( '/admin/login', 'AdminController@loginPage')->name( 'loginPage' );
+	SimpleRouter::post('/admin/login/verwerken','AdminController@adminLogin')->name('adminLogin');
 
 	SimpleRouter::get( '/not-found', function () {
 		http_response_code( 404 );
