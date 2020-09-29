@@ -29,6 +29,12 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/admin/login', 'AdminController@loginPage')->name( 'loginPage' );
 	SimpleRouter::post('/admin/login/verwerken','AdminController@adminLogin')->name('adminLogin');
 	SimpleRouter::get( '/admin/post', 'AdminController@adminPost')->name('adminPost');
+	SimpleRouter::get( '/admin/taken', 'AdminController@adminTaken')->name('adminTaken');
+
+	// Takenlijst verwerkingen
+	SimpleRouter::post( '/admin/taken/add', 'AdminController@addTask')->name('addTask');
+	SimpleRouter::post( '/admin/taken/delete', 'AdminController@deleteTask')->name('deleteTask');
+	SimpleRouter::post( '/admin/taken/update', 'AdminController@updateTask')->name('updateTask');
 
 	SimpleRouter::get( '/not-found', function () {
 		http_response_code( 404 );

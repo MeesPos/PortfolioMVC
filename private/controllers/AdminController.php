@@ -12,14 +12,16 @@ namespace Website\Controllers;
  */
 class AdminController
 {
-    public function admin() {
+    public function admin()
+    {
         loginCheck();
 
         $template_engine = get_template_engine();
         echo $template_engine->render('admin');
     }
 
-    public function loginPage() {
+    public function loginPage()
+    {
 
         $template_engine = get_template_engine();
         echo $template_engine->render('adminLogin');
@@ -48,9 +50,76 @@ class AdminController
         echo $template_engine->render('adminLogin', ['errors' => $result['errors']]);
     }
 
-    public function adminPost() {
+    public function adminPost()
+    {
 
         $template_engine = get_template_engine();
         echo $template_engine->render('adminPost');
+    }
+
+    public function adminTaken()
+    {
+
+        $tasks = getTasks();
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('taskList', ['tasks' => $tasks]);
+    }
+
+    public function addTask()
+    {
+        $connection = dbConnect();
+
+        if ($_POST["task_name"]) {
+            $data = array(
+                ':details' => trim($_POST["task_name"]),
+                ':task_status' => 'no'
+            );
+
+            $sql = 'INSERT INTO tasks (`details`, `task_status`) VALUES (:details, :task_status)';
+            $statement = $connection->prepare($sql);
+
+            if ($statement->execute($data)) {
+                $id = $connection->lastInsertId();
+                echo '<a href="#" class="list-group-item" id="list-group-item-' . $id . '" data-id="' . $id . '">' . $_POST["task_name"] . ' <span class="badge" data-id="' . $id . '">X</span></a>';
+            }
+        }
+    }
+
+    public function deleteTask()
+    {
+        $connection = dbConnect();
+
+        if ($_POST["id"]) {
+            $data = array(
+                ':id'  => $_POST['id']
+            );
+
+            $sql = "DELETE FROM tasks WHERE id = :id";
+            $statement = $connection->prepare($sql);
+
+            if ($statement->execute($data)) {
+                echo 'Done';
+            }
+        }
+    }
+
+    public function updateTask()
+    {
+        $connection = dbConnect();
+
+        if ($_POST["id"]) {
+            $data = array(
+                ':task_status'  => 'yes',
+                ':id'  => $_POST["id"]
+            );
+
+            $sql = 'UPDATE task_list SET task_status = :task_status WHERE id = :id';
+            $statement = $connection->prepare($sql);
+
+            if ($statement->execute($data)) {
+                echo 'Done';
+            }
+        }
     }
 }

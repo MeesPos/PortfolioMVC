@@ -1,14 +1,16 @@
 <?php
 
-function getProjectsHome() {
+function getProjectsHome()
+{
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `projecten` ORDER BY rand() LIMIT 3';
     $statement  = $connection->query($sql);
-    
+
     return $statement->fetchAll();
 }
 
-function getTutorialsHome() {
+function getTutorialsHome()
+{
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `tutorials` ORDER BY rand() LIMIT 4';
     $statement  = $connection->query($sql);
@@ -16,7 +18,8 @@ function getTutorialsHome() {
     return $statement->fetchAll();
 }
 
-function getSkills() {
+function getSkills()
+{
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `skills`';
     $statement  = $connection->query($sql);
@@ -24,7 +27,8 @@ function getSkills() {
     return $statement->fetchAll();
 }
 
-function getAllProjects() {
+function getAllProjects()
+{
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `projecten`';
     $statement  = $connection->query($sql);
@@ -32,7 +36,8 @@ function getAllProjects() {
     return $statement->fetchAll();
 }
 
-function getAllProjectDetails($link) {
+function getAllProjectDetails($link)
+{
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `projecten` WHERE `link` = :link';
     $statement  = $connection->prepare($sql);
@@ -45,7 +50,8 @@ function getAllProjectDetails($link) {
     return $statement->fetchAll();
 }
 
-function getMadeWith() {
+function getMadeWith()
+{
     $connection = dbConnect();
     $sql        = 'SELECT * 
     FROM `projecten`
@@ -57,7 +63,8 @@ function getMadeWith() {
     return $statement->fetchAll();
 }
 
-function getTutorials() {
+function getTutorials()
+{
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `tutorials`';
     $statement  = $connection->query($sql);
@@ -65,7 +72,8 @@ function getTutorials() {
     return $statement->fetchAll();
 }
 
-function getTutorialsByLink($link) {
+function getTutorialsByLink($link)
+{
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `tutorials` WHERE `link` = :link';
     $statement  = $connection->prepare($sql);
@@ -78,7 +86,8 @@ function getTutorialsByLink($link) {
     return $statement->fetchAll();
 }
 
-function userRegisteredCheck($username) {
+function userRegisteredCheck($username)
+{
 
     $connection = dbConnect();
     $sql =  'SELECT * FROM `gebruikers` WHERE `username`= :username';
@@ -88,14 +97,25 @@ function userRegisteredCheck($username) {
     return ($statement->rowCount() === 0);
 }
 
-function getLoginUserInfo($username) {
+function getLoginUserInfo($username)
+{
 
     $connection = dbConnect();
     $sql =  'SELECT * FROM `gebruikers` WHERE `username`= :username';
 
-    $statement = $connection->prepare( $sql );
-    $statement->execute( ['username' => $username] );
-    if($statement->rowCount() === 1){
-    return  $statement->fetch() ;
-} return false;
+    $statement = $connection->prepare($sql);
+    $statement->execute(['username' => $username]);
+    if ($statement->rowCount() === 1) {
+        return  $statement->fetch();
+    }
+    return false;
+}
+
+function getTasks()
+{
+    $connection = dbConnect();
+    $sql = 'SELECT * FROM tasks ORDER BY id DESC';
+    $statement = $connection->query($sql);
+
+    return $result = $statement->fetchAll();
 }
