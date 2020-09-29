@@ -12,6 +12,13 @@ namespace Website\Controllers;
  */
 class AdminController
 {
+    public function admin() {
+        loginCheck();
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('admin');
+    }
+
     public function loginPage() {
 
         $template_engine = get_template_engine();
@@ -27,7 +34,7 @@ class AdminController
                 $userInfo = getLoginUserInfo($result['data']['username']);
                 if (password_verify($result['data']['wachtwoord'], $userInfo['wachtwoord'])) {
                     $_SESSION['user_id'] = $userInfo['id'];
-                    $overviewURL = url('home');
+                    $overviewURL = url('admin');
                     redirect($overviewURL);
                 } else {
                     $result['errors']['wachtwoord'] = 'Onjuist wachtwoord, probeer het overnieuw!';

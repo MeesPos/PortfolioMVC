@@ -133,3 +133,10 @@ function validate($data) {
 		'errors' => $errors
 	];
 }
+
+function loginCheck() {
+	if(!isset($_SESSION['user_id'])) {
+		$redirectLogin = url('home');
+		redirect($redirectLogin);
+	}
+}

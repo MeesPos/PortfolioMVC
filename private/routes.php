@@ -25,6 +25,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/tutorials/{link}', 'TutorialController@tutorialDetail')->name( 'tutorialDetail' );
 
 	// Admin Routes
+	SimpleRouter::get( '/admin', 'AdminController@admin')->name('admin');
 	SimpleRouter::get( '/admin/login', 'AdminController@loginPage')->name( 'loginPage' );
 	SimpleRouter::post('/admin/login/verwerken','AdminController@adminLogin')->name('adminLogin');
 
