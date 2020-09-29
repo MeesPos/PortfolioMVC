@@ -16,9 +16,9 @@
         <?php echo $this->fetch('_dashboardNav') ?>
     <?php endif ?>
 
-    <div class="content" id="content">
+    <div class="content">
         <!-- Github stats -->
-            <h1>Dit is de eerste pagina</h1>
+
         <!-- Agenda -->
     </div>
 
@@ -28,5 +28,4 @@
         <?php echo $this->fetch('_dashboardFooter') ?>
     <?php endif ?>
 </body>
-
 </html>

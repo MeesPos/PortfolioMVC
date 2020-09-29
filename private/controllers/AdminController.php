@@ -47,4 +47,10 @@ class AdminController
         $template_engine = get_template_engine();
         echo $template_engine->render('adminLogin', ['errors' => $result['errors']]);
     }
+
+    public function adminPost() {
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('adminPost');
+    }
 }
