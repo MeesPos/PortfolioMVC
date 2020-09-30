@@ -76,12 +76,12 @@ class AdminController
                 ':task_status' => 'no'
             );
 
-            $sql = 'INSERT INTO tasks (`details`, `task_status`) VALUES (:details, :task_status)';
+            $sql = 'INSERT INTO tasks (details, task_status) VALUES (:details, :task_status)';
             $statement = $connection->prepare($sql);
 
             if ($statement->execute($data)) {
                 $id = $connection->lastInsertId();
-                echo '<a href="#" class="list-group-item" id="list-group-item-' . $id . '" data-id="' . $id . '">' . $_POST["task_name"] . ' <span class="badge" data-id="' . $id . '">X</span></a>';
+                echo '<a href="#" class="list-group-item" id="list-group-item-' . $id . '" data-id="' . $id . '">' . $_POST["task_name"] . ' <span class="badge" data-id="' . $id . '"><i class="fas fa-trash"></i></span></a>';
             }
         }
     }
@@ -114,7 +114,7 @@ class AdminController
                 ':id'  => $_POST["id"]
             );
 
-            $sql = 'UPDATE task_list SET task_status = :task_status WHERE id = :id';
+            $sql = 'UPDATE tasks SET task_status = :task_status WHERE id = :id';
             $statement = $connection->prepare($sql);
 
             if ($statement->execute($data)) {
