@@ -1,0 +1,28 @@
+.postEditor{
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    & > .titleSection{
+        padding-top: 2vh;
+        & > label{
+            font-size: 14px;
+            font-weight: 700;
+            margin-left: 20px;
+        } & > input[type=text] {
+            width: 90%;
+            padding: 15px;
+            margin-left: 20px;
+            border: none;
+            margin-bottom: 2vh;
+            background-color: $lichtGrijs;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,.2);
+            &:focus{
+                outline: none;
+            }
+        }   
+    } 
+}
+
+// Hoogte fixen van textarea

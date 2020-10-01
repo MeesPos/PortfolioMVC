@@ -75,6 +75,34 @@
   margin-bottom: 2vh;
 }
 
+.postEditor {
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.postEditor > .titleSection {
+  padding-top: 2vh;
+}
+.postEditor > .titleSection > label {
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+.postEditor > .titleSection > input[type=text] {
+  width: 90%;
+  padding: 15px;
+  margin-left: 20px;
+  border: none;
+  margin-bottom: 2vh;
+  background-color: #F8F8F8;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.postEditor > .titleSection > input[type=text]:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -28,7 +28,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/admin', 'AdminController@admin')->name('admin');
 	SimpleRouter::get( '/admin/login', 'AdminController@loginPage')->name( 'loginPage' );
 	SimpleRouter::post('/admin/login/verwerken','AdminController@adminLogin')->name('adminLogin');
-	SimpleRouter::get( '/admin/post', 'AdminController@adminPost')->name('adminPost');
+	SimpleRouter::get( '/admin/post/maken', 'AdminController@adminPostMaken')->name('adminPostMaken');
 	SimpleRouter::get( '/admin/taken', 'AdminController@adminTaken')->name('adminTaken');
 
 	// Takenlijst verwerkingen

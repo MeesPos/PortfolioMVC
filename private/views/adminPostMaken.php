@@ -17,9 +17,14 @@
     <?php endif ?>
 
     <div class="content">
-        <!-- Github stats -->
+        <div class="postEditor">
+            <div class="titleSection">
+                <label for="title">Titel van Bericht <span style="color: red;">*</span></label> <br>
+                <input type="text" id="title" name="title">
+            </div>
 
-        <!-- Agenda -->
+            <div id="editor"></div>
+        </div>
     </div>
 
     <?php if ($this->section('dashboardFooter')) : ?>
@@ -27,5 +32,15 @@
     <?php else : ?>
         <?php echo $this->fetch('_dashboardFooter') ?>
     <?php endif ?>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
+
 </html>

@@ -50,11 +50,11 @@ class AdminController
         echo $template_engine->render('adminLogin', ['errors' => $result['errors']]);
     }
 
-    public function adminPost()
+    public function adminPostMaken()
     {
 
         $template_engine = get_template_engine();
-        echo $template_engine->render('adminPost');
+        echo $template_engine->render('adminPostMaken');
     }
 
     public function adminTaken()
