@@ -18,12 +18,14 @@
 
     <div class="content">
         <div class="postEditor">
+            <h1>Maak een Bericht!</h1>
             <div class="titleSection">
-                <label for="title">Titel van Bericht <span style="color: red;">*</span></label> <br>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" placeholder="Titel van het Bericht...">
             </div>
 
-            <div id="editor"></div>
+            <form method="post">
+                <textarea id="mytextarea" name="mytextarea"></textarea>
+            </form>
         </div>
     </div>
 
@@ -33,13 +35,16 @@
         <?php echo $this->fetch('_dashboardFooter') ?>
     <?php endif ?>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.tiny.cloud/1/a4porrdjpxoppis4n6hiyvrts4udnwno0xz3104dp9afltl0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
+        tinymce.init({
+            selector: '#mytextarea',
+            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Mees Postma',
+        });
     </script>
 </body>
 
