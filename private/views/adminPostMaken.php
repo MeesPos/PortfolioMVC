@@ -7,6 +7,8 @@
     <title>Admin | Mees Postma</title>
     <link rel="stylesheet" href="<?php echo site_url('/css/admin.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-typeahead.css" />
 </head>
 
 <body>
@@ -26,6 +28,25 @@
             <form method="post">
                 <textarea id="mytextarea" name="mytextarea"></textarea>
             </form>
+
+            <div class="postInformation">
+                <div class="catoForm">
+                    <h2>Categorie toevoegen</h2>
+                    <div class="cato">
+                        <input type="text" placeholder="Voeg een categorie toe..." class="catoInput">
+                    </div>
+                    <select class="catoSelect" name="catoDropdown"></select>
+                </div>
+
+                <div class="kopImage">
+                    <h2>Kopafbeelding</h2>
+                    <input type="file">
+                </div>
+            </div>
+
+            <div class="submit">
+                <input class="postSubmit" type="submit" value="Post aanmaken">
+            </div>
         </div>
     </div>
 
@@ -45,6 +66,23 @@
             tinycomments_mode: 'embedded',
             tinycomments_author: 'Mees Postma',
         });
+    </script>
+
+    <script>
+        let input = document.querySelector('.catoInput');
+        let select = document.querySelector('.catoSelect');
+
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                let option = document.createElement('option');
+                option.value = input.value;
+                option.text = input.value;
+
+                let currentIndex = select.options[select.selectedIndex];
+                select.add(option, 0);
+                input.value = '';
+            }
+        })
     </script>
 </body>
 
