@@ -122,4 +122,10 @@ class AdminController
             }
         }
     }
+
+    public function jwt() {
+     
+        $template_engine = get_template_engine();
+        echo $template_engine->render('jwt');   
+    }
 }

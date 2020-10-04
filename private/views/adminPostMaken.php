@@ -60,11 +60,20 @@
     <script>
         tinymce.init({
             selector: '#mytextarea',
-            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-            toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker tinydrive image imagetools code link',
+            toolbar: "insertfile image link | code" + 'undo redo | formatselect | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
+            menu: {
+                insert: {
+                    title: "Insert",
+                    items: "insertfile"
+                }
+            },
+            insert_button_items: "insertfile",
             toolbar_mode: 'floating',
             tinycomments_mode: 'embedded',
             tinycomments_author: 'Mees Postma',
+            tinydrive_token_provider: '<?php echo url('jwt') ?>',
+            tinydrive_upload_path: "<?php echo site_url('/img/postImages') ?>"
         });
     </script>
 
