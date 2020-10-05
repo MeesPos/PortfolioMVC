@@ -6,22 +6,24 @@
     & > h1{
         text-align: center;
         padding-top: 1.5vh;
-    } & > .titleSection{
-        text-align: center;
-        & > input[type=text] {
-            width: calc(90% - 30px);
-            padding: 15px;
-            border: none;
-            margin-bottom: 2vh;
-            background-color: $lichtGrijs;
-            border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0,0,0,.2);
-            &:focus{
-                outline: none;
-            }
-        }   
     }
 } 
+
+.titleSection{
+    text-align: center;
+    & > input[type=text] {
+        width: calc(90% - 30px);
+        padding: 15px;
+        border: none;
+        margin-bottom: 2vh;
+        background-color: $lichtGrijs;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,.2);
+        &:focus{
+            outline: none;
+        }
+    }
+}   
 
 .tox-statusbar__branding{
     display: none;
@@ -32,11 +34,25 @@
     margin: 0 auto;
 }
 
+.cato{
+    width: 100%;
+    & > button{
+        width: 17%;
+        background-color: $lichtGrijs;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,.2);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        height: 45px;
+    }
+}
+
 .catoForm{
     width: 80%;
     margin: 0 auto;
     & > select{
-        width: 100%;
+        width: 98%;
         padding: 10px;
         margin-top: 10px;
         background-color: $lichtGrijs;
@@ -44,7 +60,7 @@
         box-shadow: 0 3px 6px rgba(0,0,0,.2);
         border: none;
     } & .catoInput{
-        width: calc(100% - 10px);
+        width: calc(80% - 10px);
         padding: 15px 0 15px 10px;
         background-color: $lichtGrijs;
         border-radius: 10px;

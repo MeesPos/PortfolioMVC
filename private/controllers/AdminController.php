@@ -128,4 +128,15 @@ class AdminController
         $template_engine = get_template_engine();
         echo $template_engine->render('jwt');   
     }
+
+    public function uploadPost() {
+        
+        $errors = [];
+
+        if(count($errors) === 0) {
+            createPost($_POST, $errors);
+        } else{
+            echo $errors;
+        }
+    }
 }

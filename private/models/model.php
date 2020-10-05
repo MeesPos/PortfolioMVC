@@ -119,3 +119,34 @@ function getTasks()
 
     return $result = $statement->fetchAll();
 }
+
+function createPost($results, $errors) {
+    print_r($results);
+    $headerImage = uploadHeaderImage($_FILES, $errors);
+    $postText    = $results['mytextarea'];
+    $title       = $results['title'];
+    $categories  = $results['catoDropdown'];
+    $url         = $stringURL = str_replace(' ', '-', $title); 
+                $stringURL = urlencode($stringURL);
+    $excerpt     = $arr = explode(' ', trim($postText));
+    $date        = time();
+                 setlocale(LC_ALL, 'nl_NL');
+                 strftime('%A, %B %d, %Y', $date);
+
+    $connection = dbConnect();
+    $sql = 'INSERT INTO `tutorials` ( `titel`, `link`, `datum`, `samenvatting`, `content`, `categorie`, `headerimage` )
+         VALUES (:titel, :link, :datum, :samenvatting, :content, :categorie, :headerimage)';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'titel'        => $title,
+        'link'         => $url,
+        'datum'        => $date,
+        'samenvatting' => $excerpt,
+        'content'      => $postText,
+        'categorie'    => $categories,
+        'headerimage'  => $headerImage
+    ];
+
+    $statement->execute($params);
+}

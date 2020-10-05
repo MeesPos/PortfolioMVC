@@ -21,32 +21,31 @@
     <div class="content">
         <div class="postEditor">
             <h1>Maak een Bericht!</h1>
-            <div class="titleSection">
-                <input type="text" id="title" name="title" placeholder="Titel van het Bericht...">
-            </div>
-
-            <form method="post">
+            <form method="post" action="<?php echo url('uploadPost'); ?>" enctype="multipart/form-data">
+                <div class="titleSection">
+                    <input type="text" id="title" name="title" placeholder="Titel van het Bericht...">
+                </div>
                 <textarea id="mytextarea" name="mytextarea"></textarea>
-            </form>
-
-            <div class="postInformation">
-                <div class="catoForm">
-                    <h2>Categorie toevoegen</h2>
-                    <div class="cato">
-                        <input type="text" placeholder="Voeg een categorie toe..." class="catoInput">
+                <div class="postInformation">
+                    <div class="catoForm">
+                        <h2>Categorie toevoegen</h2>
+                        <div class="cato">
+                            <input type="text" placeholder="Voeg een categorie toe..." class="catoInput">
+                            <button type="button" class="catoAddBtn">Voeg toe</button>
+                        </div>
+                        <select id="catoSelect" class="catoSelect" name="catoDropdown"></select>
                     </div>
-                    <select class="catoSelect" name="catoDropdown"></select>
+
+                    <div class="kopImage">
+                        <h2>Kopafbeelding</h2>
+                        <input type="file" id="myfile" name="myfile" accept="image/*">
+                    </div>
                 </div>
 
-                <div class="kopImage">
-                    <h2>Kopafbeelding</h2>
-                    <input type="file">
+                <div class="submit">
+                    <input class="postSubmit" type="submit" value="Post aanmaken" onclick="getAllItems()">
                 </div>
-            </div>
-
-            <div class="submit">
-                <input class="postSubmit" type="submit" value="Post aanmaken">
-            </div>
+            </form>
         </div>
     </div>
 
@@ -78,20 +77,31 @@
     </script>
 
     <script>
+        let btnAdd = document.querySelector('.catoAddBtn');
         let input = document.querySelector('.catoInput');
         let select = document.querySelector('.catoSelect');
 
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                let option = document.createElement('option');
-                option.value = input.value;
-                option.text = input.value;
+        btnAdd.addEventListener('click', () => {
+            let option = document.createElement('option');
+            option.value = input.value;
+            option.text = input.value;
 
-                let currentIndex = select.options[select.selectedIndex];
-                select.add(option, 0);
-                input.value = '';
+            let currentIndex = select.options[select.selectedIndex];
+            select.add(option, currentIndex);
+            input.value = '';
+        });
+
+        function getAllItems() {
+            let results = [];
+
+            for(var i = 0; i < select.length; i++) {
+                let element = select[i];
+                let strSel = element.options.text;
+                results.push(strSel);
             }
-        })
+
+            console.log(results);
+        }
     </script>
 </body>
 

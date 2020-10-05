@@ -3,6 +3,7 @@
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
+use Website\Controllers\AdminController;
 
 SimpleRouter::setDefaultNamespace( 'Website\Controllers' );
 
@@ -30,6 +31,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::post('/admin/login/verwerken','AdminController@adminLogin')->name('adminLogin');
 	SimpleRouter::get( '/admin/post/maken', 'AdminController@adminPostMaken')->name('adminPostMaken');
 	SimpleRouter::post('/admin/post/jwt', 'AdminController@jwt')->name('jwt');
+	SimpleRouter::post('/admin/post/upload', 'AdminController@uploadPost')->name('uploadPost');
 	SimpleRouter::get( '/admin/taken', 'AdminController@adminTaken')->name('adminTaken');
 
 
