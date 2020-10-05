@@ -15,8 +15,7 @@
 /vendor
 /node_modules
 
+/private/views/jwt.php
+
 # Ook onze gevoelige gegevens (usernames, passwords e.d.) NOOIT in Git
 /private/includes/config.php
-
-TinyDrive
-TinyDrive.pub

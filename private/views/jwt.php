@@ -1,4 +1,4 @@
-<?php require 'vendor/autoload.php';
+<?php 
 use \Firebase\JWT\JWT;
 
 header("Access-Control-Allow-Origin: *");
@@ -6,31 +6,32 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 $privateKey = <<<EOD
 -----BEGIN PRIVATE KEY-----
-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
+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
+UhWTp8pboCXsW7HBgFP5XKA=
 -----END PRIVATE KEY-----
 EOD;
 
@@ -50,7 +51,7 @@ $payload = array(
 );
 
 try {
-  $token = JWT::encode($payload, $privateKey, array('RS256'));
+  $token = JWT::encode($payload, $privateKey, 'RS256');
   http_response_code(200);
   header('Content-Type: application/json');
   echo json_encode(array("token" => $token));
