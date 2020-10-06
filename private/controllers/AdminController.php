@@ -133,8 +133,12 @@ class AdminController
         
         $errors = [];
 
+        $headerImage = uploadHeaderImage($_FILES, $errors);
+
         if(count($errors) === 0) {
-            createPost($_POST, $errors);
+            createPost($_POST, $headerImage, $errors);
+            $postID = getId();
+            uploadCato($_POST, $errors, $postID);
         } else{
             echo $errors;
         }

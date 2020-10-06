@@ -33,7 +33,7 @@
                             <input type="text" placeholder="Voeg een categorie toe..." class="catoInput">
                             <button type="button" class="catoAddBtn">Voeg toe</button>
                         </div>
-                        <select id="catoSelect" class="catoSelect" name="catoDropdown"></select>
+                        <select id="catoSelect" class="catoSelect" name="catoDropdown[]" multiple></select>
                     </div>
 
                     <div class="kopImage">
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="submit">
-                    <input class="postSubmit" type="submit" value="Post aanmaken" onclick="getAllItems()">
+                    <input class="postSubmit" type="submit" value="Post aanmaken">
                 </div>
             </form>
         </div>
@@ -85,23 +85,12 @@
             let option = document.createElement('option');
             option.value = input.value;
             option.text = input.value;
+            option.selected = true;
 
             let currentIndex = select.options[select.selectedIndex];
             select.add(option, currentIndex);
             input.value = '';
         });
-
-        function getAllItems() {
-            let results = [];
-
-            for(var i = 0; i < select.length; i++) {
-                let element = select[i];
-                let strSel = element.options.text;
-                results.push(strSel);
-            }
-
-            console.log(results);
-        }
     </script>
 </body>
 

@@ -120,33 +120,58 @@ function getTasks()
     return $result = $statement->fetchAll();
 }
 
-function createPost($results, $errors) {
-    print_r($results);
-    $headerImage = uploadHeaderImage($_FILES, $errors);
-    $postText    = $results['mytextarea'];
-    $title       = $results['title'];
-    $categories  = $results['catoDropdown'];
-    $url         = $stringURL = str_replace(' ', '-', $title); 
-                $stringURL = urlencode($stringURL);
-    $excerpt     = $arr = explode(' ', trim($postText));
-    $date        = time();
-                 setlocale(LC_ALL, 'nl_NL');
-                 strftime('%A, %B %d, %Y', $date);
+function createPost($results, $headerImage, $errors) {
+    $url          = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
+                  echo $stringURL;
+    $date         = date("d-m-Y");
 
     $connection = dbConnect();
-    $sql = 'INSERT INTO `tutorials` ( `titel`, `link`, `datum`, `samenvatting`, `content`, `categorie`, `headerimage` )
-         VALUES (:titel, :link, :datum, :samenvatting, :content, :categorie, :headerimage)';
-    $statement = $connection->prepare($sql);
+    $sql = 'INSERT INTO `tutorials` ( `titel`, `link`, `datum`, `samenvatting`, `content`, `headerimage` )
+         VALUES (:titel, :link, :datum, :samenvatting, :content, :headerimage)';
 
     $params = [
-        'titel'        => $title,
+        'titel'        => $results['title'],
         'link'         => $url,
         'datum'        => $date,
-        'samenvatting' => $excerpt,
-        'content'      => $postText,
-        'categorie'    => $categories,
+        'samenvatting' => limit_text($results['mytextarea'], 40),
+        'content'      => $results['mytextarea'],
         'headerimage'  => $headerImage
     ];
 
+    print_r($params);
+
+    $statement = $connection->prepare($sql);
     $statement->execute($params);
+}
+
+function getId() {
+    $connection = dbConnect();
+
+    $sql = 'SELECT MAX(id) FROM tutorials';
+    $statement = $connection->query($sql);
+
+    return $statement->fetchAll();
+}
+
+function uploadCato($results, $errors, $postID) {    
+    foreach($postID as $lastID) {
+        foreach($lastID as $theID) {
+            $lastPostID = $theID;
+        }
+    }
+
+    $connection = dbConnect();
+
+    $sql = 'INSERT INTO `catos` ( `cat_name`, `post_id`) VALUES (:cat_name, :post_id)';
+    $statement = $connection->prepare($sql);
+
+    foreach($results['catoDropdown'] as $row) {
+        $params = [
+            'cat_name' => $row,
+            'post_id'  => $lastPostID
+        ];
+
+        print_r($params);
+        $statement->execute($params);
+    }
 }

@@ -153,6 +153,7 @@ function uploadHeaderImage($myfile, $errors)
 		exit;
 	}
 
+	//  Checken van upload fouten
 	$file_error = $myfile['myfile']['error'];
 	switch ($file_error) {
 		case UPLOAD_ERR_OK:
@@ -172,19 +173,20 @@ function uploadHeaderImage($myfile, $errors)
 	}
 
 	if (count($errors) === 0) {
+
 		$file_name = $myfile['myfile']['name'];
 		$file_size = $myfile['myfile']['size'];
 		$file_tmp = $myfile['myfile']['tmp_name'];
 		$file_type = $myfile['myfile']['type'];
 
+		// Is het een afbeelding check  
 		$valid_image_types = [
-			1 => 'gif',
 			2 => 'jpg',
 			3 => 'png'
 		];
-
-		$image_type = exif_imagetype($file_tmp);
+		$image_type        = exif_imagetype($file_tmp);
 		if ($image_type !== false) {
+			// Juiste extensie opzoeken, die gaan we zo gebruiken bij het maken van de nieuwe bestandsnaam
 			$file_extension = $valid_image_types[$image_type];
 		} else {
 			$errors['myfile'] = 'Dit is geen afbeelding!';
@@ -192,11 +194,23 @@ function uploadHeaderImage($myfile, $errors)
 	}
 
 	if (count($errors) === 0) {
-		$new_filename   = sha1_file($file_tmp) . '.' . $file_extension;
-		$final_filename = site_url('/img/postImages/headers/') . $new_filename;
 
-		move_uploaded_file($file_tmp, $final_filename);
+		// Bestandsnaam genereren
+		$new_filename   = sha1_file($file_tmp) . '.' . $file_extension;
+		$final_filename = 'img/postImages/headers/' . $new_filename;
+
+		// met move_uploaded_file verplaats je het tijdelijke bestand naar de uiteindelijke plek
+		move_uploaded_file($file_tmp, $final_filename); // dus van tijdelijke bestandsnaam naar de originele naam (in de huidige map);
 
 		return $new_filename;
 	}
+}
+
+function limit_text($text, $limit) {
+    if (str_word_count($text, 0) > $limit) {
+        $words = str_word_count($text, 2);
+        $pos   = array_keys($words);
+        $text  = substr($text, 0, $pos[$limit]) . '...';
+    }
+    return $text;
 }
