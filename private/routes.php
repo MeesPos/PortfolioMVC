@@ -23,7 +23,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	// Tutorial Routes
 	SimpleRouter::get( '/tutorials', 'TutorialController@tutorials')->name( 'tutorials' );
-	SimpleRouter::get( '/tutorials/{link}', 'TutorialController@tutorialDetail')->name( 'tutorialDetail' );
+	SimpleRouter::get( '/tutorials/{link}', 'TutorialController@tutorialDetail', ['defaultParameterRegex' => '[\w\-]+'])->name( 'tutorialDetail' );
 
 	// Admin Routes
 	SimpleRouter::get( '/admin', 'AdminController@admin')->name('admin');
@@ -32,8 +32,12 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/admin/post/maken', 'AdminController@adminPostMaken')->name('adminPostMaken');
 	SimpleRouter::post('/admin/post/jwt', 'AdminController@jwt')->name('jwt');
 	SimpleRouter::post('/admin/post/upload', 'AdminController@uploadPost')->name('uploadPost');
+	SimpleRouter::get('/admin/posts', 'AdminController@allPosts')->name('allPosts');
 	SimpleRouter::get( '/admin/taken', 'AdminController@adminTaken')->name('adminTaken');
 
+	// Post editen/verwijderen
+	SimpleRouter::get('/admin/posts/verwijderen/{id}', 'AdminController@deletePost')->name('deletePost');
+	SimpleRouter::get('/admin/posts/wijzigen/{id}', 'AdminController@wijzigPost')->name('wijzigPost');
 
 	// Takenlijst verwerkingen
 	SimpleRouter::post( '/admin/taken/add', 'AdminController@addTask')->name('addTask');

@@ -2,6 +2,7 @@
 @import 'vars';
 @import 'todo';
 @import 'addPost';
+@import 'allPosts';
 
 body{
     margin: 0;
@@ -233,7 +234,7 @@ label #sidebar_btn{
     display: block;
   }
 
-  .panel-heading, .panel-body, .postEditor{
+  .panel-heading, .panel-body, .postEditor, #allPosts{
     width: 90vw;
   }
 }

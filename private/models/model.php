@@ -66,7 +66,10 @@ function getMadeWith()
 function getTutorials()
 {
     $connection = dbConnect();
-    $sql        = 'SELECT * FROM `tutorials`';
+    $sql        = 'SELECT * FROM `tutorials`
+    INNER JOIN `catos`
+    ON `tutorials`.`id` = `catos`.`post_id`
+    WHERE `tutorials`.`id` = `catos`.`post_id`';
     $statement  = $connection->query($sql);
 
     return $statement->fetchAll();
@@ -171,7 +174,69 @@ function uploadCato($results, $errors, $postID) {
             'post_id'  => $lastPostID
         ];
 
-        print_r($params);
         $statement->execute($params);
     }
+}
+
+function getAllTutorials() {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM `tutorials`';
+    $statement = $connection->query($sql);
+
+    return $statement->fetchAll();
+}
+
+function deleteThePost($id) {
+    $connection = dbConnect();
+
+    $sql = 'DELETE FROM `tutorials` WHERE `id` = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+}
+
+function deleteAllCatos($id) {
+    $connection = dbConnect();
+
+    $sql = 'DELETE FROM `catos` WHERE `post_id` = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+}
+
+function getCurrentPost($id) {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM tutorials WHERE id = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}
+
+function getCurrentCato($id) {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM catos WHERE post_id = :id';
+    $statement = $connection->prepare($sql);
+    
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
 }

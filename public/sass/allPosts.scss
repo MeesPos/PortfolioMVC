@@ -1,0 +1,35 @@
+#allPosts{
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin-top: 5vh;
+    & > h1{
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 2vh;
+        margin-bottom: 0;
+    }
+}
+
+.posts{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 20px;
+    & > h4{
+        margin: 0;
+    } & .liveversie{
+        padding-right: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        color: $blue;
+    } & .deletePost{
+        color: red;
+        padding-left: 10px;
+    } & .bewerkPost{
+        color: $base-accent-color;
+    }
+}

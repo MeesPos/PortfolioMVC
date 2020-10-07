@@ -27,11 +27,11 @@
         <h2>Leer meer over <span style="font-weight: bold;">coderen</span></h2>
         <div class="owl-carousel owl-theme">
             <?php foreach ($tutorial as $row) : ?>
-                <?php if ($row['categorie'] === 'Coderen') : ?>
+                <?php if ($row['cat_name'] === 'Coderen') : ?>
                     <div class="blog-grid">
-                        <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
+                        <img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
-                        <h4><?php echo $row['categorie']; ?></h4>
+                        <h4><?php echo $row['cat_name']; ?></h4>
                         <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>
                     </div>
                 <?php endif; ?>
@@ -43,11 +43,11 @@
         <h2>Leer meer over <span style="font-weight: bold;">marketing</span></h2>
         <div class="owl-carousel owl-theme">
             <?php foreach ($tutorial as $row) : ?>
-                <?php if ($row['categorie'] === 'Marketing') : ?>
+                <?php if ($row['cat_name'] === 'Marketing') : ?>
                     <div class="blog-grid">
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
-                        <h4><?php echo $row['categorie']; ?></h4>
+                        <h4><?php echo $row['cat_name']; ?></h4>
                         <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>
                     </div>
                 <?php endif; ?>
@@ -59,11 +59,11 @@
         <h2>Leer meer over <span style="font-weight: bold;">ondernemen</span></h2>
         <div class="owl-carousel owl-theme">
             <?php foreach ($tutorial as $row) : ?>
-                <?php if ($row['categorie'] === 'Ondernemen') : ?>
+                <?php if ($row['cat_name'] === 'Ondernemen') : ?>
                     <div class="blog-grid">
                         <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
-                        <h4><?php echo $row['categorie']; ?></h4>
+                        <h4><?php echo $row['cat_name']; ?></h4>
                         <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>
                     </div>
                 <?php endif; ?>
@@ -75,11 +75,11 @@
         <h2>Leer ook meer <span style="font-weight: bold;">over dit</span></h2>
         <div class="owl-carousel owl-theme">
             <?php foreach ($tutorial as $row) : ?>
-                <?php if ($row['categorie'] === 'Overig') : ?>
+                <?php if ($row['cat_name'] === 'Overig') : ?>
                     <div class="blog-grid">
-                        <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?> - Mees Postma">
+                        <img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" alt="<?php echo $row['titel'] ?> - Mees Postma">
                         <h3><?php echo $row['titel']; ?></h3>
-                        <h4><?php echo $row['categorie']; ?></h4>
+                        <h4><?php echo $row['cat_name']; ?></h4>
                         <a href="<?php echo url('tutorialDetail') . $row['link']; ?>">Lees meer ></a>
                     </div>
                 <?php endif; ?>

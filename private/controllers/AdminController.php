@@ -141,6 +141,31 @@ class AdminController
             uploadCato($_POST, $errors, $postID);
         } else{
             echo $errors;
+            exit;
         }
+    }
+
+    public function allPosts() {
+
+        $posts = getAllTutorials();
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('adminAllPosts', ['posts' => $posts]);
+    }
+
+    public function deletePost($id) {
+        deleteAllCatos($id);
+        deleteThePost($id);
+
+        $overviewURL = url('allPosts');
+        redirect($overviewURL);
+    }
+
+    public function wijzigPost($id) {
+        $currentPost = getCurrentPost($id);
+        $currentCato = getCurrentCato($id);
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('wijzigPost', ['currentPost' => $currentPost, 'currentCato' => $currentCato]);
     }
 }
