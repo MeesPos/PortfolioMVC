@@ -47,8 +47,16 @@
 
             <div class="overBericht">
                 <h2>Over dit bericht</h2>
-                <p><span style="font-weight: bold;">Geplaatst op:</span> <?php echo $row['Datum'] ?></p>
-                <p><span style="font-weight: bold;">Categorieën:</span> <?php echo $row['categorie']; ?>,</p>
+                <p><span style="font-weight: bold;">Geplaatst op:</span> <?php echo $row['datum'] ?></p>
+                <p><span style="font-weight: bold;">Categorieën:</span>
+                <?php $catos = array();
+                    foreach($catogorie as $row) {
+                        print_r($row);
+                        $catos[] = $row['cat_name'];
+                        $result = implode(', ', $catos);
+                        echo $result;
+                    } ?>
+                </p>
             </div>
         </aside>
     </section>

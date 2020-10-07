@@ -38,6 +38,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	// Post editen/verwijderen
 	SimpleRouter::get('/admin/posts/verwijderen/{id}', 'AdminController@deletePost')->name('deletePost');
 	SimpleRouter::get('/admin/posts/wijzigen/{id}', 'AdminController@wijzigPost')->name('wijzigPost');
+	SimpleRouter::post('/admin/posts/update/{id}', 'AdminController@updatePost')->name('updatePost');
 
 	// Takenlijst verwerkingen
 	SimpleRouter::post( '/admin/taken/add', 'AdminController@addTask')->name('addTask');

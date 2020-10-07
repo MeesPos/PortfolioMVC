@@ -89,6 +89,22 @@ function getTutorialsByLink($link)
     return $statement->fetchAll();
 }
 
+function getTutorialCato($getTutorials)
+{
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `catos` WHERE `post_id` = :id';
+    $statement  = $connection->prepare($sql);
+
+    foreach ($getTutorials as $row) {
+        $params = [
+            'id' => $row['id']
+        ];
+    }
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}
+
 function userRegisteredCheck($username)
 {
 
@@ -123,9 +139,10 @@ function getTasks()
     return $result = $statement->fetchAll();
 }
 
-function createPost($results, $headerImage, $errors) {
+function createPost($results, $headerImage, $errors)
+{
     $url          = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
-                  echo $stringURL;
+    echo $stringURL;
     $date         = date("d-m-Y");
 
     $connection = dbConnect();
@@ -147,7 +164,8 @@ function createPost($results, $headerImage, $errors) {
     $statement->execute($params);
 }
 
-function getId() {
+function getId()
+{
     $connection = dbConnect();
 
     $sql = 'SELECT MAX(id) FROM tutorials';
@@ -156,9 +174,10 @@ function getId() {
     return $statement->fetchAll();
 }
 
-function uploadCato($results, $errors, $postID) {    
-    foreach($postID as $lastID) {
-        foreach($lastID as $theID) {
+function uploadCato($results, $errors, $postID)
+{
+    foreach ($postID as $lastID) {
+        foreach ($lastID as $theID) {
             $lastPostID = $theID;
         }
     }
@@ -168,7 +187,7 @@ function uploadCato($results, $errors, $postID) {
     $sql = 'INSERT INTO `catos` ( `cat_name`, `post_id`) VALUES (:cat_name, :post_id)';
     $statement = $connection->prepare($sql);
 
-    foreach($results['catoDropdown'] as $row) {
+    foreach ($results['catoDropdown'] as $row) {
         $params = [
             'cat_name' => $row,
             'post_id'  => $lastPostID
@@ -178,7 +197,8 @@ function uploadCato($results, $errors, $postID) {
     }
 }
 
-function getAllTutorials() {
+function getAllTutorials()
+{
     $connection = dbConnect();
 
     $sql = 'SELECT * FROM `tutorials`';
@@ -187,7 +207,8 @@ function getAllTutorials() {
     return $statement->fetchAll();
 }
 
-function deleteThePost($id) {
+function deleteThePost($id)
+{
     $connection = dbConnect();
 
     $sql = 'DELETE FROM `tutorials` WHERE `id` = :id';
@@ -200,7 +221,8 @@ function deleteThePost($id) {
     $statement->execute($params);
 }
 
-function deleteAllCatos($id) {
+function deleteAllCatos($id)
+{
     $connection = dbConnect();
 
     $sql = 'DELETE FROM `catos` WHERE `post_id` = :id';
@@ -213,7 +235,8 @@ function deleteAllCatos($id) {
     $statement->execute($params);
 }
 
-function getCurrentPost($id) {
+function getCurrentPost($id)
+{
     $connection = dbConnect();
 
     $sql = 'SELECT * FROM tutorials WHERE id = :id';
@@ -227,16 +250,55 @@ function getCurrentPost($id) {
     return $statement->fetchAll();
 }
 
-function getCurrentCato($id) {
+function getCurrentCato($id)
+{
     $connection = dbConnect();
 
     $sql = 'SELECT * FROM catos WHERE post_id = :id';
     $statement = $connection->prepare($sql);
-    
+
     $params = [
         'id' => $id
     ];
 
     $statement->execute($params);
     return $statement->fetchAll();
+}
+
+function updatePost($results, $id, $errors)
+{
+    $url          = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
+    echo $stringURL;
+
+    $connection = dbConnect();
+
+    $sql = 'UPDATE tutorials SET titel = :titel, link = :link, samenvatting = :samenvatting, content = :content WHERE id = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id,
+        'titel' => $results['title'],
+        'link' => $url,
+        'samenvatting' => limit_text($results['mytextarea'], 40),
+        'content'      => $results['mytextarea'],
+    ];
+
+    $statement->execute($params);
+}
+
+function updateNewCatos($results, $id, $errors)
+{
+    $connection = dbConnect();
+
+    $sql = 'INSERT INTO `catos` ( `cat_name`, `post_id`) VALUES (:cat_name, :post_id)';
+    $statement = $connection->prepare($sql);
+
+    foreach ($results['catoDropdown'] as $row) {
+        $params = [
+            'cat_name' => $row,
+            'post_id'  => $id
+        ];
+
+        $statement->execute($params);
+    }
 }

@@ -22,7 +22,7 @@ class AdminController
 
     public function loginPage()
     {
-
+        
         $template_engine = get_template_engine();
         echo $template_engine->render('adminLogin');
     }
@@ -53,6 +53,8 @@ class AdminController
     public function adminPostMaken()
     {
 
+        loginCheck();
+
         $template_engine = get_template_engine();
         echo $template_engine->render('adminPostMaken');
     }
@@ -60,6 +62,7 @@ class AdminController
     public function adminTaken()
     {
 
+        loginCheck();
         $tasks = getTasks();
 
         $template_engine = get_template_engine();
@@ -68,6 +71,7 @@ class AdminController
 
     public function addTask()
     {
+        loginCheck();
         $connection = dbConnect();
 
         if ($_POST["task_name"]) {
@@ -88,6 +92,8 @@ class AdminController
 
     public function deleteTask()
     {
+        loginCheck();
+
         $connection = dbConnect();
 
         if ($_POST["id"]) {
@@ -106,6 +112,8 @@ class AdminController
 
     public function updateTask()
     {
+        loginCheck();
+
         $connection = dbConnect();
 
         if ($_POST["id"]) {
@@ -131,6 +139,7 @@ class AdminController
 
     public function uploadPost() {
         
+        loginCheck();
         $errors = [];
 
         $headerImage = uploadHeaderImage($_FILES, $errors);
@@ -139,14 +148,15 @@ class AdminController
             createPost($_POST, $headerImage, $errors);
             $postID = getId();
             uploadCato($_POST, $errors, $postID);
-        } else{
-            echo $errors;
-            exit;
         }
+
+        $bedanktUrl = url("allPosts");
+        redirect($bedanktUrl);
     }
 
     public function allPosts() {
 
+        loginCheck();
         $posts = getAllTutorials();
 
         $template_engine = get_template_engine();
@@ -154,6 +164,7 @@ class AdminController
     }
 
     public function deletePost($id) {
+        loginCheck();
         deleteAllCatos($id);
         deleteThePost($id);
 
@@ -162,10 +173,26 @@ class AdminController
     }
 
     public function wijzigPost($id) {
+        loginCheck();
         $currentPost = getCurrentPost($id);
         $currentCato = getCurrentCato($id);
 
         $template_engine = get_template_engine();
         echo $template_engine->render('wijzigPost', ['currentPost' => $currentPost, 'currentCato' => $currentCato]);
+    }
+    
+    public function updatePost($id) {
+        
+        loginCheck();
+        $errors = [];
+
+        if(count($errors) === 0) {
+            updatePost($_POST, $id, $errors);
+            deleteAllCatos($id);
+            updateNewCatos($_POST, $id, $errors);
+        }
+
+        $bedanktUrl = url("allPosts");
+        redirect($bedanktUrl);
     }
 }

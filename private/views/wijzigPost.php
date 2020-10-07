@@ -22,7 +22,7 @@
         <div class="postEditor">
             <h1>Wijzig dit Bericht!</h1>
             <?php foreach($currentPost as $row) : ?>
-                <form method="post" action="<?php echo url('uploadPost'); ?>" enctype="multipart/form-data">
+                <form method="post" action="<?php echo url('updatePost') . $row['id']; ?>" enctype="multipart/form-data">
                     <div class="titleSection">
                         <input type="text" id="title" name="title" placeholder="Titel van het Bericht..." value="<?php echo $row['titel'] ?>">
                     </div>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="submit">
-                        <input class="postSubmit" type="submit" value="Post aanmaken">
+                        <input class="postSubmit" type="submit" value="Post wijzigen">
                     </div>
                 </form>
             <?php endforeach; ?>
