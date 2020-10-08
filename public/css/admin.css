@@ -86,10 +86,11 @@
   padding-top: 1.5vh;
 }
 
-.titleSection {
+.titleSection, .longInput {
   text-align: center;
+  margin-top: 3vh;
 }
-.titleSection > input[type=text] {
+.titleSection > input[type=text], .longInput > input[type=text] {
   width: calc(90% - 30px);
   padding: 15px;
   border: none;
@@ -98,7 +99,7 @@
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
-.titleSection > input[type=text]:focus {
+.titleSection > input[type=text]:focus, .longInput > input[type=text]:focus {
   outline: none;
 }
 
@@ -126,7 +127,7 @@
 }
 
 .catoForm {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 .catoForm > select {
@@ -195,6 +196,10 @@
   .kopImage {
     margin-top: 2vh;
   }
+
+  .urls, .projectDetails {
+    grid-template-columns: 1fr !important;
+  }
 }
 #allPosts {
   width: 75%;
@@ -233,6 +238,31 @@
 }
 .posts .bewerkPost {
   color: #34Bf49;
+}
+
+.urls, .projectDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 2vh;
+  text-align: center;
+}
+.urls > div > input, .projectDetails > div > input {
+  width: 75%;
+  padding: 15px;
+  border: none;
+  margin-bottom: 2vh;
+  background-color: #F8F8F8;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.urls > div > input:focus, .projectDetails > div > input:focus {
+  outline: none;
+}
+
+.projectLinks {
+  text-align: center;
 }
 
 body {

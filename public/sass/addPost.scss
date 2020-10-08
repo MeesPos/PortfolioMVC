@@ -9,8 +9,9 @@
     }
 } 
 
-.titleSection{
+.titleSection, .longInput{
     text-align: center;
+    margin-top: 3vh;
     & > input[type=text] {
         width: calc(90% - 30px);
         padding: 15px;
@@ -49,7 +50,7 @@
 }
 
 .catoForm{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     & > select{
         width: 98%;
@@ -115,5 +116,9 @@
 
     .kopImage{
         margin-top: 2vh;
+    }
+
+    .urls, .projectDetails{
+        grid-template-columns: 1fr!important;
     }
 }

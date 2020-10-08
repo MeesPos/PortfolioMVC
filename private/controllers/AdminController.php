@@ -195,4 +195,29 @@ class AdminController
         $bedanktUrl = url("allPosts");
         redirect($bedanktUrl);
     }
+
+    public function projectMaken() {
+
+        loginCheck();
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('adminProjectPosten');
+    }
+
+    public function uploadProject() {
+
+        loginCheck();
+        $errors = [];
+
+        $headerImage = uploadHeaderImage($_FILES, $errors);
+
+        if(count($errors) === 0) {
+            createProject($_POST, $headerImage, $errors);
+            $postID = getProjID();
+            uploadMethode($_POST, $errors, $postID);
+        }
+
+        // $bedanktUrl = url("allPosts");
+        // redirect($bedanktUrl);
+    }
 }

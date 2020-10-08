@@ -51,11 +51,10 @@
                 <p><span style="font-weight: bold;">Categorieën:</span>
                 <?php $catos = array();
                     foreach($catogorie as $row) {
-                        print_r($row);
                         $catos[] = $row['cat_name'];
                         $result = implode(', ', $catos);
-                        echo $result;
-                    } ?>
+                    }
+                    echo $result; ?>
                 </p>
             </div>
         </aside>

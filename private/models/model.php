@@ -290,13 +290,70 @@ function updateNewCatos($results, $id, $errors)
 {
     $connection = dbConnect();
 
-    $sql = 'INSERT INTO `catos` ( `cat_name`, `post_id`) VALUES (:cat_name, :post_id)';
+    $sql = 'INSERT INTO `catos` (`cat_name`, `post_id`) VALUES (:cat_name, :post_id)';
     $statement = $connection->prepare($sql);
 
     foreach ($results['catoDropdown'] as $row) {
         $params = [
             'cat_name' => $row,
             'post_id'  => $id
+        ];
+
+        $statement->execute($params);
+    }
+}
+
+function createProject($results, $headerImage, $errors) {
+    $url          = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
+    echo $stringURL;
+
+    $connection = dbConnect();
+    $sql = 'INSERT INTO `projecten` ( `projectnaam`, `link`, `datum`, `content`, `headerimage`, `soort`, `taal`, `liveversie`, `github`)
+         VALUES (:titel, :link, :datum, :content, :headerimage, :soort, :taal, :liveversie, :github)';
+
+    $params = [
+        'titel'        => $results['title'],
+        'link'         => $url,
+        'datum'        => $results['projectdate'],
+        'content'      => $results['mytextarea'],
+        'headerimage'  => $headerImage,
+        'soort'        => $results['soortproject'],
+        'taal'         => $results['taal'],
+        'liveversie'   => $results['liveversie'],
+        'github'       => $results['github']
+    ];
+
+    print_r($params);
+
+    $statement = $connection->prepare($sql);
+    $statement->execute($params);
+}
+
+function getProjID() {
+    $connection = dbConnect();
+
+    $sql = 'SELECT MAX(id) FROM projecten';
+    $statement = $connection->query($sql);
+
+    return $statement->fetchAll();
+}
+
+function uploadMethode($results, $errors, $postID) {
+    foreach ($postID as $lastID) {
+        foreach ($lastID as $theID) {
+            $lastPostID = $theID;
+        }
+    }
+
+    $connection = dbConnect();
+
+    $sql = 'INSERT INTO `maakmethodes` ( `naam`, `project_ID`) VALUES (:naam, :project_ID)';
+    $statement = $connection->prepare($sql);
+
+    foreach ($results['methodeDropdown'] as $row) {
+        $params = [
+            'naam' => $row,
+            'project_ID'  => $lastPostID
         ];
 
         $statement->execute($params);

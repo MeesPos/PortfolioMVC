@@ -1,0 +1,24 @@
+.urls, .projectDetails{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2vh;
+    text-align: center;
+    & > div > input{
+        width: 75%;
+        padding: 15px;
+        border: none;
+        margin-bottom: 2vh;
+        background-color: $lichtGrijs;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,.2);
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+.projectLinks{
+    text-align: center;
+}
