@@ -220,4 +220,31 @@ class AdminController
         // $bedanktUrl = url("allPosts");
         // redirect($bedanktUrl);
     }
+
+    public function allProjects() {
+
+        loginCheck();
+        $projects = getAllProjects();
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('adminAllProjects', ['projects' => $projects]);
+    }
+
+    public function deleteProject($id) {
+        loginCheck();
+        deleteProjectMethodes($id);
+        deleteTheProject($id);
+
+        $overviewURL = url('allProjects');
+        redirect($overviewURL);
+    }
+
+    public function wijzigProject($id) {
+        loginCheck();
+        $currentProject = getCurrentProject($id);
+        $currentMethods = getCurrentMethodes($id);
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('wijzigProject', ['currentProject' => $currentProject, 'currentMethods' => $currentMethods]);
+    }
 }

@@ -359,3 +359,57 @@ function uploadMethode($results, $errors, $postID) {
         $statement->execute($params);
     }
 }
+
+function deleteProjectMethodes($id) {
+    $connection = dbConnect();
+
+    $sql = 'DELETE FROM `maakmethodes` WHERE `project_ID` = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+}
+
+function deleteTheProject($id) {
+    $connection = dbConnect();
+
+    $sql = 'DELETE FROM `projecten` WHERE `id` = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+}
+
+function getCurrentProject($id) {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM projecten WHERE id = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}
+
+function getCurrentMethodes($id) {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM maakmethodes WHERE project_ID = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}
