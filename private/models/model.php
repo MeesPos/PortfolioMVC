@@ -210,6 +210,9 @@ function getAllTutorials()
 function deleteThePost($id, $results) {
     $image = $results['image'];
 
+    $myFile = "img/postImages/headers/$image";
+    unlink($myFile) or die("Couldn't delete file");
+
     $connection = dbConnect();
 
     $sql = 'DELETE FROM `tutorials` WHERE `id` = :id';
@@ -416,23 +419,31 @@ function getAllProjectImages($id) {
     return $statement->fetchAll();
 }
 
-function deteteProjectImages($id) {
+function deteteProjectImages($id, $results) {
     $images = getAllProjectImages($id);
 
     foreach($images as $row) {
-        print_r($row);
+        $file = $row['image_naam'];
+
+        $myFile = "img/projectImages/$file";
+        unlink($myFile) or die("Couldn't delete file");
     }
+
+    $headerImage = $results['headerimage'];
+
+    $delHeader = "img/postImages/headers/$headerImage";
+    unlink($delHeader) or die("Couldn't delete file");
 
     $connection = dbConnect();
 
-    // $sql = 'DELETE FROM `projectimages` WHERE `project_id` = :id';
-    // $statement = $connection->prepare($sql);
-// 
-    // $params = [
-        // 'id' => $id
-    // ];
-// 
-    // $statement->execute($params);
+    $sql = 'DELETE FROM `projectimages` WHERE `project_id` = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
 }
 
 function deleteTheProject($id)
@@ -469,6 +480,20 @@ function getCurrentMethodes($id)
     $connection = dbConnect();
 
     $sql = 'SELECT * FROM maakmethodes WHERE project_ID = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}
+
+function getCurrentImages($id) {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM projectimages WHERE project_id = :id';
     $statement = $connection->prepare($sql);
 
     $params = [

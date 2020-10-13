@@ -234,13 +234,12 @@ class AdminController
 
     public function deleteProject($id) {
         loginCheck();
-        // deleteProjectMethodes($id);
-        // $images = getAllProjectImages($id);
-        deteteProjectImages($id);
-        // deleteTheProject($id);
+        deleteProjectMethodes($id);
+        deteteProjectImages($id, $_POST);
+        deleteTheProject($id);
 
-        // $overviewURL = url('allProjects');
-        // redirect($overviewURL);
+        $overviewURL = url('allProjects');
+        redirect($overviewURL);
     }
 
     public function wijzigProject($id) {
