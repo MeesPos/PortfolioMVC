@@ -145,15 +145,13 @@ function loginCheck()
 	}
 }
 
-function uploadHeaderImage($myfile, $errors)
-{
+function uploadHeaderImage($myfile, $errors){
 	if (!isset($_FILES['myfile'])) {
 		$message = "Geen bestand geupload!";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 		exit;
 	}
 
-	//  Checken van upload fouten
 	$file_error = $myfile['myfile']['error'];
 	switch ($file_error) {
 		case UPLOAD_ERR_OK:
@@ -169,7 +167,7 @@ function uploadHeaderImage($myfile, $errors)
 			$errors['myfile'] = 'Dit bestand is te groot, pas php.ini aan';
 			break;
 		default:
-			$errors['myfile'] = 'Onbekeden fout';
+			$errors['myfile'] = 'Onbekende fout';
 	}
 
 	if (count($errors) === 0) {
@@ -179,14 +177,12 @@ function uploadHeaderImage($myfile, $errors)
 		$file_tmp = $myfile['myfile']['tmp_name'];
 		$file_type = $myfile['myfile']['type'];
 
-		// Is het een afbeelding check  
 		$valid_image_types = [
 			2 => 'jpg',
 			3 => 'png'
 		];
 		$image_type        = exif_imagetype($file_tmp);
 		if ($image_type !== false) {
-			// Juiste extensie opzoeken, die gaan we zo gebruiken bij het maken van de nieuwe bestandsnaam
 			$file_extension = $valid_image_types[$image_type];
 		} else {
 			$errors['myfile'] = 'Dit is geen afbeelding!';
@@ -194,23 +190,47 @@ function uploadHeaderImage($myfile, $errors)
 	}
 
 	if (count($errors) === 0) {
-
-		// Bestandsnaam genereren
 		$new_filename   = sha1_file($file_tmp) . '.' . $file_extension;
 		$final_filename = 'img/postImages/headers/' . $new_filename;
-
-		// met move_uploaded_file verplaats je het tijdelijke bestand naar de uiteindelijke plek
 		move_uploaded_file($file_tmp, $final_filename); // dus van tijdelijke bestandsnaam naar de originele naam (in de huidige map);
 
 		return $new_filename;
 	}
 }
 
-function limit_text($text, $limit) {
-    if (str_word_count($text, 0) > $limit) {
-        $words = str_word_count($text, 2);
-        $pos   = array_keys($words);
-        $text  = substr($text, 0, $pos[$limit]) . '...';
-    }
-    return $text;
+function limit_text($text, $limit)
+{
+	if (str_word_count($text, 0) > $limit) {
+		$words = str_word_count($text, 2);
+		$pos   = array_keys($words);
+		$text  = substr($text, 0, $pos[$limit]) . '...';
+	}
+	return $text;
+}
+
+function uploadAllImages(){
+	$fileNames = array();
+
+	for ($i = 0; $i < count($_FILES["projectimages"]["name"]); $i++) {
+		$uploadfile = $_FILES["projectimages"]["tmp_name"][$i];
+
+		$valid_image_types = [
+			2 => 'jpg',
+			3 => 'png'
+		];
+		$image_type        = exif_imagetype($uploadfile);
+		if ($image_type !== false) {
+			$file_extension = $valid_image_types[$image_type];
+		} else {
+			$errors['myfile'] = 'Dit is geen afbeelding!';
+		}
+
+		$new_filename   = sha1_file($uploadfile) . '.' . $file_extension;
+		$final_filename = 'img/projectImages/' . $new_filename;
+		move_uploaded_file($uploadfile, $final_filename);
+
+		$fileNames[] = $new_filename;
+	}
+
+	return array($fileNames);
 }

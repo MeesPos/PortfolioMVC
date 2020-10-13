@@ -166,7 +166,7 @@ class AdminController
     public function deletePost($id) {
         loginCheck();
         deleteAllCatos($id);
-        deleteThePost($id);
+        deleteThePost($id, $_POST);
 
         $overviewURL = url('allPosts');
         redirect($overviewURL);
@@ -208,6 +208,7 @@ class AdminController
 
         loginCheck();
         $errors = [];
+        print_r($_POST);
 
         $headerImage = uploadHeaderImage($_FILES, $errors);
 
@@ -215,10 +216,11 @@ class AdminController
             createProject($_POST, $headerImage, $errors);
             $postID = getProjID();
             uploadMethode($_POST, $errors, $postID);
+            uploadImages($_FILES, $errors, $postID);
         }
 
-        // $bedanktUrl = url("allPosts");
-        // redirect($bedanktUrl);
+        $bedanktUrl = url("allProjects");
+        redirect($bedanktUrl);
     }
 
     public function allProjects() {
@@ -232,11 +234,13 @@ class AdminController
 
     public function deleteProject($id) {
         loginCheck();
-        deleteProjectMethodes($id);
-        deleteTheProject($id);
+        // deleteProjectMethodes($id);
+        // $images = getAllProjectImages($id);
+        deteteProjectImages($id);
+        // deleteTheProject($id);
 
-        $overviewURL = url('allProjects');
-        redirect($overviewURL);
+        // $overviewURL = url('allProjects');
+        // redirect($overviewURL);
     }
 
     public function wijzigProject($id) {
@@ -246,5 +250,14 @@ class AdminController
 
         $template_engine = get_template_engine();
         echo $template_engine->render('wijzigProject', ['currentProject' => $currentProject, 'currentMethods' => $currentMethods]);
+    }
+
+    public function updateProject($id) {
+        updateTheProject($_POST, $id);
+        deleteProjectMethodes($id);
+        addNewMethods($_POST, $id);
+
+        $overviewURL = url('allProjects');
+        redirect($overviewURL);
     }
 }

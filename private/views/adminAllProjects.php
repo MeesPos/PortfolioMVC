@@ -25,7 +25,10 @@
                     <div class="postsAction">
                         <a class="liveversie" href="<?php echo url('projectenDetail') . $row['link']; ?>">Live versie</a>
                         <a class="bewerkPost" href="<?php echo url('wijzigProject') . $row['id'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                        <a class="deletePost" href="<?php echo url('deleteProject') . $row['id'] ?>"><i class="fas fa-trash"></i></a>
+                        <form action="<?php echo url('deleteProject') . $row['id'] ?>" method="post">
+                            <input type="hidden" name="headerimage" value="<?php echo $row['headerimage'] ?>">
+                            <button class="deletePost" type="submit"><i class="fas fa-trash"></i></button>
+                        </form>                    
                     </div>
                 </div>
             <?php endforeach; ?>

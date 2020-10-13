@@ -22,14 +22,27 @@
     & > h4{
         margin: 0;
     } & .liveversie{
-        padding-right: 30px;
+        padding-right: 20px;
         text-decoration: none;
         font-weight: bold;
         color: $blue;
+        font-size: 15px;
     } & .deletePost{
         color: red;
         padding-left: 10px;
+        border: none;
+        padding: 0;
+        margin: 0;
+        background: none;
+        font-size: 15px;
+        & i{
+            cursor: pointer;
+        }
+    } & form{
+        display: inline-block;
+        padding-left: 5px;
     } & .bewerkPost{
         color: $base-accent-color;
+        display: inline-block;
     }
 }

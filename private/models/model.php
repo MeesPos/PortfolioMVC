@@ -207,8 +207,9 @@ function getAllTutorials()
     return $statement->fetchAll();
 }
 
-function deleteThePost($id)
-{
+function deleteThePost($id, $results) {
+    $image = $results['image'];
+
     $connection = dbConnect();
 
     $sql = 'DELETE FROM `tutorials` WHERE `id` = :id';
@@ -303,7 +304,8 @@ function updateNewCatos($results, $id, $errors)
     }
 }
 
-function createProject($results, $headerImage, $errors) {
+function createProject($results, $headerImage, $errors)
+{
     $url          = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
     echo $stringURL;
 
@@ -323,13 +325,12 @@ function createProject($results, $headerImage, $errors) {
         'github'       => $results['github']
     ];
 
-    print_r($params);
-
     $statement = $connection->prepare($sql);
     $statement->execute($params);
 }
 
-function getProjID() {
+function getProjID()
+{
     $connection = dbConnect();
 
     $sql = 'SELECT MAX(id) FROM projecten';
@@ -338,7 +339,8 @@ function getProjID() {
     return $statement->fetchAll();
 }
 
-function uploadMethode($results, $errors, $postID) {
+function uploadMethode($results, $errors, $postID)
+{
     foreach ($postID as $lastID) {
         foreach ($lastID as $theID) {
             $lastPostID = $theID;
@@ -360,7 +362,34 @@ function uploadMethode($results, $errors, $postID) {
     }
 }
 
-function deleteProjectMethodes($id) {
+function uploadImages($results, $errors, $postID) {
+    foreach ($postID as $lastID) {
+        foreach ($lastID as $theID) {
+            $lastPostID = $theID;
+        }
+    }
+
+    $connection = dbConnect();
+
+    $sql       = 'INSERT INTO `projectimages` ( `image_naam`, `project_id` ) VALUES (:naam, :project_id)';
+    $statement = $connection->prepare($sql);
+
+    $imageName = uploadAllImages();
+
+    foreach ($imageName as $row) {
+        foreach ($row as $file) {
+            $params = [
+                'naam'       => $file,
+                'project_id' => $lastPostID
+            ];
+
+            $statement->execute($params);
+        }
+    }
+}
+
+function deleteProjectMethodes($id)
+{
     $connection = dbConnect();
 
     $sql = 'DELETE FROM `maakmethodes` WHERE `project_ID` = :id';
@@ -373,7 +402,41 @@ function deleteProjectMethodes($id) {
     $statement->execute($params);
 }
 
-function deleteTheProject($id) {
+function getAllProjectImages($id) {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM `projectimages` WHERE `project_id` = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}
+
+function deteteProjectImages($id) {
+    $images = getAllProjectImages($id);
+
+    foreach($images as $row) {
+        print_r($row);
+    }
+
+    $connection = dbConnect();
+
+    // $sql = 'DELETE FROM `projectimages` WHERE `project_id` = :id';
+    // $statement = $connection->prepare($sql);
+// 
+    // $params = [
+        // 'id' => $id
+    // ];
+// 
+    // $statement->execute($params);
+}
+
+function deleteTheProject($id)
+{
     $connection = dbConnect();
 
     $sql = 'DELETE FROM `projecten` WHERE `id` = :id';
@@ -386,7 +449,8 @@ function deleteTheProject($id) {
     $statement->execute($params);
 }
 
-function getCurrentProject($id) {
+function getCurrentProject($id)
+{
     $connection = dbConnect();
 
     $sql = 'SELECT * FROM projecten WHERE id = :id';
@@ -400,7 +464,8 @@ function getCurrentProject($id) {
     return $statement->fetchAll();
 }
 
-function getCurrentMethodes($id) {
+function getCurrentMethodes($id)
+{
     $connection = dbConnect();
 
     $sql = 'SELECT * FROM maakmethodes WHERE project_ID = :id';
@@ -412,4 +477,45 @@ function getCurrentMethodes($id) {
 
     $statement->execute($params);
     return $statement->fetchAll();
+}
+
+function updateTheProject($results, $id)
+{
+    $url = $stringURL = strtolower(str_replace(' ', '-', $results['projectnaam']));
+    echo $stringURL;
+
+    $connection = dbConnect();
+
+    $sql = 'UPDATE projecten SET projectnaam = :titel, link = :link, content = :content, soort = :soort, taal = :taal, liveversie = :liveversie, github = :github WHERE id = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id'         => $id,
+        'titel'      => $results['title'],
+        'link'       => $url,
+        'content'    => $results['mytextarea'],
+        'soort'      => $results['soortproject'],
+        'taal'       => $results['taal'],
+        'liveversie' => $results['liveversie'],
+        'github'     => $results['github']
+    ];
+
+    $statement->execute($params);
+}
+
+function addNewMethods($results, $id)
+{
+    $connection = dbConnect();
+
+    $sql = 'INSERT INTO `maakmethodes` (`naam`, `project_id`) VALUES (:naam, :project_id)';
+    $statement = $connection->prepare($sql);
+
+    foreach ($results['catoDropdown'] as $row) {
+        $params = [
+            'naam' => $row,
+            'project_id'  => $id
+        ];
+
+        $statement->execute($params);
+    }
 }

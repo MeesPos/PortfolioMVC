@@ -22,7 +22,7 @@
         <div class="postEditor">
             <h1>Wijzig dit Project!</h1>
             <?php foreach ($currentProject as $row) : ?>
-                <form method="post" action="<?php echo url('updatePost') . $row['id']; ?>" enctype="multipart/form-data">
+                <form method="post" action="<?php echo url('updateProject') . $row['id']; ?>" enctype="multipart/form-data">
                     <div class="titleSection">
                         <input type="text" id="title" name="title" placeholder="Titel van het Bericht..." value="<?php echo $row['projectnaam'] ?>">
                     </div>
@@ -33,18 +33,18 @@
                     <div class="projectDetails">
                         <div class="soortProject">
                             <h2>Soort Project</h2>
-                            <input type="text" name="soortproject" id="soortproject" placeholder="Soort Project...">
+                            <input type="text" name="soortproject" id="soortproject" placeholder="Soort Project..." value="<?php echo $row['soort'] ?>">
                         </div>
 
                         <div class="projectDatum">
                             <h2>Datum van Project</h2>
-                            <input type="date" name="projectdate" id="projectdate">
+                            <input type="date" name="projectdate" id="projectdate" value="<?php echo $row['datum'] ?>">
                         </div>
                     </div>
 
                     <div class="postInformation">
                         <div class="catoForm">
-                            <h2>Categorie toevoegen</h2>
+                            <h2>Methode toevoegen</h2>
                             <div class="cato">
                                 <input type="text" placeholder="Voeg een categorie toe..." class="catoInput">
                                 <button type="button" class="catoAddBtn">Voeg toe</button>
@@ -58,7 +58,7 @@
 
                         <div class="kopImage">
                             <h2>Kopafbeelding</h2>
-                            <img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" style="width: 100%;" alt="">
+                            <img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" style="width: 100%;">
                         </div>
                     </div>
 
@@ -66,17 +66,17 @@
                         <h2>Url's van Project</h2>
                         <div class="urls">
                             <div class="liveversie">
-                                <input type="text" name="liveversie" id="liveversie" placeholder="URL van het Project...">
+                                <input type="text" name="liveversie" id="liveversie" placeholder="URL van het Project..." value="<?php echo $row['liveversie'] ?>">
                             </div>
 
                             <div class="github">
-                                <input type="text" name="github" id="github" placeholder="URL naar de Github van dit Project...">
+                                <input type="text" name="github" id="github" placeholder="URL naar de Github van dit Project..." value="<?php echo $row['github'] ?>">
                             </div>
                         </div>
                     </div>
 
                     <div class="longInput">
-                        <input type="text" id="taal" name="taal" placeholder="Taal van het Project...">
+                        <input type="text" id="taal" name="taal" placeholder="Taal van het Project..." value="<?php echo $row['taal'] ?>">
                     </div>
 
                     <div class="submit">

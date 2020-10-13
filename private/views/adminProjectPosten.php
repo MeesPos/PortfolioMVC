@@ -28,6 +28,11 @@
 
                 <textarea id="mytextarea" name="mytextarea"></textarea>
 
+                <div class="projectImages longInput">
+                    <h2>Foto's van het Project</h2>
+                    <input type="file" id="projectimages" name="projectimages[]" accept="image/*" multiple>
+                </div>
+
                 <div class="projectDetails">
                     <div class="soortProject">
                         <h2>Soort Project</h2>

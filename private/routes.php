@@ -39,11 +39,12 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get('/admin/projecten', 'AdminController@allProjects')->name('allProjects');
 
 	// Project editen/verwijderen
-	SimpleRouter::get('/admin/projecten/verwijderen/{id}', 'AdminController@deleteProject')->name('deleteProject');
+	SimpleRouter::post('/admin/projecten/verwijderen/{id}', 'AdminController@deleteProject')->name('deleteProject');
 	SimpleRouter::get('/admin/projecten/wijzigen/{id}', 'AdminController@wijzigProject')->name('wijzigProject');
+	SimpleRouter::post('/admin/projecten/update/{id}', 'AdminController@updateProject')->name('updateProject');
 
 	// Post editen/verwijderen
-	SimpleRouter::get('/admin/posts/verwijderen/{id}', 'AdminController@deletePost')->name('deletePost');
+	SimpleRouter::post('/admin/posts/verwijderen/{id}', 'AdminController@deletePost')->name('deletePost');
 	SimpleRouter::get('/admin/posts/wijzigen/{id}', 'AdminController@wijzigPost')->name('wijzigPost');
 	SimpleRouter::post('/admin/posts/update/{id}', 'AdminController@updatePost')->name('updatePost');
 
