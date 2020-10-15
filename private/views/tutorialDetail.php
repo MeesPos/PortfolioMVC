@@ -60,6 +60,12 @@
         </aside>
     </section>
 
+    <?php if ($this->section('contactSection')) : ?>
+		<?php echo $this->section('contactSection') ?>
+	<?php else : ?>
+		<?php echo $this->fetch('_contactSection') ?>
+	<?php endif ?>
+
     <?php if ($this->section('footer')) : ?>
         <?php echo $this->section('footer') ?>
     <?php else : ?>

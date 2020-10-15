@@ -23,8 +23,8 @@
 				te worden. Buitenschool beheer ik ook mijn eigen
 				bedrijf samen met een vriend van mij. Voor meer
 				informatie kijk verder op mijn website.</p>
-			<a href="#">
-				<button>Lees meer</button>
+			<a href="<?php echo url('contact') ?>">
+				<button class="blueButton">Contact</button>
 			</a>
 		</div>
 
@@ -41,16 +41,13 @@
 		<div class="aboutMe">
 			<h2>Over mij</h2>
 			<h3>Mees Postma - Software developer</h3>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-				Voluptatem dolor quam ipsum quia dolores. Nihil quasi error
-				quidem natus, praesentium asperiores cumque. Cumque necessitatibus
-				rem provident repellendus eius, repudiandae consequuntur. Lorem ipsum
-				dolor sit amet consectetur adipisicing elit. Ipsam cupiditate
-				consequatur at, officiis libero, explicabo architecto ipsum, modi
-				dolores natus exercitationem non tempore earum blanditiis nam
-				dignissimos officia placeat laborum?</p>
+			<p>Ik ben een Software Developer uit Nederland</strong>. In 2019 ben ik
+				begonnen met de opleiding Media developing op het Mediacollege Amsterdam.
+				Hier leer ik websites maken, optimaliseren en ontwerpen. Maar ook om professioneel
+				te worden op de markt. Wil je meer weten over mij? Lees dan meer dan over mij door
+				op de Lees Meer knop te drukken.</p>
 			<a href="<?php echo url('over'); ?>">
-				<button>Lees Meer</button>
+				<button class="blueButton">Lees Meer</button>
 			</a>
 		</div>
 	</section>
@@ -61,12 +58,12 @@
 		<div class="projects">
 			<?php foreach ($project as $row) : ?>
 				<div class="cardProject" onclick="this.classList.toggle('expanded')">
-					<img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" class="label" alt="Project (Nummer) van Mees Postma">
+					<img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" class="label" alt="Project (Nummer) van Mees Postma">
 					<div class="text">
 						<div class="text-content">
 							<h1 class="title"><?php echo $row['projectnaam'] ?></h1>
-							<div class="body-text"><?php echo $row['samenvatting'] ?></div>
-							<a href="#" class="leesMeerProject">Lees meer ></a>
+							<div class="body-text"><?php echo limit_text($row['content'], 15); ?></div>
+							<a href="<?php echo url('projectenDetail') . $row['link'] ?>" class="leesMeerProject">Lees meer ></a>
 						</div>
 					</div>
 					<svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="80">
@@ -75,8 +72,8 @@
 			<?php endforeach ?>
 		</div>
 
-		<a href="#" class="meerProjecten">
-			<button>Zie meer</button>
+		<a href="<?php echo url('projecten') ?>" class="meerProjecten">
+			<button class="blueButton">Zie meer</button>
 		</a>
 	</section>
 
@@ -87,36 +84,25 @@
 				<div class="blogCard">
 					<img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" alt="<?php echo $row['titel'] ?>">
 					<div class="blogInfo">
-						<a href="#" class="categorie">Laptop</a>
+						<p class="categorie"><?php echo $row['cat_name'] ?></p>
 						<h3><?php echo $row['titel'] ?></h3>
-						<p><?php echo $row['samenvatting'] ?></p>
+						<p><?php echo limit_text($row['content'], 23) ?></p>
 						<a href="<?php echo url('tutorialDetail') . $row['link']; ?>" class="leesMeer">Lees meer</a>
 					</div>
 				</div>
 			<?php endforeach; ?>
 		</div>
 
-		<a href="#" class="meerProjecten blogsButton">
-			<button>Zie meer</button>
+		<a href="<?php echo url('tutorials') ?>" class="blogsButton">
+			<button class="blueButton">Zie meer</button>
 		</a>
 	</section>
 
-	<section id="contact">
-		<div class="contactMe">
-			<h2>Meer informatie?</h2>
-			<h3>Neem contact met me op!</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
-				lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
-				velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
-			<a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
-				<button>Contact</button>
-			</a>
-		</div>
-
-		<div class="heroAbout contactHero">
-			<img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
-		</div>
-	</section>
+	<?php if ($this->section('contactSection')) : ?>
+		<?php echo $this->section('contactSection') ?>
+	<?php else : ?>
+		<?php echo $this->fetch('_contactSection') ?>
+	<?php endif ?>
 
 	<?php if ($this->section('footer')) : ?>
 		<?php echo $this->section('footer') ?>

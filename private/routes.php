@@ -19,7 +19,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	// Projecten Routes
 	SimpleRouter::get( '/projecten', 'ProjectenController@projecten')->name( 'projecten' );
-	SimpleRouter::get( '/projecten/{link}', 'ProjectenController@projectenDetail')->name( 'projectenDetail' );
+	SimpleRouter::get( '/projecten/{link}', 'ProjectenController@projectenDetail', ['defaultParameterRegex' => '[\w\-]+'])->name( 'projectenDetail' );
 
 	// Tutorial Routes
 	SimpleRouter::get( '/tutorials', 'TutorialController@tutorials')->name( 'tutorials' );

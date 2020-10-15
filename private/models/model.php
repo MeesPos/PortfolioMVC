@@ -12,7 +12,11 @@ function getProjectsHome()
 function getTutorialsHome()
 {
     $connection = dbConnect();
-    $sql        = 'SELECT * FROM `tutorials` ORDER BY rand() LIMIT 4';
+    $sql        = 'SELECT * FROM `tutorials`
+    INNER JOIN `catos`
+    ON `tutorials`.`id` = `catos`.`post_id`
+    WHERE `tutorials`.`id` = `catos`.`post_id`
+    ORDER BY rand() LIMIT 4';
     $statement  = $connection->query($sql);
 
     return $statement->fetchAll();
@@ -50,16 +54,17 @@ function getAllProjectDetails($link)
     return $statement->fetchAll();
 }
 
-function getMadeWith()
+function getMadeWith($row)
 {
     $connection = dbConnect();
-    $sql        = 'SELECT * 
-    FROM `projecten`
-    INNER JOIN `maakmethodes`
-    ON `projecten`.`id` = `maakmethodes`.`project_ID`
-    WHERE `projecten`.`id` = `maakmethodes`.`project_ID`';
-    $statement  = $connection->query($sql);
+    $sql        = 'SELECT * FROM `maakmethodes` WHERE project_ID = :id';
+    $statement  = $connection->prepare($sql);
 
+    $params = [
+        'id' => $row['id']
+    ];
+
+    $statement->execute($params);
     return $statement->fetchAll();
 }
 

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Mees Postma</title>
+    <?php foreach ($projectDetails as $row) { ?>
+    <title><?php echo $row['projectnaam'] ?> | Mees Postma</title>
     <link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 </head>
@@ -18,8 +19,7 @@
 
     <header id="subHeader">
         <div class="subContent">
-            <?php foreach ($projectDetails as $row) { ?>
-                <h1><?php echo $row['projectnaam']; ?></h1><?php } ?>
+            <h1><?php echo $row['projectnaam']; ?></h1><?php } ?>
         </div>
     </header>
 
@@ -51,17 +51,20 @@
             <?php foreach ($projectDetails as $row) : ?>
                 <h2 class="overProject">Over dit <span style="font-weight: bold;">Project</span></h2>
                 <h3 class="soortProject">
-                    <p><?php echo $row['categorie'] ?></p>
+                    <p><?php echo $row['soort'] ?></p>
                 </h3>
-                <p class="projectSamenvatting"><?php echo $row['samenvatting'] ?></p>
+                <p class="projectSamenvatting"><?php echo limit_text($row['content'], 30); ?></p>
                 <div class="specificatiesProj">
                     <div class="gemaaktMet">
                         <h3>Gemaakt met: </h3>
-                        <?php foreach ($madeWith as $made) : ?>
-                            <div class="madeItem">
-                                <p><?php echo $made['naam']; ?>,</p>
-                            </div>
-                        <?php endforeach; ?>
+                        <div class="madeItem">
+                            <?php foreach ($madeWith as $made) : ?>
+                                <?php $methods[] = $made['naam'];
+                                $result = implode(', ', $methods); ?>
+                            <?php endforeach;
+
+                            echo $result; ?>
+                        </div>
                     </div>
 
                     <div class="taal">
@@ -69,17 +72,23 @@
                         <p><?php echo $row['taal']; ?></p>
                     </div>
                 </div>
+
+                <div class="gemaaktButtons">
+                    <?php if ($row['github'] === NULL) { ?>
+                        <a href="<?php echo $row['liveversie'] ?>" target="_blank">
+                            <button>Live versie</button>
+                        </a>
+                    <?php } else { ?>
+                        <a href="<?php echo $row['liveversie'] ?>" target="_blank">
+                            <button>Live versie</button>
+                        </a>
+
+                        <a href="<?php echo $row['github'] ?>" target="_blank">
+                            <button><i class="fab fa-github"></i> Github</button>
+                        </a>
+                    <?php } ?>
+                </div>
             <?php endforeach; ?>
-
-            <div class="gemaaktButtons">
-                <a href="#">
-                    <button>Live versie</button>
-                </a>
-
-                <a href="#">
-                    <button><i class="fab fa-github"></i> Github</button>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -90,22 +99,11 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contactMe">
-            <h2>Meer informatie?</h2>
-            <h3>Neem contact met me op!</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at enim at
-                lacus viverra accumsan. Vivamus sodales porttitor lorem, non auctor
-                velit cursus sed. Vivamus tristique sed quam eu laoreet.</p>
-            <a href="<?php echo url('contact') ?>" class="meerProjecten contactButton">
-                <button>Contact</button>
-            </a>
-        </div>
-
-        <div class="heroAbout contactHero">
-            <img src="<?php echo site_url('/img/contactMe.png') ?>" alt="Mees Postma, Over mij Illustration">
-        </div>
-    </section>
+    <?php if ($this->section('contactSection')) : ?>
+        <?php echo $this->section('contactSection') ?>
+    <?php else : ?>
+        <?php echo $this->fetch('_contactSection') ?>
+    <?php endif ?>
 
     <?php if ($this->section('footer')) : ?>
         <?php echo $this->section('footer') ?>

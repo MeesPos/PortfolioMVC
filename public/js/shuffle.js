@@ -13,17 +13,12 @@ $("#all").on("click", function () {
     $(this).addClass("activeProject");
 });
 $("#btn-websites").on("click", function () {
-    shuffleInstance.filter('website');
+    shuffleInstance.filter('Website');
     $('button.activeProject').removeClass('activeProject');
     $(this).addClass("activeProject");
 });
-$("#btn-city").on("click", function () {
-    shuffleInstance.filter('city');
-    $('button.activeProject').removeClass('activeProject');
-    $(this).addClass("activeProject");
-});
-$("#btn-nature").on("click", function () {
-    shuffleInstance.filter('nature');
+$("#btn-optimalisatie").on("click", function () {
+    shuffleInstance.filter('Optimalisatie');
     $('button.activeProject').removeClass('activeProject');
     $(this).addClass("activeProject");
 });

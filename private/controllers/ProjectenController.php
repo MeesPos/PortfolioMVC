@@ -22,7 +22,9 @@ class ProjectenController {
     public function projectenDetail($link) {
 
         $projectDetails = getAllProjectDetails($link);
-        $madeWith       = getMadeWith();
+        foreach($projectDetails as $row) {
+            $madeWith = getMadeWith($row);
+        }
 
         $template_engine = get_template_engine();
         echo $template_engine->render('projectDetail', ['projectDetails' => $projectDetails, 'madeWith' => $madeWith]);

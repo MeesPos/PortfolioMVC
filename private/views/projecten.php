@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Mees Postma</title>
+    <title>Projecten | Mees Postma</title>
     <link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
 </head>
 
@@ -25,13 +25,12 @@
         <div class="buttons">
             <button id='all' class="activeProject">Alles</button>
             <button id='btn-websites'>Websites</button>
-            <button id='btn-city'>Naam</button>
-            <button id='btn-nature'>Naam</button>
+            <button id='btn-optimalisatie'>Optimalisatie</button>
         </div>
 
         <div class="projectShuffle containerProject">
             <?php foreach ($projects as $row) : ?>
-                <div class="picture-item column" data-groups='["<?php echo $row['categorie']; ?>"]'>
+                <div class="picture-item column" data-groups='["<?php echo $row['soort']; ?>"]'>
                     <div class="aspect aspect--16x9">
                         <div class="aspect__inner">
                             <a href="<?php echo url('projectenDetail') . $row['link']; ?>">
@@ -39,7 +38,7 @@
                                     <img class="projectPicture" src="https://mk0designbombsg12amh.kinstacdn.com/wp-content/uploads/2018/04/kuon-yagi.jpg" alt="<?php echo $row['projectnaam'] ?> Image, Mees Postma">
                                     <div class="projectInfo">
                                         <h4><?php echo $row['projectnaam'] ?></h4>
-                                        <p><?php echo $row['categorie'] ?>Tst</p>
+                                        <p><?php echo $row['soort'] ?></p>
                                     </div>
                                 </div>
                             </a>
@@ -51,6 +50,12 @@
             <div class="col-1@sm my-sizer-element"></div>
         </div>
     </section>
+
+    <?php if ($this->section('contactSection')) : ?>
+		<?php echo $this->section('contactSection') ?>
+	<?php else : ?>
+		<?php echo $this->fetch('_contactSection') ?>
+	<?php endif ?>
 
     <?php if ($this->section('footer')) : ?>
         <?php echo $this->section('footer') ?>

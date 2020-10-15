@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
 
+// Vaste Componenten
+@import 'vars';
+@import 'nav';
+@import 'footer';
+
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +19,18 @@
     }
 }
 
+.blueButton {
+    background-color: $blue;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 18px 55px;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
 body, html{
     overflow-x: hidden;
 }
@@ -21,11 +38,6 @@ body, html{
 a{
     text-decoration: none;
 }
-
-// Vaste Componenten
-@import 'vars';
-@import 'nav';
-@import 'footer';
 
 // Home pagina
 @import 'header';
