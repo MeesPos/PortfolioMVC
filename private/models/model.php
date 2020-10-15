@@ -544,3 +544,61 @@ function addNewMethods($results, $id)
         $statement->execute($params);
     }
 }
+
+function uploadSkill($results) {
+    $connection = dbConnect();
+
+    $sql = 'INSERT INTO `skills` (`fa-class`, `skillnaam`, `niveau`) VALUES (:icon, :naam, :niveau)';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'icon'   => $results['icon'],
+        'naam'   => $results['skill'],
+        'niveau' => $results['skillNiveau']
+    ];
+
+    $statement->execute($params);
+}
+
+function deleteSkill($id) {
+    $connection = dbConnect();
+
+    $sql = 'DELETE FROM `skills` WHERE `id` = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+}
+
+function getCurrentSkill($id) {
+    $connection = dbConnect();
+
+    $sql = 'SELECT * FROM skills WHERE id = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}
+
+function updateSkill($id, $results) {
+    $connection = dbConnect();
+
+    $sql = 'UPDATE skills SET `fa-class` = :icon, `skillnaam` = :naam, `niveau` = :niveau WHERE id = :id';
+    $statement = $connection->prepare($sql);
+
+    $params = [
+        'id'     => $id,
+        'icon'   => $results['icon'],
+        'naam'   => $results['skill'],
+        'niveau' => $results['skillNiveau']
+    ];
+
+    $statement->execute($params);
+}

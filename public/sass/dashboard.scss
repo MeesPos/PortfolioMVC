@@ -4,6 +4,7 @@
 @import 'addPost';
 @import 'allPosts';
 @import 'addProject';
+@import 'skills';
 
 body{
     margin: 0;
@@ -239,7 +240,7 @@ label #sidebar_btn{
     display: block;
   }
 
-  .panel-heading, .panel-body, .postEditor, #allPosts{
+  .panel-heading, .panel-body, .postEditor, #allPosts, #addSkill{
     width: 90vw;
   }
 }

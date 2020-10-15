@@ -37,6 +37,13 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get('/admin/projecten/maken', 'AdminController@projectMaken')->name('projectMaken');
 	SimpleRouter::post('/admin/projecten/upload', 'AdminController@uploadProject')->name('uploadProject');
 	SimpleRouter::get('/admin/projecten', 'AdminController@allProjects')->name('allProjects');
+	SimpleRouter::get('/admin/skills', 'AdminController@skills')->name('skills');
+	SimpleRouter::post('/admin/skills/upload', 'AdminController@skillsUpload')->name('insertSkill');
+
+	// Skill editen/verwijderen
+	SimpleRouter::get('/admin/skills/verwijderen/{id}', 'AdminController@deleteSkill')->name('deleteSkill');
+	SimpleRouter::get('/admin/skills/wijzigen/{id}', 'AdminController@updateSkill')->name('updateSkill');
+	SimpleRouter::post('/admin/skills/update/{id}', 'AdminController@wijzigSkill')->name('wijzigSkill');
 
 	// Project editen/verwijderen
 	SimpleRouter::post('/admin/projecten/verwijderen/{id}', 'AdminController@deleteProject')->name('deleteProject');

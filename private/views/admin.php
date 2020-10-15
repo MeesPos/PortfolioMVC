@@ -18,7 +18,8 @@
 
     <div class="content" id="content">
         <!-- Github stats -->
-            <h1>Dit is de eerste pagina</h1>
+            <h1 style="text-align: center;">Home</h1>
+            <p style="text-align: center;">Content moet nog komen!</p>
         <!-- Agenda -->
     </div>
 

@@ -208,7 +208,6 @@ class AdminController
 
         loginCheck();
         $errors = [];
-        print_r($_POST);
 
         $headerImage = uploadHeaderImage($_FILES, $errors);
 
@@ -252,11 +251,53 @@ class AdminController
     }
 
     public function updateProject($id) {
+        loginCheck();
         updateTheProject($_POST, $id);
         deleteProjectMethodes($id);
         addNewMethods($_POST, $id);
 
         $overviewURL = url('allProjects');
+        redirect($overviewURL);
+    }
+
+    public function skills() {
+        loginCheck();
+        $skills = getSkills();
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('adminSkills', ['skills' => $skills]);
+    }
+
+    public function skillsUpload() {
+        loginCheck();
+        uploadSkill($_POST);
+
+        $overviewURL = url('skills');
+        redirect($overviewURL);
+    }
+
+    public function deleteSkill($id) {
+        loginCheck();
+        deleteSkill($id);
+
+        $overviewURL = url('skills');
+        redirect($overviewURL);
+    }
+
+    public function updateSkill($id) {
+        loginCheck();
+        $currentSkill = getCurrentSkill($id);
+        $skills = getSkills();
+
+        $template_engine = get_template_engine();
+        echo $template_engine->render('adminSkillsWijzigen', ['theSkill' => $currentSkill, 'skills' => $skills]);
+    }
+
+    public function wijzigSkill($id) {
+        loginCheck();
+        updateSkill($id, $_POST);
+
+        $overviewURL = url('skills');
         redirect($overviewURL);
     }
 }
