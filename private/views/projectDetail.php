@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php foreach ($projectDetails as $row) { ?>
-    <title><?php echo $row['projectnaam'] ?> | Mees Postma</title>
-    <link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+        <title><?php echo $row['projectnaam'] ?> | Mees Postma</title>
+        <link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 </head>
 
 <body class="projectDetail subPage">
@@ -27,22 +27,33 @@
         <div class="container">
             <div id="js-gallery" class="gallery">
                 <div class="gallery__hero">
-                    <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg">
+                    <?php $imageCount = 0;
+                    foreach ($images as $row) { ?>
+                        <img src="<?php echo site_url('/img/projectImages/' . $row['image_naam']) ?>">
+                    <?php $imageCount += 1;
+
+                        if ($imageCount >= 1) {
+                            break;
+                        }
+                    } ?>
                 </div>
 
                 <div class="gallery__thumbs">
-                    <a href="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" data-gallery="thumb" class="is-active">
-                        <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg">
-                    </a>
-                    <a href="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" data-gallery="thumb">
-                        <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg">
-                    </a>
-                    <a href="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" data-gallery="thumb">
-                        <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg">
-                    </a>
-                    <a href="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg" data-gallery="thumb">
-                        <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/02/Boat-Trips.jpg">
-                    </a>
+                    <?php $classCount = 0;
+                    foreach($images as $row) :
+                        if($classCount === 0) { ?>
+                        <a href="<?php echo site_url('/img/projectImages/' . $row['image_naam']) ?>" data-gallery="thumb" class="is-active">
+                            <img src="<?php echo site_url('/img/projectImages/' . $row['image_naam']) ?>">
+                        </a>
+
+                        <?php $classCount += 1; ?>
+                        
+                        <?php } else { ?>
+                            <a href="<?php echo site_url('/img/projectImages/' . $row['image_naam']) ?>" data-gallery="thumb">
+                                <img src="<?php echo site_url('/img/projectImages/' . $row['image_naam']) ?>">
+                            </a>
+                        <?php }
+                    endforeach; ?>
                 </div>
             </div>
         </div>
@@ -116,6 +127,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js"></script>
     <script src="https://kit.fontawesome.com/a82e000026.js"></script>
     <script src="<?php echo site_url('/js/gallery.js') ?>"></script>
-    </body=>
+    </body>
 
 </html>

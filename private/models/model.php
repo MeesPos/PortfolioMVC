@@ -68,6 +68,19 @@ function getMadeWith($row)
     return $statement->fetchAll();
 }
 
+function getProjectImages($row) {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `projectimages` WHERE `project_id` = :id';
+    $statement  = $connection->prepare($sql);
+
+    $params = [
+        'id' => $row['id']
+    ];
+
+    $statement->execute($params);
+    return $statement->fetchAll();
+}
+
 function getTutorials()
 {
     $connection = dbConnect();

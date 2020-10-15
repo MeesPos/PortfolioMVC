@@ -24,9 +24,10 @@ class ProjectenController {
         $projectDetails = getAllProjectDetails($link);
         foreach($projectDetails as $row) {
             $madeWith = getMadeWith($row);
+            $images = getProjectImages($row);
         }
 
         $template_engine = get_template_engine();
-        echo $template_engine->render('projectDetail', ['projectDetails' => $projectDetails, 'madeWith' => $madeWith]);
+        echo $template_engine->render('projectDetail', ['projectDetails' => $projectDetails, 'madeWith' => $madeWith, 'images' => $images]);
     }
 }
