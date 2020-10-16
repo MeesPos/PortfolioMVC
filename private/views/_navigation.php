@@ -1,6 +1,6 @@
 <nav id="navbar">
     <div id="logo">
-
+        <img src="<?php echo site_url('/img/logo/logoZonderTekst.png') ?>" alt="Logo van Mees Postma">
     </div>
 
     <div id="navbar-left">
@@ -17,9 +17,9 @@
                 <a href="<?php echo url('projecten') ?>" <?php if (current_route_is('projecten')) : ?> class="active" <?php endif ?>>Projecten</a>
             </li>
 
-            <li class="menu-items menu-item">
-                <a href="<?php echo url('tutorials') ?>" <?php if (current_route_is('tutorials')) : ?> class="active" <?php endif ?>>Tutorials</a>
-            </li>
+            <!-- <li class="menu-items menu-item"> -->
+                <!-- <a href="<?php echo url('tutorials') ?>" <?php if (current_route_is('tutorials')) : ?> class="active" <?php endif ?>>Tutorials</a> -->
+            <!-- </li> -->
 
             <li class="menu-items menu-item contactNav">
                 <a id="contactNav" href="<?php echo url('contact') ?>" <?php if (current_route_is('contact')) : ?> class="active" <?php endif ?>>Contact</a>

@@ -1,0 +1,60 @@
+.errorimage{
+    width: 40vw;
+    display: block;
+    margin: 0 auto;
+    margin-top: 16vh;
+}
+
+#error{
+    padding-bottom: 3vh;
+    text-align: center;
+    & > h2{
+        margin-top: 2vh;
+        font-size: 30px;
+        color: $darkblue;
+    }
+}
+
+.errorPage{
+    overflow: hidden;
+    & > footer{
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .errorimage{
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .errorimage{
+        width: 80vw;
+    }
+
+    #error > h2{
+        font-size: 25px;
+    }
+}
+
+@media screen and(max-width: 500px) {
+    .errorPage{
+        overflow: visible;
+        & > footer{
+            position: relative;
+        }
+    }
+}
+
+@media screen and (max-width: 285px) {
+    #error > h2{
+        font-size: 20px;
+    }
+
+    #error > a > .blueButton{
+        padding: 13px 40px!important;
+    }
+}

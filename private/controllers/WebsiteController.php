@@ -29,4 +29,10 @@ class WebsiteController {
 		$template_engine = get_template_engine();
 		echo $template_engine->render('about', ['skills' => $getSkills]);
 	}
+
+	public function notFound() {
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('404');
+	}
 }

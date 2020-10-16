@@ -59,14 +59,17 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::post( '/admin/taken/add', 'AdminController@addTask')->name('addTask');
 	SimpleRouter::post( '/admin/taken/delete', 'AdminController@deleteTask')->name('deleteTask');
 	SimpleRouter::post( '/admin/taken/update', 'AdminController@updateTask')->name('updateTask');
+	
+	// 404 Error
+	SimpleRouter::get('/not-found', 'WebsiteController@notFound');
 
-	SimpleRouter::get( '/not-found', function () {
-		http_response_code( 404 );
+	SimpleRouter::error(function(Request $request, \Exception $exception) {
+    	if($exception instanceof NotFoundHttpException && $exception->getCode() === 404) {
+    	    response()->redirect('/not-found');
+    	}
+	});
 
-		return '404 Page not Found';
-	} );
-
-} );
+});
 
 SimpleRouter::error( function ( Request $request, \Exception $exception ) {
 	if ( $exception instanceof NotFoundHttpException && $exception->getCode() === 404 ) {
