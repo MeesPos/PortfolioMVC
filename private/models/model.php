@@ -524,7 +524,7 @@ function getCurrentImages($id) {
 
 function updateTheProject($results, $id)
 {
-    $url = $stringURL = strtolower(str_replace(' ', '-', $results['projectnaam']));
+    $url = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
     echo $stringURL;
 
     $connection = dbConnect();

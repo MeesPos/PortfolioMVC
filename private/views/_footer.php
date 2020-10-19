@@ -10,14 +10,13 @@
         <div class="footer-links">
             <h3>Informatie</h3>
             <a href="<?php echo url('over') ?>">Over mij</a><br>
-            <a href="#">Projecten</a><br>
-            <a href="#">Tutorials</a>
+            <a href="<?php echo url('projecten') ?>">Projecten</a><br>
+            <a href="<?php echo url('tutorials') ?>">Tutorials</a>
         </div>
 
         <div class="footer-links">
             <h3>Social Media</h3>
             <a href="https://www.linkedin.com/in/mees-postma-a911b1196/" target="_blank">LinkedIn</a><br>
-            <a href="https://www.facebook.com/meespostma2002" target="_blank">Facebook</a>
         </div>
     </div>
 

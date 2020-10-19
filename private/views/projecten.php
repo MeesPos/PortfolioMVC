@@ -63,7 +63,7 @@
                         <div class="aspect__inner">
                             <a href="<?php echo url('projectenDetail') . $row['link']; ?>">
                                 <div class="projectCard">
-                                    <img class="projectPicture" src="https://mk0designbombsg12amh.kinstacdn.com/wp-content/uploads/2018/04/kuon-yagi.jpg" alt="<?php echo $row['projectnaam'] ?> Image, Mees Postma">
+                                    <img class="projectPicture" src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" alt="<?php echo $row['projectnaam'] ?> Image, Mees Postma">
                                     <div class="projectInfo">
                                         <h4><?php echo $row['projectnaam'] ?></h4>
                                         <p><?php echo $row['soort'] ?></p>

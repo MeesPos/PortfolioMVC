@@ -155,7 +155,7 @@
   }
 
   .contactNav > a {
-    font-weight: bold !important;
+    background: none;
   }
 
   body {
@@ -1366,6 +1366,10 @@ figure:nth-child(2n+1) {
 }
 .projectDetails img {
   max-width: 100%;
+}
+
+.projectSamenvatting {
+  max-width: 60% !important;
 }
 
 .container {
