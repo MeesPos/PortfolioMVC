@@ -112,7 +112,6 @@
 				<div class="blogCard">
 					<img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" alt="<?php echo $row['titel'] ?>">
 					<div class="blogInfo">
-						<p class="categorie"><?php echo $row['cat_name'] ?></p>
 						<h3><?php echo $row['titel'] ?></h3>
 						<p><?php echo limit_text($row['content'], 23) ?></p>
 						<a href="<?php echo url('tutorialDetail') . $row['link']; ?>" class="leesMeer">Lees meer</a>

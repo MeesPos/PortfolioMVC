@@ -12,13 +12,22 @@ function getProjectsHome()
 function getTutorialsHome()
 {
     $connection = dbConnect();
-    $sql        = 'SELECT * FROM `tutorials`
-    INNER JOIN `catos`
-    ON `tutorials`.`id` = `catos`.`post_id`
-    WHERE `tutorials`.`id` = `catos`.`post_id`
-    ORDER BY rand() LIMIT 4';
-    $statement  = $connection->query($sql);
+    $sql        = 'SELECT * FROM `tutorials` ORDER BY rand() LIMIT 4';
+    $statement = $connection->query($sql);
 
+    return $statement->fetchAll();
+}
+
+function getCatosForTutorials($id) {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `catos` WHERE post_id = :id';
+    $statement  = $connection->prepare($sql);
+
+    $params = [
+        'id' => $id
+    ];
+
+    $statement->execute($params);
     return $statement->fetchAll();
 }
 

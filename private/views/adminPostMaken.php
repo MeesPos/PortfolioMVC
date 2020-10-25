@@ -80,8 +80,15 @@
     <script>
         tinymce.init({
             selector: '#mytextarea',
-            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker tinydrive image imagetools code link',
-            toolbar: "insertfile image link | code" + 'undo redo | formatselect | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
+            plugins: 'codesample a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker tinydrive image imagetools code link',
+            toolbar: "codesample insertfile image link | code" + 'undo redo | formatselect | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
+            codesample_languages: [
+                {text: 'HTML/XML', value: 'markup'},
+                {text: 'JavaScript', value: 'javascript'},
+                {text: 'CSS', value: 'css'},
+                {text: 'PHP', value: 'php'},
+                {text: 'Python', value: 'python'}
+            ],
             menu: {
                 insert: {
                     title: "Insert",

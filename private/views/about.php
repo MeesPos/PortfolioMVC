@@ -74,6 +74,10 @@
                 <br>
                 Wil je meer weten over mij? Kijk verder op deze pagina of neem <a href="#">Contact</a> met me op.
             </p>
+
+            <a href="<?php echo site_url('/img/cv-mees-postma.pdf') ?>" target="_blank">
+                <button class="blueButton">Mijn CV</button>
+            </a>
     </section>
 
     <section id="skillset">

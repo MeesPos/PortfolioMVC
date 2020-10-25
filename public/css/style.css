@@ -1544,11 +1544,25 @@ textarea:focus, input:focus {
   width: 80%;
   margin-left: 15%;
   margin-top: 5vh;
+  line-height: 1.5;
 }
 #blogContent > .blogTekst > h1 {
   margin-bottom: 20px;
   font-size: 30px;
   text-transform: uppercase;
+}
+#blogContent > .blogTekst > ul, #blogContent > .blogTekst > ol {
+  margin-left: 50px;
+}
+#blogContent > .blogTekst > .language-markup {
+  padding: 16px;
+  margin: 0;
+  font-size: 85%;
+  background-color: #fafbfc;
+  border-radius: 6px;
+  line-height: 3;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 #blogContent > aside {
   margin-top: 5vh;

@@ -38,10 +38,22 @@
         width: 80%;
         margin-left: 15%;
         margin-top: 5vh;
+        line-height: 1.5;
         & > h1{
             margin-bottom: 20px;
             font-size: 30px;
             text-transform: uppercase;
+        } & > ul, > ol{
+            margin-left: 50px;
+        } & > .language-markup{
+            padding: 16px;
+            margin: 0;
+            font-size: 85%;
+            background-color: #fafbfc;
+            border-radius: 6px;
+            line-height: 3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
     } & > aside{
         margin-top: 5vh;
@@ -83,6 +95,8 @@
 #tutorialAside{
     width: 75%;
 }
+
+
 
 @media screen and (max-width: 1300px) {
     #blogContent > .blogTekst{

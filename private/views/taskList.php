@@ -85,10 +85,8 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-
             $(document).on('submit', '#to_do_form', function(event) {
                 event.preventDefault();
-
                 if ($('#task_name').val() == '') {
                     $('#message').html('<div class="alert alert-danger">Enter Task Details</div>');
                     return false;
