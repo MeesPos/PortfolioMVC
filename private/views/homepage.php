@@ -22,6 +22,7 @@
 	Ook beheer ik mijn eigen bedrijf: Hubsor. Neem een kijkje op mijn website voor meer informatie.">
 	<meta name="keywords" content="Mees Postma, Mees, Postma, Mediacollege, Amsterdam, Mediacollege Amsterdam, Nederland, Software developer,
     Website developer, Hubsor, Hubsor website, Hubsor eigenaar, Hubsor Mees, Websites, Website, SEO, The Netherlands, Holland, Dutch">
+	<meta name="google-site-verification" content="KyyrwHl-VMXP8gcxRgX-wfrQCp1CZUQ-uzCXDjcJ5Vw" />
 	<link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152808621-1"></script>
     <script>

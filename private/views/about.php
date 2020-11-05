@@ -72,7 +72,7 @@
                 Mijn interesse lag er altijd, het begon bij simpele <strong>HTML</strong> websites, of een <strong>Wordpress</strong> template gebruiken.
                 Maar na een tijdje wou ik toch meer leren over websites. Toen ben ik terecht gekomen bij het Mediacollege.<br>
                 <br>
-                Wil je meer weten over mij? Kijk verder op deze pagina of neem <a href="#">Contact</a> met me op.
+                Wil je meer weten over mij? Kijk verder op deze pagina of neem <a href="<?php echo url('contact') ?>">Contact</a> met me op.
             </p>
 
             <a href="<?php echo site_url('/img/cv-mees-postma.pdf') ?>" target="_blank">
