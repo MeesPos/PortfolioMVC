@@ -11,7 +11,7 @@
             <h3>Informatie</h3>
             <a href="<?php echo url('over') ?>">Over mij</a><br>
             <a href="<?php echo url('projecten') ?>">Projecten</a><br>
-            <a href="<?php echo url('tutorials') ?>">Tutorials</a>
+            <!-- <a href="<?php echo url('tutorials') ?>">Tutorials</a> -->
         </div>
 
         <div class="footer-links">

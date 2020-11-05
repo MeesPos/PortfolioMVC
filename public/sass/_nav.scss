@@ -11,7 +11,7 @@
     z-index: 999;
 }
 
-#logo > img{
+#logo > a > img{
     height: 50px;
     margin-left: 0vw;
 }
@@ -69,7 +69,7 @@
 }
 
 @media screen and (max-width: 1550px){
-    #logo > img{
+    #logo > a > img{
         margin-left: -5vw;
     }
 
@@ -93,7 +93,7 @@
 }
 
 @media screen and (max-width: 1250px) {
-    #logo > img{
+    #logo > a > img{
         margin-left: -2vw;
     }
 
@@ -112,6 +112,11 @@
     #homeHeader{
         grid-template-columns: 1fr!important;
         grid-template-rows: 1fr 1fr!important;
+    }
+
+    .subPage > #navbar > #navbar-left > #menu-menu > .contactNav > a{
+        background: none!important;
+        color: $darkblue!important;
     }
 
     .shapeRight{

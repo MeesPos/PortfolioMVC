@@ -70,7 +70,7 @@
 }
 
 .introductionAboutMe{
-    margin-top: 14vh;
+    margin-top: 9vh;
 }
 
 @media screen and (max-width: 1500px){
@@ -99,5 +99,18 @@
     #skillset > p{
         width: 85vw;
         margin: 10px auto!important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .introductionAboutMe > p{
+        max-width: 90vw;
+        margin-top: 3vh;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .introductionAboutMe > h2{
+        font-size: 30px!important;
     }
 }

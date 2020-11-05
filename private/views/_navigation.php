@@ -1,6 +1,8 @@
 <nav id="navbar">
     <div id="logo">
-        <img src="<?php echo site_url('/img/logo/logoZonderTekst.png') ?>" alt="Logo van Mees Postma">
+        <a href="<?php echo url('home') ?>">
+            <img src="<?php echo site_url('/img/logo/logoZonderTekst.png') ?>" alt="Logo van Mees Postma">
+        </a>
     </div>
 
     <div id="navbar-left">

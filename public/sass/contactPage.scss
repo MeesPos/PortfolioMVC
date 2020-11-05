@@ -147,3 +147,23 @@ textarea:focus, input:focus{
         height: 150px;
     }
 }
+
+@media screen and (max-width: 300px) {
+    .gegevensValue{
+        margin-left: 20px;
+    }
+
+    .gegevens{
+        margin-top: 4vh;
+        & > h2{
+            font-size: 20px!important;
+        }
+    }
+
+    .contactForm{
+        margin-top: 2vh;
+        & > form > h2{
+            font-size: 20px!important;
+        }
+    }
+}

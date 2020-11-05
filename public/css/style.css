@@ -12,7 +12,7 @@
   z-index: 999;
 }
 
-#logo > img {
+#logo > a > img {
   height: 50px;
   margin-left: 0vw;
 }
@@ -70,7 +70,7 @@
 }
 
 @media screen and (max-width: 1550px) {
-  #logo > img {
+  #logo > a > img {
     margin-left: -5vw;
   }
 
@@ -92,7 +92,7 @@
   }
 }
 @media screen and (max-width: 1250px) {
-  #logo > img {
+  #logo > a > img {
     margin-left: -2vw;
   }
 
@@ -109,6 +109,11 @@
   #homeHeader {
     grid-template-columns: 1fr !important;
     grid-template-rows: 1fr 1fr !important;
+  }
+
+  .subPage > #navbar > #navbar-left > #menu-menu > .contactNav > a {
+    background: none !important;
+    color: #00117F !important;
   }
 
   .shapeRight {
@@ -682,6 +687,12 @@ a {
     font-size: 15px;
   }
 }
+@media screen and (max-width: 320px) {
+  .cardProject {
+    width: 250px;
+    height: 165px;
+  }
+}
 #blogs > h2 {
   text-align: center;
   color: #4834D4;
@@ -949,7 +960,7 @@ a {
 }
 
 .introductionAboutMe {
-  margin-top: 14vh;
+  margin-top: 9vh;
 }
 
 @media screen and (max-width: 1500px) {
@@ -977,6 +988,17 @@ a {
   #skillset > p {
     width: 85vw;
     margin: 10px auto !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  .introductionAboutMe > p {
+    max-width: 90vw;
+    margin-top: 3vh;
+  }
+}
+@media screen and (max-width: 400px) {
+  .introductionAboutMe > h2 {
+    font-size: 30px !important;
   }
 }
 #skillset {
@@ -1039,6 +1061,7 @@ a {
 @media screen and (max-width: 550px) {
   .skills {
     grid-template-columns: 1fr;
+    margin-left: 0;
   }
 }
 #contactMij {
@@ -1187,6 +1210,25 @@ textarea:focus, input:focus {
   .contactForm > form > textarea {
     width: 75vw;
     height: 150px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .gegevensValue {
+    margin-left: 20px;
+  }
+
+  .gegevens {
+    margin-top: 4vh;
+  }
+  .gegevens > h2 {
+    font-size: 20px !important;
+  }
+
+  .contactForm {
+    margin-top: 2vh;
+  }
+  .contactForm > form > h2 {
+    font-size: 20px !important;
   }
 }
 #projects {
@@ -1603,6 +1645,10 @@ textarea:focus, input:focus {
 }
 #blogContent > aside > .overBericht > p {
   padding: 15px 0;
+}
+
+.tutorialsBody section#contact {
+  margin-bottom: 10vh;
 }
 
 #tutorialAside {
