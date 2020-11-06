@@ -26,8 +26,8 @@
             <!-- </li> -->
 
             <li class="menu-item taal-switch">
-                <a class="nl" href="?lang=nl" <?php if($_SESSION['lang'] == 'nl') : ?> style="font-weight: bold;" <?php endif; ?>>NL</a> | 
-                <a class="en" href="?lang=en" <?php if($_SESSION['lang'] == 'en') : ?> style="font-weight: bold;" <?php endif; ?>>EN</a>
+                <a class="nl" href="<?php echo url('switch-language', ['language' => 'nl'])?>" <?php if(currentLanguage() == 'nl'): ?> style="font-weight: bold;" <?php endif; ?>>NL</a> | 
+                <a class="en" href="<?php echo url('switch-language', ['language' => 'en'])?>" <?php if(currentLanguage() == 'en'): ?> style="font-weight: bold;" <?php endif; ?>>EN</a>
             </li>
 
             <li class="menu-items menu-item contactNav">

@@ -39,4 +39,9 @@ class WebsiteController {
 		$template_engine = get_template_engine();
 		echo $template_engine->render('404', ['content' => $content]);
 	}
+
+	public function switchLanguage($language){
+		languageSwitch($language);
+		redirect($_SERVER['HTTP_REFERER']);
+	}
 }
