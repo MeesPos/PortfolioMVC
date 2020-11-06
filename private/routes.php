@@ -4,6 +4,7 @@ use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
 use Website\Controllers\AdminController;
+use Website\Controllers\WebsiteController;
 
 SimpleRouter::setDefaultNamespace( 'Website\Controllers' );
 
@@ -11,6 +12,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	SimpleRouter::get( '/', 'WebsiteController@home' )->name( 'home' );
 	SimpleRouter::get( '/over-mij', 'WebsiteController@about' )->name( 'over' );
+	SimpleRouter::get('/switch-language/{language}', 'WebsiteController@switchLanguage')->name('switch-lang');
 
 	// Contact Routes
 	SimpleRouter::get( '/contact', 'ContactController@contact' )->name( 'contact' );
