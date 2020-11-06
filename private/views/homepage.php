@@ -16,10 +16,8 @@
   	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-180x180.png') ?>" />
 	<title>Home | Mees Postma</title>
 	<meta name="og:title" property="og:title" content="Home | Mees Postma">
-	<meta name="description" content="Mijn naam is Mees Postma, ik ben een Software Developer en studeer aan het Mediacollege.
-	Ook beheer ik mijn eigen bedrijf: Hubsor. Neem een kijkje op mijn website voor meer informatie.">
-	<meta name="twitter:card" content="Mijn naam is Mees Postma, ik ben een Software Developer en studeer aan het Mediacollege.
-	Ook beheer ik mijn eigen bedrijf: Hubsor. Neem een kijkje op mijn website voor meer informatie.">
+	<meta name="description" content="<?php getContentCurrentLang('about_header', $content)?>">
+	<meta name="twitter:card" content="<?php getContentCurrentLang('about_header', $content)?>">
 	<meta name="keywords" content="Mees Postma, Mees, Postma, Mediacollege, Amsterdam, Mediacollege Amsterdam, Nederland, Software developer,
     Website developer, Hubsor, Hubsor website, Hubsor eigenaar, Hubsor Mees, Websites, Website, SEO, The Netherlands, Holland, Dutch">
 	<meta name="google-site-verification" content="KyyrwHl-VMXP8gcxRgX-wfrQCp1CZUQ-uzCXDjcJ5Vw" />
@@ -47,11 +45,7 @@
 	<header id="homeHeader">
 		<div class="infoMe">
 			<h1>Mees Postma</h1>
-			<p>Mijn naam is Mees Postma, ik studeer op het
-				Mediacollege. Hier leer ik om Software developer
-				te worden. Buitenschool beheer ik ook mijn eigen
-				bedrijf samen met een vriend van mij. Voor meer
-				informatie kijk verder op mijn website.</p>
+			<p><?php getContentCurrentLang('about_header', $content)?></p>
 			<a href="<?php echo url('contact') ?>">
 				<button class="blueButton">Contact</button>
 			</a>
@@ -68,22 +62,18 @@
 		</div>
 
 		<div class="aboutMe">
-			<h2>Over mij</h2>
+			<h2><?php getContentCurrentLang('about_title', $content)?></h2>
 			<h3>Mees Postma - Software developer</h3>
-			<p>Ik ben een Software Developer uit Nederland</strong>. In 2019 ben ik
-				begonnen met de opleiding Media developing op het Mediacollege Amsterdam.
-				Hier leer ik websites maken, optimaliseren en ontwerpen. Maar ook om professioneel
-				te worden op de markt. Wil je meer weten over mij? Lees dan meer dan over mij door
-				op de Lees Meer knop te drukken.</p>
+			<p><?php getContentCurrentLang('about_section', $content)?></p>
 			<a href="<?php echo url('over'); ?>">
-				<button class="blueButton">Lees Meer</button>
+				<button class="blueButton"><?php getContentCurrentLang('read_more', $content)?></button>
 			</a>
 		</div>
 	</section>
 
 	<section id="projecten">
-		<h2>Mijn Projecten</h2>
-		<p>Zie een kort overzicht van mijn werk</p>
+		<h2><?php getContentCurrentLang('projects_title', $content)?></h2>
+		<p><?php getContentCurrentLang('projects_desc', $content)?></p>
 		<div class="projects">
 			<?php foreach ($project as $row) : ?>
 				<div class="cardProject" onclick="this.classList.toggle('expanded')">
@@ -92,7 +82,7 @@
 						<div class="text-content">
 							<h1 class="title"><?php echo $row['projectnaam'] ?></h1>
 							<div class="body-text"><?php echo limit_text($row['content'], 15); ?></div>
-							<a href="<?php echo url('projectenDetail') . $row['link'] ?>" class="leesMeerProject">Lees meer ></a>
+							<a href="<?php echo url('projectenDetail') . $row['link'] ?>" class="leesMeerProject"><?php getContentCurrentLang('read_more', $content)?> ></a>
 						</div>
 					</div>
 					<svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="80">
@@ -102,7 +92,7 @@
 		</div>
 
 		<a href="<?php echo url('projecten') ?>" class="meerProjecten">
-			<button class="blueButton">Zie meer</button>
+			<button class="blueButton"><?php getContentCurrentLang('see_more', $content)?></button>
 		</a>
 	</section>
 

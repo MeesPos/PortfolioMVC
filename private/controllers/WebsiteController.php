@@ -14,25 +14,29 @@ class WebsiteController {
 
 	public function home() {
 
-		$getProjects = getProjectsHome();
+		$getProjects  = getProjectsHome();
 		$getTutorials = getTutorialsHome();
+		$content	  = getContent();
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('homepage', ['project' => $getProjects, 'tutorial' => $getTutorials]);
+		echo $template_engine->render('homepage', ['project' => $getProjects, 'tutorial' => $getTutorials, 'content' => $content]);
 
 	}
 
 	public function about() {
 
 		$getSkills = getSkills();
+		$content	  = getContent();
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('about', ['skills' => $getSkills]);
+		echo $template_engine->render('about', ['skills' => $getSkills, 'content' => $content]);
 	}
 
 	public function notFound() {
 
+		$content	  = getContent();
+
 		$template_engine = get_template_engine();
-		echo $template_engine->render('404');
+		echo $template_engine->render('404', ['content' => $content]);
 	}
 }

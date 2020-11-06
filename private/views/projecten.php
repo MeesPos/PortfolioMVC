@@ -45,7 +45,7 @@
 
     <header id="subHeader">
         <div class="subContent">
-            <h1>Projecten</h1>
+            <h1><?php getContentCurrentLang('projects_title', $content)?></h1>
         </div>
     </header>
 

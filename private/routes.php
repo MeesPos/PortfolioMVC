@@ -23,7 +23,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	// Tutorial Routes
 	SimpleRouter::get( '/tutorials', 'TutorialController@tutorials')->name( 'tutorials' );
-	SimpleRouter::get( '/tutorials/{link}', 'TutorialController@tutorialDetail', ['defaultParameterRegex' => '[\w\-]+'])->name( 'tutorialDetail' );
+	SimpleRouter::get( '/tutorials/{link}/', 'TutorialController@tutorialDetail', ['defaultParameterRegex' => '[\w\-]+'])->name( 'tutorialDetail' );
 
 	// Admin Routes
 	SimpleRouter::get( '/admin', 'AdminController@admin')->name('admin');

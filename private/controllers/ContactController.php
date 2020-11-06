@@ -13,8 +13,10 @@ namespace Website\Controllers;
 class ContactController {
     public function contact() {
 
+        $content = getContent();
+
 		$template_engine = get_template_engine();
-		echo $template_engine->render('contact');
+		echo $template_engine->render('contact', ['content' => $content]);
 	}
 
     public function contactSend()
@@ -47,7 +49,9 @@ class ContactController {
 
     public function contactBedankt() {
 
+        $content = getContent();
+
         $template_engine = get_template_engine();
-        echo $template_engine->render('contactBedankt');
+        echo $template_engine->render('contactBedankt', ['content' => $content]);
     }
 }

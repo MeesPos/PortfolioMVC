@@ -1,3 +1,5 @@
+<?php $content = getContent(); ?>
+
 <footer>
     <div class="underFooter"></div>
 
@@ -8,9 +10,9 @@
         </div>
 
         <div class="footer-links">
-            <h3>Informatie</h3>
-            <a href="<?php echo url('over') ?>">Over mij</a><br>
-            <a href="<?php echo url('projecten') ?>">Projecten</a><br>
+            <h3><?php getContentCurrentLang('information', $content)?></h3>
+            <a href="<?php echo url('over') ?>"><?php getContentCurrentLang('about_title', $content)?></a><br>
+            <a href="<?php echo url('projecten') ?>"><?php getContentCurrentLang('projects_title', $content)?></a><br>
             <!-- <a href="<?php echo url('tutorials') ?>">Tutorials</a> -->
         </div>
 

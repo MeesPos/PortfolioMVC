@@ -17,10 +17,8 @@
   	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-180x180.png') ?>" />
     <meta name="og:title" property="og:title" content="Over Mij | Mees Postma">
     <link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">
-    <meta name="description" content="Mijn naam is Mees Postma, ik ben een Software Developer en studeer aan het Mediacollege.
-    Ook beheer ik mijn eigen bedrijf: Hubsor. Als u meer over mij wilt weten, neem een kijkje op deze pagina.">
-    <meta name="twitter:card" content="Mijn naam is Mees Postma, ik ben een Software Developer en studeer aan het Mediacollege.
-    Ook beheer ik mijn eigen bedrijf: Hubsor. Als u meer over mij wilt weten, neem een kijkje op deze pagina.">
+    <meta name="description" content="<?php getContentCurrentLang('about_header', $content)?>">
+	<meta name="twitter:card" content="<?php getContentCurrentLang('about_header', $content)?>">
     <meta name="keywords" content="Mees Postma, Mees, Postma, Mediacollege, Amsterdam, Mediacollege Amsterdam, Nederland, Software developer,
     Website developer, Hubsor, Hubsor website, Hubsor eigenaar, Hubsor Mees, Websites, Website, SEO, The Netherlands, Holland, Dutch">
     <script src="https://kit.fontawesome.com/a82e000026.js"></script>
@@ -46,7 +44,7 @@
 
     <header id="subHeader">
         <div class="subContent">
-            <h1>Over mij</h1>
+            <h1><?php getContentCurrentLang('about_title', $content)?></h1>
         </div>
     </header>
 
@@ -56,35 +54,18 @@
         </div>
 
         <div class="introductionAboutMe">
-            <h3>Hallo, ik ben</h3>
+            <h3><?php getContentCurrentLang('about_hello', $content)?></h3>
             <h2>Mees Postma</h2>
-            <p><strong>Ik ben een Software Developer uit Nederland</strong>. In 2019 ben ik
-                begonnen met de opleiding Media developing op het Mediacollege Amsterdam.
-                Hier leer ik websites maken, optimaliseren en ontwerpen. Maar ook om professioneel
-                te worden op de markt.<br>
-                <br>
-                Buiten school ben ik ook bezig met mijn eigen bedrijf genaamd <a target="_blank" href="https://www.hubsor.nl/">Hubsor</a>
-                samen met <a target="_blank" href="http://cornellvdstraaten.nl/">Cornell van der Straaten</a>. Wij hadden allebei interesse
-                in het beginnen van een eigen bedrijf. Op Hubsor verkopen we online diensten zoals: Websites, SEO Optimalisatie & Online
-                marketing services. Voor meer informatie, bezoek de website van <a target="_blank" href="https://www.hubsor.nl/"></a>.<br>
-                <br>
-                Ik wist al een paar jaar voordat ik met mijn opleiding begon dat ik iets wou doen met websites.
-                Mijn interesse lag er altijd, het begon bij simpele <strong>HTML</strong> websites, of een <strong>Wordpress</strong> template gebruiken.
-                Maar na een tijdje wou ik toch meer leren over websites. Toen ben ik terecht gekomen bij het Mediacollege.<br>
-                <br>
-                Wil je meer weten over mij? Kijk verder op deze pagina of neem <a href="<?php echo url('contact') ?>">Contact</a> met me op.
-            </p>
+            <p><?php getContentCurrentLang('about_me', $content)?></p>
 
             <a href="<?php echo site_url('/img/cv-mees-postma.pdf') ?>" target="_blank">
-                <button class="blueButton">Mijn CV</button>
+                <button class="blueButton"><?php getContentCurrentLang('my_resume', $content)?></button>
             </a>
     </section>
 
     <section id="skillset">
-        <h2>Mijn skills</h2>
-        <p>In mijn tijd dat ik bezig ben met het maken van websites heb ik heel wat dingen geleerd. Ik leer bijvoorbeeld veel
-            programmeertalen kennen. Maar ik leer ook andere vaardigheden, zie hier een overzicht van mijn skills.
-        </p>
+        <h2><?php getContentCurrentLang('skills_title', $content)?></h2>
+        <p><?php getContentCurrentLang('skills_desc', $content)?></p>
         <div class="skills">
             <?php foreach ($skills as $row) : ?>
                 <div class="skill">

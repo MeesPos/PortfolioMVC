@@ -46,7 +46,13 @@
                 <div class="titleSection">
                     <input type="text" id="title" name="title" placeholder="Titel van het Bericht...">
                 </div>
+                
+                <h2 style="text-align: center;">Nederlandse tekst</h2>
                 <textarea id="mytextarea" name="mytextarea"></textarea>
+
+                <h2 style="text-align: center;">Engelse tekst</h2>
+                <textarea id="entextarea" name="entextarea"></textarea>
+
                 <div class="postInformation">
                     <div class="catoForm">
                         <h2>Categorie toevoegen</h2>
@@ -79,8 +85,8 @@
     <script src="https://cdn.tiny.cloud/1/a4porrdjpxoppis4n6hiyvrts4udnwno0xz3104dp9afltl0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-            selector: '#mytextarea',
-            plugins: 'codesample a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker tinydrive image imagetools code link',
+            selector: '#mytextarea, #entextarea',
+            plugins: 'codesample autolink lists media table tinydrive image imagetools code link',
             toolbar: "codesample insertfile image link | code" + 'undo redo | formatselect | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
             codesample_languages: [
                 {text: 'HTML/XML', value: 'markup'},

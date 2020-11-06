@@ -69,6 +69,15 @@
   color: white !important;
 }
 
+.taal-switch > .nl {
+  margin-left: 1.5vw;
+}
+.taal-switch > a {
+  font-weight: 400;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 1550px) {
   #logo > a > img {
     margin-left: -5vw;
@@ -188,7 +197,7 @@
   }
 
   .navbar-ul > li > a {
-    font-size: 18px;
+    font-size: 14px;
     margin-top: -5vh;
   }
 
@@ -327,7 +336,7 @@
 }
 @media screen and (max-width: 400px) {
   .navbar-ul > li > a {
-    font-size: 15.5px;
+    font-size: 13px;
   }
 }
 .nav-active {

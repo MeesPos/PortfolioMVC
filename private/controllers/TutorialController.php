@@ -25,8 +25,9 @@ class TutorialController {
 
         $getTutorials = getTutorialsByLink($link);
         $catoTutorial = getTutorialCato($getTutorials);
+        $content      = getContent();
 
         $template_engine = get_template_engine();
-        echo $template_engine->render('tutorialDetail', ['tutorial' => $getTutorials, 'catogorie' => $catoTutorial]);
+        echo $template_engine->render('tutorialDetail', ['tutorial' => $getTutorials, 'catogorie' => $catoTutorial, 'content' => $content]);
     }
 }

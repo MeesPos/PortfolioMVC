@@ -1,3 +1,5 @@
+<?php $content = getContent(); ?>
+
 <nav id="navbar">
     <div id="logo">
         <a href="<?php echo url('home') ?>">
@@ -12,20 +14,27 @@
             </li>
 
             <li class="menu-items menu-item">
-                <a href="<?php echo url('over') ?>" <?php if (current_route_is('over')) : ?> class="active" <?php endif ?>>Over mij</a>
+                <a href="<?php echo url('over') ?>" <?php if (current_route_is('over')) : ?> class="active" <?php endif ?>><?php getContentCurrentLang('about_title', $content)?></a>
             </li>
 
             <li class="menu-items menu-item">
-                <a href="<?php echo url('projecten') ?>" <?php if (current_route_is('projecten')) : ?> class="active" <?php endif ?>>Projecten</a>
+                <a href="<?php echo url('projecten') ?>" <?php if (current_route_is('projecten')) : ?> class="active" <?php endif ?>><?php getContentCurrentLang('projects_title', $content)?></a>
             </li>
 
             <!-- <li class="menu-items menu-item"> -->
                 <!-- <a href="<?php echo url('tutorials') ?>" <?php if (current_route_is('tutorials')) : ?> class="active" <?php endif ?>>Tutorials</a> -->
             <!-- </li> -->
 
+            <li class="menu-item taal-switch">
+                <a class="nl" href="?lang=nl" <?php if($_SESSION['lang'] == 'nl') : ?> style="font-weight: bold;" <?php endif; ?>>NL</a> | 
+                <a class="en" href="?lang=en" <?php if($_SESSION['lang'] == 'en') : ?> style="font-weight: bold;" <?php endif; ?>>EN</a>
+            </li>
+
             <li class="menu-items menu-item contactNav">
                 <a id="contactNav" href="<?php echo url('contact') ?>" <?php if (current_route_is('contact')) : ?> class="active" <?php endif ?>>Contact</a>
             </li>
+
+            
         </ul>
     </div>
 

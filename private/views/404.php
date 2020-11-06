@@ -39,9 +39,9 @@
     
     <section id="error">
         <img class="errorimage" src="<?php echo site_url('/img/404.png') ?>" alt="404">
-        <h2>Deze pagina is niet gevonden!</h2>
+        <h2><?php getContentCurrentLang('page_not_found', $content)?></h2>
         <a href="<?php echo url('home') ?>">
-            <button class="blueButton">Terug naar Home</button>
+            <button class="blueButton"><?php getContentCurrentLang('back_home', $content)?></button>
         </a>
     </section>
 

@@ -63,11 +63,8 @@
         <aside id="tutorialAside">
             <div class="aboutmeAside">
                 <img src="<?php echo site_url('/img/MeesFoto.jpeg') ?>" alt="Mees Postma">
-                <h2>Hallo, ik ben Mees Postma</h2>
-                <p>Ik ben een Software Developer uit Nederland. In 2019 ben ik begonnen
-                    met de opleiding Media developing op het Mediacollege Amsterdam. Hier
-                    leer ik websites maken, optimaliseren en ontwerpen. Maar ook om
-                    professioneel te worden op de markt.
+                <h2><?php getContentCurrentLang('about_hello', $content)?> Mees Postma</h2>
+                <p><?php getContentCurrentLang('aboutme_tutorial', $content)?>
                 </p>
 
                 <a href="#">Meer over mij ></a>
@@ -75,8 +72,8 @@
 
             <div class="overBericht">
                 <h2>Over dit bericht</h2>
-                <p><span style="font-weight: bold;">Geplaatst op:</span> <?php echo $row['datum'] ?></p>
-                <p><span style="font-weight: bold;">Categorieën:</span>
+                <p><span style="font-weight: bold;"><?php getContentCurrentLang('posted', $content)?>:</span> <?php echo $row['datum'] ?></p>
+                <p><span style="font-weight: bold;"><?php getContentCurrentLang('categories', $content)?>:</span> <?php echo $row['datum'] ?>:</span>
                     <?php $catos = array();
                     foreach ($catogorie as $row) {
                         $catos[] = $row['cat_name'];

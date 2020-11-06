@@ -85,6 +85,16 @@ function current_route_is($name)
 	return false;
 }
 
+function current_route() {
+	$route = request()->getLoadedRoute();
+
+	if($route) {
+		return $route;
+	}
+
+	return false;
+}
+
 function getSwiftMailer()
 {
 	$mail_config = get_config('MAIL');
@@ -233,4 +243,24 @@ function uploadAllImages(){
 	}
 
 	return array($fileNames);
+}
+
+function languageSwitch() {
+	if(!isset($_SESSION['lang'])) {
+		$_SESSION['lang'] = "nl";
+	} else if(isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_GET['lang'])) {
+		if($_GET['lang'] == "nl") {
+			$_SESSION['lang'] = "nl";
+		} else if($_GET['lang'] == "en"){
+			$_SESSION['lang'] = "en";
+		}
+	}
+}
+
+function getContentCurrentLang($place, $content) {
+	foreach($content as $row) {
+		if($place === $row['name']) {
+			echo $row['content_' . $_SESSION['lang']];
+		}
+	} 
 }

@@ -88,16 +88,16 @@
 
             <div class="projectInfoText">
                 <?php foreach ($projectDetails as $row) : ?>
-                    <h2 class="overProject">Over dit <span style="font-weight: bold;">Project</span></h2>
+                    <h2 class="overProject"><?php getContentCurrentLang('aboutproject_title', $content)?></h2>
                     <h3 class="soortProject">
                         <p><?php echo $row['soort'] ?></p>
                     </h3>
                     <div class="projectSamenvatting">
-                        <?php echo limit_text($row['content'], 30); ?>
+                        <?php echo limit_text($row['content_' . $_SESSION['lang']], 30); ?>
                     </div>
                     <div class="specificatiesProj">
                         <div class="gemaaktMet">
-                            <h3>Gemaakt met: </h3>
+                            <h3><?php getContentCurrentLang('made_with', $content)?>: </h3>
                             <div class="madeItem">
                                 <?php foreach ($madeWith as $made) : ?>
                                     <?php $methods[] = $made['naam'];
@@ -109,7 +109,7 @@
                         </div>
 
                         <div class="taal">
-                            <h3>Taal: </h3>
+                            <h3><?php getContentCurrentLang('language', $content)?>: </h3>
                             <p><?php echo $row['taal']; ?></p>
                         </div>
                     </div>
@@ -117,11 +117,11 @@
                     <div class="gemaaktButtons">
                         <?php if ($row['github'] === NULL) { ?>
                             <a href="<?php echo $row['liveversie'] ?>" target="_blank">
-                                <button>Live versie</button>
+                                <button><?php getContentCurrentLang('live_version', $content)?></button>
                             </a>
                         <?php } else { ?>
                             <a href="<?php echo $row['liveversie'] ?>" target="_blank">
-                                <button>Live versie</button>
+                                <button><?php getContentCurrentLang('live_version', $content)?></button>
                             </a>
 
                             <a href="<?php echo $row['github'] ?>" target="_blank">
@@ -135,8 +135,8 @@
 
         <section id="meerinfo">
             <div class="infoContent">
-                <h2>Meer over <span style="font-weight: bold;">dit Project</span></h2>
-                <p><?php echo $row['content']; ?></p>
+                <h2><?php getContentCurrentLang('more_about_project', $content)?></span></h2>
+                <p><?php echo $row['content_' . $_SESSION['lang']]; ?></p>
             </div>
         </section>
 

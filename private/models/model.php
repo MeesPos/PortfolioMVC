@@ -13,7 +13,15 @@ function getTutorialsHome()
 {
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `tutorials` ORDER BY rand() LIMIT 4';
-    $statement = $connection->query($sql);
+    $statement  = $connection->query($sql);
+
+    return $statement->fetchAll();
+}
+
+function getContent() {
+    $connection = dbConnect();
+    $sql        = 'SELECT * FROM `content`';
+    $statement  = $connection->query($sql);
 
     return $statement->fetchAll();
 }
@@ -173,15 +181,16 @@ function createPost($results, $headerImage, $errors)
     $date         = date("d-m-Y");
 
     $connection = dbConnect();
-    $sql = 'INSERT INTO `tutorials` ( `titel`, `link`, `datum`, `samenvatting`, `content`, `headerimage` )
-         VALUES (:titel, :link, :datum, :samenvatting, :content, :headerimage)';
+    $sql = 'INSERT INTO `tutorials` ( `titel`, `link`, `datum`, `samenvatting`, `content_nl`, `content_en`, `headerimage` )
+         VALUES (:titel, :link, :datum, :samenvatting, :content_nl, :content_en :headerimage)';
 
     $params = [
         'titel'        => $results['title'],
         'link'         => $url,
         'datum'        => $date,
         'samenvatting' => limit_text($results['mytextarea'], 40),
-        'content'      => $results['mytextarea'],
+        'content_nl'   => $results['mytextarea'],
+        'content_en'   => $results['entextarea'],
         'headerimage'  => $headerImage
     ];
 
@@ -340,14 +349,15 @@ function createProject($results, $headerImage, $errors)
     echo $stringURL;
 
     $connection = dbConnect();
-    $sql = 'INSERT INTO `projecten` ( `projectnaam`, `link`, `datum`, `content`, `headerimage`, `soort`, `taal`, `liveversie`, `github`)
-         VALUES (:titel, :link, :datum, :content, :headerimage, :soort, :taal, :liveversie, :github)';
+    $sql = 'INSERT INTO `projecten` ( `projectnaam`, `link`, `datum`, `content_nl`, `content_en`, `headerimage`, `soort`, `taal`, `liveversie`, `github`)
+         VALUES (:titel, :link, :datum, :content_nl, :content_en, :headerimage, :soort, :taal, :liveversie, :github)';
 
     $params = [
         'titel'        => $results['title'],
         'link'         => $url,
         'datum'        => $results['projectdate'],
-        'content'      => $results['mytextarea'],
+        'content_nl'   => $results['mytextarea'],
+        'content_en'   => $results['entextarea'],
         'headerimage'  => $headerImage,
         'soort'        => $results['soortproject'],
         'taal'         => $results['taal'],

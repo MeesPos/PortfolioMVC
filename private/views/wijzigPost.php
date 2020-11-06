@@ -88,7 +88,7 @@
     <script>
         tinymce.init({
             selector: '#mytextarea',
-            plugins: 'codesample a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker tinydrive image imagetools code link',
+            plugins: 'codesample autolink lists media table tinydrive image imagetools code link',
             toolbar: "codesample insertfile image link | code" + 'undo redo | formatselect | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
             codesample_languages: [
                 {text: 'HTML/XML', value: 'markup'},

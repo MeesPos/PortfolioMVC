@@ -52,10 +52,8 @@
 
     <section id="contactMij">
         <div class="gegevens">
-            <h2>Neem contact met me op</h2>
-            <p>Wil je meer weten over mij of wil je een samenwerking starten? Neem
-                contact met mij op via het contact formulier of via de volgende gegevens:
-            </p>
+            <h2><?php getContentCurrentLang('contact_title', $content)?></h2>
+            <p><?php getContentCurrentLang('contactpage_desc', $content)?></p>
 
             <div class="gegevensValues">
                 <div class="gegevensCo">
@@ -72,11 +70,11 @@
 
         <div class="contactForm">
             <form method="post" action="<?php echo url("contactSend") ?>">
-                <h2>Stuur me een Bericht</h2>
-                <input type="text" name="naam" placeholder="Uw naam..."><br>
-                <input type="text" name="email" placeholder="Uw email adres..."><br>
-                <textarea type="comment" name="bericht" placeholder="Uw bericht..."></textarea><br>
-                <input type="submit" name="submit" value="Verstuur">
+                <h2><?php getContentCurrentLang('send_title', $content)?></h2>
+                <input type="text" name="naam" placeholder="<?php getContentCurrentLang('your_name', $content)?>..."><br>
+                <input type="text" name="email" placeholder="<?php getContentCurrentLang('your_email', $content)?>..."><br>
+                <textarea type="comment" name="bericht" placeholder="<?php getContentCurrentLang('your_message', $content)?>..."></textarea><br>
+                <input type="submit" name="submit" value="<?php getContentCurrentLang('submit', $content)?>">
             </form>
         </div>
     </section>
