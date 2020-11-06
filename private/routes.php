@@ -3,8 +3,6 @@
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
-use Website\Controllers\AdminController;
-use Website\Controllers\WebsiteController;
 
 SimpleRouter::setDefaultNamespace( 'Website\Controllers' );
 
