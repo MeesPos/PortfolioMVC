@@ -43,8 +43,14 @@
         <div class="postEditor">
             <h1>Maak een Project!</h1>
             <form method="post" action="<?php echo url('uploadProject'); ?>" enctype="multipart/form-data">
+                <h2 style="text-align: center;">Nederlandse titel</h2>
                 <div class="longInput">
-                    <input type="text" id="title" name="title" placeholder="Titel van het Project...">
+                    <input type="text" id="title" name="title_nl" placeholder="Titel van het Project...">
+                </div>
+
+                <h2 style="text-align: center;">Engelste titel</h2>
+                <div class="longInput">
+                    <input type="text" id="title" name="title_en" placeholder="Titel van het Project...">
                 </div>
 
                 <h2 style="text-align: center;">Nederlandse tekst</h2>

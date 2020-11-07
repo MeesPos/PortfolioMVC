@@ -80,9 +80,9 @@
 					<img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" class="label" alt="Project (Nummer) van Mees Postma">
 					<div class="text">
 						<div class="text-content">
-							<h1 class="title"><?php echo $row['projectnaam'] ?></h1>
-							<div class="body-text"><?php echo limit_text($row['content'], 15); ?></div>
-							<a href="<?php echo url('projectenDetail') . $row['link'] ?>" class="leesMeerProject"><?php getContentCurrentLang('read_more', $content)?> ></a>
+							<h1 class="title"><?php echo $row['projectnaam_' . $_SESSION['lang']] ?></h1>
+							<div class="body-text"><?php echo limit_text($row['content_' . $_SESSION['lang']], 15); ?></div>
+							<a href="<?php echo url('projectenDetail') . $row['link_' . $_SESSION['lang']] ?>" class="leesMeerProject"><?php getContentCurrentLang('read_more', $content)?> ></a>
 						</div>
 					</div>
 					<svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="80">
