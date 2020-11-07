@@ -42,9 +42,9 @@
             <h1>Alle Projecten</h1>
             <?php foreach ($projects as $row) : ?>
                 <div class="posts post-<?php echo $row['id'] ?>">
-                    <h4><?php echo $row['id'] ?>. <?php echo $row['projectnaam'] ?></h4>
+                    <h4><?php echo $row['id'] ?>. <?php echo $row['projectnaam_nl'] ?></h4>
                     <div class="postsAction">
-                        <a class="liveversie" href="<?php echo url('projectenDetail') . $row['link']; ?>">Live versie</a>
+                        <a class="liveversie" href="<?php echo url('projectenDetail') . $row['link_nl']; ?>">Live versie</a>
                         <a class="bewerkPost" href="<?php echo url('wijzigProject') . $row['id'] ?>"><i class="fas fa-pencil-alt"></i></a>
                         <form action="<?php echo url('deleteProject') . $row['id'] ?>" method="post">
                             <input type="hidden" name="headerimage" value="<?php echo $row['headerimage'] ?>">

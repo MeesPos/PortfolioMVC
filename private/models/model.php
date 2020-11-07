@@ -59,8 +59,10 @@ function getAllProjects()
 
 function getAllProjectDetails($link)
 {
+    $urlLang = 'link_' . $_SESSION['lang'];
+
     $connection = dbConnect();
-    $sql        = 'SELECT * FROM `projecten` WHERE `link` = :link';
+    $sql        = 'SELECT * FROM `projecten` WHERE ' . $urlLang . ' = :link';
     $statement  = $connection->prepare($sql);
 
     $params = [
@@ -345,16 +347,18 @@ function updateNewCatos($results, $id, $errors)
 
 function createProject($results, $headerImage, $errors)
 {
-    $url          = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
-    echo $stringURL;
+    $url_nl = $stringURL = strtolower(str_replace(' ', '-', $results['title_nl']));
+    $url_en = $stringURL = strtolower(str_replace(' ', '-', $results['title_en']));
 
     $connection = dbConnect();
-    $sql = 'INSERT INTO `projecten` ( `projectnaam`, `link`, `datum`, `content_nl`, `content_en`, `headerimage`, `soort`, `taal`, `liveversie`, `github`)
-         VALUES (:titel, :link, :datum, :content_nl, :content_en, :headerimage, :soort, :taal, :liveversie, :github)';
+    $sql = 'INSERT INTO `projecten` ( `projectnaam_nl`, `projectnaam_en`, `link_nl`, `link_en`, `datum`, `content_nl`, `content_en`, `headerimage`, `soort`, `taal`, `liveversie`, `github`)
+         VALUES (:titel_nl, :titel_en, :link_nl, :link_en, :datum, :content_nl, :content_en, :headerimage, :soort, :taal, :liveversie, :github)';
 
     $params = [
-        'titel'        => $results['title'],
-        'link'         => $url,
+        'titel_nl'     => $results['title_nl'],
+        'titel_en'     => $results['title_en'],
+        'link_nl'      => $url_nl,
+        'link_en'      => $url_en,
         'datum'        => $results['projectdate'],
         'content_nl'   => $results['mytextarea'],
         'content_en'   => $results['entextarea'],
