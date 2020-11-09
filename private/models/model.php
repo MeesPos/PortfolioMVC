@@ -57,43 +57,41 @@ function getAllProjects()
     return $statement->fetchAll();
 }
 
-function getAllProjectDetails($link)
+function getAllProjectDetails($id)
 {
-    $urlLang = 'link_' . $_SESSION['lang'];
-
     $connection = dbConnect();
-    $sql        = 'SELECT * FROM `projecten` WHERE ' . $urlLang . ' = :link';
+    $sql        = 'SELECT * FROM `projecten` WHERE `id` = :id';
     $statement  = $connection->prepare($sql);
 
     $params = [
-        'link' => $link
+        'id' => $id
     ];
 
     $statement->execute($params);
     return $statement->fetchAll();
 }
 
-function getMadeWith($row)
+function getMadeWith($id)
 {
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `maakmethodes` WHERE project_ID = :id';
     $statement  = $connection->prepare($sql);
 
     $params = [
-        'id' => $row['id']
+        'id' => $id
     ];
 
     $statement->execute($params);
     return $statement->fetchAll();
 }
 
-function getProjectImages($row) {
+function getProjectImages($id) {
     $connection = dbConnect();
     $sql        = 'SELECT * FROM `projectimages` WHERE `project_id` = :id';
     $statement  = $connection->prepare($sql);
 
     $params = [
-        'id' => $row['id']
+        'id' => $id
     ];
 
     $statement->execute($params);
@@ -112,14 +110,14 @@ function getTutorials()
     return $statement->fetchAll();
 }
 
-function getTutorialsByLink($link)
+function getTutorialsByLink($id)
 {
     $connection = dbConnect();
-    $sql        = 'SELECT * FROM `tutorials` WHERE `link` = :link';
+    $sql        = 'SELECT * FROM `tutorials` WHERE `id` = :id';
     $statement  = $connection->prepare($sql);
 
     $params = [
-        'link' => $link
+        'id' => $id
     ];
 
     $statement->execute($params);
@@ -176,21 +174,22 @@ function getTasks()
     return $result = $statement->fetchAll();
 }
 
-function createPost($results, $headerImage, $errors)
+function createPost($results, $headerImage)
 {
-    $url          = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
-    echo $stringURL;
+    $url_nl = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
+    $url_en = $stringURL = strtolower(str_replace(' ', '-', $results['title_en']));
     $date         = date("d-m-Y");
 
     $connection = dbConnect();
-    $sql = 'INSERT INTO `tutorials` ( `titel`, `link`, `datum`, `samenvatting`, `content_nl`, `content_en`, `headerimage` )
-         VALUES (:titel, :link, :datum, :samenvatting, :content_nl, :content_en :headerimage)';
+    $sql = 'INSERT INTO `tutorials` ( `titel_nl`, `titel_en`, `link_nl`, `link_en`, `datum`, `content_nl`, `content_en`, `headerimage` )
+         VALUES (:titel_nl, :titel_en, :link_nl, :link_en, :datum, :content_nl, :content_en, :headerimage)';
 
     $params = [
-        'titel'        => $results['title'],
-        'link'         => $url,
+        'titel_nl'     => $results['title'],
+        'titel_en'     => $results['title_en'],
+        'link_nl'      => $url_nl,
+        'link_en'      => $url_en,
         'datum'        => $date,
-        'samenvatting' => limit_text($results['mytextarea'], 40),
         'content_nl'   => $results['mytextarea'],
         'content_en'   => $results['entextarea'],
         'headerimage'  => $headerImage
@@ -212,7 +211,7 @@ function getId()
     return $statement->fetchAll();
 }
 
-function uploadCato($results, $errors, $postID)
+function uploadCato($results, $postID)
 {
     foreach ($postID as $lastID) {
         foreach ($lastID as $theID) {
@@ -309,20 +308,22 @@ function getCurrentCato($id)
 
 function updatePost($results, $id, $errors)
 {
-    $url          = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
-    echo $stringURL;
+    $url_nl = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
+    $url_en = $stringURL = strtolower(str_replace(' ', '-', $results['title_en']));
 
     $connection = dbConnect();
 
-    $sql = 'UPDATE tutorials SET titel = :titel, link = :link, samenvatting = :samenvatting, content = :content WHERE id = :id';
+    $sql = 'UPDATE tutorials SET titel_nl = :titel_nl, titel_en = :titel_en, link_nl = :link_nl, link_en = :link_en, content_nl = :content_nl, content_en = :content_en WHERE id = :id';
     $statement = $connection->prepare($sql);
 
     $params = [
         'id' => $id,
-        'titel' => $results['title'],
-        'link' => $url,
-        'samenvatting' => limit_text($results['mytextarea'], 40),
-        'content'      => $results['mytextarea'],
+        'titel_nl' => $results['title'],
+        'titel_en' => $results['title_en'],
+        'link_nl'  => $url_nl,
+        'link_en'  => $url_en,
+        'content_nl' => $results['mytextarea'],
+        'content_en' => $results['entextarea']
     ];
 
     $statement->execute($params);
@@ -547,19 +548,22 @@ function getCurrentImages($id) {
 
 function updateTheProject($results, $id)
 {
-    $url = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
-    echo $stringURL;
+    $url_nl = $stringURL = strtolower(str_replace(' ', '-', $results['title']));
+    $url_en = $stringURL = strtolower(str_replace(' ', '-', $results['title_en']));
 
     $connection = dbConnect();
 
-    $sql = 'UPDATE projecten SET projectnaam = :titel, link = :link, content = :content, soort = :soort, taal = :taal, liveversie = :liveversie, github = :github WHERE id = :id';
+    $sql = 'UPDATE projecten SET projectnaam_nl = :titel_nl, projectnaam_en = :titel_en, link_nl = :link_nl, link_en = :link_en, content_nl = :content_nl, content_en = :content_en, soort = :soort, taal = :taal, liveversie = :liveversie, github = :github WHERE id = :id';
     $statement = $connection->prepare($sql);
 
     $params = [
         'id'         => $id,
-        'titel'      => $results['title'],
-        'link'       => $url,
-        'content'    => $results['mytextarea'],
+        'titel_nl'   => $results['title'],
+        'titel_en'   => $results['title_en'],
+        'link_en'    => $url_en,
+        'link_nl'    => $url_nl,
+        'content_nl' => $results['mytextarea'],
+        'content_en' => $results['entextarea'],
         'soort'      => $results['soortproject'],
         'taal'       => $results['taal'],
         'liveversie' => $results['liveversie'],
@@ -589,13 +593,15 @@ function addNewMethods($results, $id)
 function uploadSkill($results) {
     $connection = dbConnect();
 
-    $sql = 'INSERT INTO `skills` (`fa-class`, `skillnaam`, `niveau`) VALUES (:icon, :naam, :niveau)';
+    $sql = 'INSERT INTO `skills` (`fa-class`, `skillnaam_nl`, `skillnaam_en`, `niveau_nl`, `niveau_en`) VALUES (:icon, :naam_nl, :naam_en, :niveau_nl, :niveau_en)';
     $statement = $connection->prepare($sql);
 
     $params = [
-        'icon'   => $results['icon'],
-        'naam'   => $results['skill'],
-        'niveau' => $results['skillNiveau']
+        'icon'      => $results['icon'],
+        'naam_nl'   => $results['skill'],
+        'naam_en'   => $results['skillen'],
+        'niveau_nl' => $results['skillNiveau'],
+        'niveau_en' => $results['skillNiveauEn']
     ];
 
     $statement->execute($params);
@@ -631,14 +637,16 @@ function getCurrentSkill($id) {
 function updateSkill($id, $results) {
     $connection = dbConnect();
 
-    $sql = 'UPDATE skills SET `fa-class` = :icon, `skillnaam` = :naam, `niveau` = :niveau WHERE id = :id';
+    $sql = 'UPDATE skills SET `fa-class` = :icon, `skillnaam_nl` = :naam_nl, `skillnaam_en` = :naam_en, `niveau_nl` = :niveau_nl, `niveau_en` = :niveau_en WHERE id = :id';
     $statement = $connection->prepare($sql);
 
     $params = [
-        'id'     => $id,
-        'icon'   => $results['icon'],
-        'naam'   => $results['skill'],
-        'niveau' => $results['skillNiveau']
+        'id'      => $id,
+        'icon'    => $results['icon'],
+        'naam_nl' => $results['skill'],
+        'naam_en' => $results['skillen'],
+        'niveau_nl' => $results['skillNiveau'],
+        'niveau_en' => $results['skillNiveauEn']
     ];
 
     $statement->execute($params);

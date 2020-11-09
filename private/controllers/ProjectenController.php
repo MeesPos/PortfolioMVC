@@ -20,14 +20,12 @@ class ProjectenController {
 		echo $template_engine->render('projecten', ['projects' => $projects, 'content' => $content]);
     }
 
-    public function projectenDetail($link) {
+    public function projectenDetail($id, $link) {
 
-        $projectDetails = getAllProjectDetails($link);
-        foreach($projectDetails as $row) {
-            $madeWith  = getMadeWith($row);
-            $images    = getProjectImages($row);
-        }
-        $content	   = getContent();
+        $projectDetails = getAllProjectDetails($id);
+        $madeWith       = getMadeWith($id);
+        $images         = getProjectImages($id);
+        $content	    = getContent();
 
         $template_engine = get_template_engine();
         echo $template_engine->render('projectDetail', ['projectDetails' => $projectDetails, 'madeWith' => $madeWith, 'images' => $images, 'content' => $content]);

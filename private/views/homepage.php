@@ -101,11 +101,11 @@
 		<div class="tutorials">
 			<?php foreach ($tutorial as $row) : ?>
 				<div class="blogCard">
-					<img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" alt="<?php echo $row['titel'] ?>">
+					<img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" alt="<?php echo $row['titel_' . currentLanguage()] ?>">
 					<div class="blogInfo">
-						<h3><?php echo $row['titel'] ?></h3>
-						<p><?php echo limit_text($row['content'], 23) ?></p>
-						<a href="<?php echo url('tutorialDetail') . $row['link']; ?>" class="leesMeer">Lees meer</a>
+						<h3><?php echo $row['titel_' . currentLanguage()] ?></h3>
+						<p><?php echo limit_text($row['content_' . currentLanguage()], 23) ?></p>
+						<a href="<?php echo url('tutorialDetail') . $row['id'] . '/' . $row['link_' . currentLanguage()]; ?>" class="leesMeer"><?php getContentCurrentLang('read_more', $content) ?></a>
 					</div>
 				</div>
 			<?php endforeach; ?>

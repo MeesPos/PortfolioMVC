@@ -10,7 +10,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	SimpleRouter::get( '/', 'WebsiteController@home' )->name( 'home' );
 	SimpleRouter::get( '/over-mij', 'WebsiteController@about' )->name( 'over' );
-	SimpleRouter::get('/switch-language/{language}', 'WebsiteController@switchLanguage')->name('switch-lang');
+	SimpleRouter::get( '/switch-language/{language}', 'WebsiteController@switchLanguage' )->name('switch-lang');
 
 	// Contact Routes
 	SimpleRouter::get( '/contact', 'ContactController@contact' )->name( 'contact' );
@@ -19,11 +19,11 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	// Projecten Routes
 	SimpleRouter::get( '/projecten', 'ProjectenController@projecten')->name( 'projecten' );
-	SimpleRouter::get( '/projecten/{link}', 'ProjectenController@projectenDetail', ['defaultParameterRegex' => '[\w\-]+'])->name( 'projectenDetail' );
+	SimpleRouter::get( '/projecten/{id}/{link}', 'ProjectenController@projectenDetail', ['defaultParameterRegex' => '[\w\-]+'])->name( 'projectenDetail' )->where(['id' => '[0-9]+']);
 
 	// Tutorial Routes
 	SimpleRouter::get( '/tutorials', 'TutorialController@tutorials')->name( 'tutorials' );
-	SimpleRouter::get( '/tutorials/{link}/', 'TutorialController@tutorialDetail', ['defaultParameterRegex' => '[\w\-]+'])->name( 'tutorialDetail' );
+	SimpleRouter::get( '/tutorials/{id}/{link}', 'TutorialController@tutorialDetail', ['defaultParameterRegex' => '[\w\-]+'])->name( 'tutorialDetail' )->where(['id' => '[0-9]+']);
 
 	// Admin Routes
 	SimpleRouter::get( '/admin', 'AdminController@admin')->name('admin');

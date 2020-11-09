@@ -42,9 +42,9 @@
             <h1>Alle Tutorials</h1>
             <?php foreach ($posts as $row) : ?>
                 <div class="posts post-<?php echo $row['id'] ?>">
-                    <h4><?php echo $row['id'] ?>. <?php echo $row['titel'] ?></h4>
+                    <h4><?php echo $row['id'] ?>. <?php echo $row['titel_nl'] ?></h4>
                     <div class="postsAction">
-                        <a class="liveversie" href="<?php echo url('tutorialDetail') . $row['link']; ?>">Live versie</a>
+                        <a class="liveversie" href="<?php echo url('tutorialDetail') . $row['id'] . '/' . $row['link_nl']; ?>">Live versie</a>
                         <a class="bewerkPost" href="<?php echo url('wijzigPost') . $row['id'] ?>"><i class="fas fa-pencil-alt"></i></a>
                         <form action="<?php echo url('deletePost') . $row['id'] ?>" method="post">
                             <input type="hidden" name="image" value="<?php echo $row['headerimage'] ?>">

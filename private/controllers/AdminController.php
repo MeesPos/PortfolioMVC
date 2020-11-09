@@ -144,11 +144,9 @@ class AdminController
 
         $headerImage = uploadHeaderImage($_FILES, $errors);
 
-        if(count($errors) === 0) {
-            createPost($_POST, $headerImage, $errors);
-            $postID = getId();
-            uploadCato($_POST, $errors, $postID);
-        }
+        createPost($_POST, $headerImage);
+        $postID = getId();
+        uploadCato($_POST, $postID);
 
         $bedanktUrl = url("allPosts");
         redirect($bedanktUrl);

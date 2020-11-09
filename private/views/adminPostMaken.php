@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Mees Postma</title>
     <link rel="shortcut icon" href="<?php echo site_url('/img/logo/favicon/favicon.ico') ?>" type="image/x-icon" />
-  	<link rel="apple-touch-icon" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-57x57.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-72x72.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-76x76.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-114x114.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-120x120.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-144x144.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-152x152.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-180x180.png') ?>" />
+    <link rel="apple-touch-icon" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon.png') ?>" />
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-57x57.png') ?>" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-72x72.png') ?>" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-76x76.png') ?>" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-114x114.png') ?>" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-120x120.png') ?>" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-144x144.png') ?>" />
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-152x152.png') ?>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-180x180.png') ?>" />
     <link rel="stylesheet" href="<?php echo site_url('/css/admin.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" crossorigin="anonymous">
@@ -43,10 +43,16 @@
         <div class="postEditor">
             <h1>Maak een Bericht!</h1>
             <form method="post" action="<?php echo url('uploadPost'); ?>" enctype="multipart/form-data">
+                <h2 style="text-align: center;">Nederlandse titel</h2>
                 <div class="titleSection">
                     <input type="text" id="title" name="title" placeholder="Titel van het Bericht...">
                 </div>
-                
+
+                <h2 style="text-align: center;">Engelste titel</h2>
+                <div class="longInput">
+                    <input type="text" id="title" name="title_en" placeholder="Titel van het Project...">
+                </div>
+
                 <h2 style="text-align: center;">Nederlandse tekst</h2>
                 <textarea id="mytextarea" name="mytextarea"></textarea>
 
@@ -88,12 +94,26 @@
             selector: '#mytextarea, #entextarea',
             plugins: 'codesample autolink lists media table tinydrive image imagetools code link',
             toolbar: "codesample insertfile image link | code" + 'undo redo | formatselect | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
-            codesample_languages: [
-                {text: 'HTML/XML', value: 'markup'},
-                {text: 'JavaScript', value: 'javascript'},
-                {text: 'CSS', value: 'css'},
-                {text: 'PHP', value: 'php'},
-                {text: 'Python', value: 'python'}
+            codesample_languages: [{
+                    text: 'HTML/XML',
+                    value: 'markup'
+                },
+                {
+                    text: 'JavaScript',
+                    value: 'javascript'
+                },
+                {
+                    text: 'CSS',
+                    value: 'css'
+                },
+                {
+                    text: 'PHP',
+                    value: 'php'
+                },
+                {
+                    text: 'Python',
+                    value: 'python'
+                }
             ],
             menu: {
                 insert: {

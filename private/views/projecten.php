@@ -55,12 +55,12 @@
                 <img src="<?php echo site_url('/img/projectImages/' . $row['headerimage']) ?>" alt="">
                 <div class="projectContent">
                     <p class="soortproject"><?php echo $row['soort'] ?></p>
-                    <h2 class="projecttitel"><?php echo $row['projectnaam'] ?></h2>
+                    <h2 class="projecttitel"><?php echo $row['projectnaam_' . currentLanguage()] ?></h2>
                     <div class="projectsamenvatting">
-                        <?php echo limit_text($row['content'], 20); ?>
+                        <?php echo limit_text($row['content_' . currentLanguage()], 20); ?>
                     </div>
                     <div class="projectRef">
-                        <a class="projectLink" href="<?php echo url('projectenDetail') . $row['link']; ?>">Lees meer ></a>
+                        <a class="projectLink" href="<?php echo url('projectenDetail') . $row['id'] . '/' . $row['link_' . currentLanguage()] ?>"><?php getContentCurrentLang('read_more', $content)?> ></a>
                     </div>
                 </div>
             </div>

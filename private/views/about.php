@@ -74,8 +74,8 @@
                     </div>
 
                     <div class="skillinfo">
-                        <h4 class="skill-name"><?php echo $row['skillnaam']; ?></h4>
-                        <h4 class="skill-niveau"><?php echo $row['niveau']; ?></h4>
+                        <h4 class="skill-name"><?php echo $row['skillnaam_' . currentLanguage()]; ?></h4>
+                        <h4 class="skill-niveau"><?php echo $row['niveau_' . currentLanguage()]; ?></h4>
                     </div>
                 </div>
             <?php endforeach; ?>

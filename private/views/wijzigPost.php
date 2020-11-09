@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="<?php echo site_url('/img/logo/favicon/favicon.ico') ?>" type="image/x-icon" />
-  	<link rel="apple-touch-icon" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-57x57.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-72x72.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-76x76.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-114x114.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-120x120.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-144x144.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-152x152.png') ?>" />
-  	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-180x180.png') ?>" />
+    <link rel="apple-touch-icon" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon.png') ?>" />
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-57x57.png') ?>" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-72x72.png') ?>" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-76x76.png') ?>" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-114x114.png') ?>" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-120x120.png') ?>" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-144x144.png') ?>" />
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-152x152.png') ?>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-180x180.png') ?>" />
     <title>Admin | Mees Postma</title>
     <link rel="stylesheet" href="<?php echo site_url('/css/admin.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -42,14 +42,28 @@
     <div class="content">
         <div class="postEditor">
             <h1>Wijzig dit Bericht!</h1>
-            <?php foreach($currentPost as $row) : ?>
+            <?php foreach ($currentPost as $row) : ?>
                 <form method="post" action="<?php echo url('updatePost') . $row['id']; ?>" enctype="multipart/form-data">
+                    <h2 style="text-align: center;">Nederlandse titel</h2>
                     <div class="titleSection">
-                        <input type="text" id="title" name="title" placeholder="Titel van het Bericht..." value="<?php echo $row['titel'] ?>">
+                        <input type="text" id="title" name="title" placeholder="Titel van het Bericht..." value="<?php echo $row['titel_nl'] ?>">
                     </div>
+
+                    <h2 style="text-align: center;">Engelste titel</h2>
+                    <div class="longInput">
+                        <input type="text" id="title" name="title_en" placeholder="Titel van het Project..." value="<?php echo $row['titel_en'] ?>">
+                    </div>
+
+                    <h2 style="text-align: center;">Nederlandse tekst</h2>
                     <textarea id="mytextarea" name="mytextarea">
-                        <?php echo $row['content']; ?>
+                        <?php echo $row['content_nl'] ?>
                     </textarea>
+
+                    <h2 style="text-align: center;">Engelse tekst</h2>
+                    <textarea id="entextarea" name="entextarea">
+                        <?php echo $row['content_en'] ?>
+                    </textarea>
+
                     <div class="postInformation">
                         <div class="catoForm">
                             <h2>Categorie toevoegen</h2>
@@ -58,7 +72,7 @@
                                 <button type="button" class="catoAddBtn">Voeg toe</button>
                             </div>
                             <select id="catoSelect" class="catoSelect" name="catoDropdown[]" multiple>
-                                <?php foreach($currentCato as $cato) : ?>
+                                <?php foreach ($currentCato as $cato) : ?>
                                     <option value="<?php echo $cato['cat_name'] ?>"><?php echo $cato['cat_name'] ?></option>
                                 <?php endforeach; ?>
                             </select>
@@ -87,15 +101,29 @@
     <script src="https://cdn.tiny.cloud/1/a4porrdjpxoppis4n6hiyvrts4udnwno0xz3104dp9afltl0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-            selector: '#mytextarea',
+            selector: '#mytextarea, #entextarea',
             plugins: 'codesample autolink lists media table tinydrive image imagetools code link',
             toolbar: "codesample insertfile image link | code" + 'undo redo | formatselect | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
-            codesample_languages: [
-                {text: 'HTML/XML', value: 'markup'},
-                {text: 'JavaScript', value: 'javascript'},
-                {text: 'CSS', value: 'css'},
-                {text: 'PHP', value: 'php'},
-                {text: 'Python', value: 'python'}
+            codesample_languages: [{
+                    text: 'HTML/XML',
+                    value: 'markup'
+                },
+                {
+                    text: 'JavaScript',
+                    value: 'javascript'
+                },
+                {
+                    text: 'CSS',
+                    value: 'css'
+                },
+                {
+                    text: 'PHP',
+                    value: 'php'
+                },
+                {
+                    text: 'Python',
+                    value: 'python'
+                }
             ],
             menu: {
                 insert: {

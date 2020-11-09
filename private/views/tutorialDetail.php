@@ -15,7 +15,7 @@
   	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-152x152.png') ?>" />
   	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-180x180.png') ?>" />
     <?php foreach ($tutorial as $row) : ?>
-        <title><?php echo $row['titel'] ?> | Mees Postma</title>
+        <title><?php echo $row['titel_' . currentLanguage()] ?> | Mees Postma</title>
         <meta name="og:title" property="og:title" content="<?php echo $row['titel'] ?> | Mees Postma">
         <meta name="description" content="<?php echo limit_text($row['content'], 30) ?> | Mees Postma">
         <meta name="twitter:card" content="<?php echo limit_text($row['content'], 30) ?> | Mees Postma">
@@ -55,8 +55,8 @@
     <section id="blogContent">
         <div class="blogTekst">
             <?php foreach ($tutorial as $row) : ?>
-                <h1><?php echo $row['titel']; ?></h1>
-                <p><?php echo $row['content']; ?></p>
+                <h1><?php echo $row['titel_' . currentLanguage()]; ?></h1>
+                <p><?php echo $row['content_' . currentLanguage()]; ?></p>
             <?php endforeach; ?>
         </div>
 
@@ -67,13 +67,13 @@
                 <p><?php getContentCurrentLang('aboutme_tutorial', $content)?>
                 </p>
 
-                <a href="#">Meer over mij ></a>
+                <a href="<?php echo url('over') ?>"><?php getContentCurrentLang('more_me' , $content); ?> ></a>
             </div>
 
             <div class="overBericht">
-                <h2>Over dit bericht</h2>
+                <h2><?php getContentCurrentLang('about_post', $content); ?></h2>
                 <p><span style="font-weight: bold;"><?php getContentCurrentLang('posted', $content)?>:</span> <?php echo $row['datum'] ?></p>
-                <p><span style="font-weight: bold;"><?php getContentCurrentLang('categories', $content)?>:</span> <?php echo $row['datum'] ?>:</span>
+                <p><span style="font-weight: bold;"><?php getContentCurrentLang('categories', $content)?>: </span>
                     <?php $catos = array();
                     foreach ($catogorie as $row) {
                         $catos[] = $row['cat_name'];

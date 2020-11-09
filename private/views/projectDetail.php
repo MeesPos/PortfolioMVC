@@ -5,19 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php foreach ($projectDetails as $row) { ?>
-        <title><?php echo $row['projectnaam'] ?> | Mees Postma</title>
+        <title><?php echo $row['projectnaam_' . currentLanguage()] ?> | Mees Postma</title>
         <meta name="og:title" property="og:title" content="<?php echo $row['projectnaam'] ?> | Mees Postma">
         <meta name="description" content="<?php echo limit_text($text=str_ireplace('<p>','',$row['content']), 30) ?> | Mees Postma">
         <meta name="twitter:card" content="<?php echo limit_text($text=str_ireplace('<p>','',$row['content']), 30) ?> | Mees Postma">
         <meta name="keywords" content="Mees Postma, Mees, Postma, Mediacollege, Amsterdam, Mediacollege Amsterdam, Nederland, Software developer,
         Website developer, Hubsor, Hubsor website, Hubsor eigenaar, Hubsor Mees, Websites, Website, SEO, The Netherlands, Holland, Dutch">
-
-        <?php if($_SESSION['lang'] == 'nl') {
-            $link = $row['projectnaam_nl'];
-        } else if($_SESSION['lang'] == 'en') {
-            $link = $row['projectnaam_en'];   
-        }?>
-
     <?php } ?>
     <link rel="shortcut icon" href="<?php echo site_url('/img/logo/favicon/favicon.ico') ?>" type="image/x-icon" />
     <link rel="apple-touch-icon" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon.png') ?>" />
@@ -54,7 +47,7 @@
     <?php foreach ($projectDetails as $row) { ?>
         <header id="subHeader">
             <div class="subContent">
-                <h1><?php echo $row['projectnaam_' . $_SESSION['lang']]; ?></h1><?php } ?>
+                <h1><?php echo $row['projectnaam_' . currentLanguage()]; ?></h1><?php } ?>
             </div>
         </header>
 
@@ -100,7 +93,7 @@
                         <p><?php echo $row['soort'] ?></p>
                     </h3>
                     <div class="projectSamenvatting">
-                        <?php echo limit_text($row['content_' . $_SESSION['lang']], 30); ?>
+                        <?php echo limit_text($row['content_' . currentLanguage()], 30); ?>
                     </div>
                     <div class="specificatiesProj">
                         <div class="gemaaktMet">

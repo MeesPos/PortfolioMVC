@@ -21,9 +21,9 @@ class TutorialController {
 
     }
     
-    public function tutorialDetail($link) {
+    public function tutorialDetail($id, $link) {
 
-        $getTutorials = getTutorialsByLink($link);
+        $getTutorials = getTutorialsByLink($id);
         $catoTutorial = getTutorialCato($getTutorials);
         $content      = getContent();
 
