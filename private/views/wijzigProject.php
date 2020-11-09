@@ -67,7 +67,7 @@
                     <div class="projectDetails">
                         <div class="soortProject">
                             <h2>Soort Project</h2>
-                            <input type="text" name="soortproject" id="soortproject" placeholder="Soort Project..." value="<?php echo $row['soort'] ?>">
+                            <input type="text" name="soortproject" id="soortproject" placeholder="Soort Project..." value="<?php echo $row['soort_nl'] ?>">
                         </div>
 
                         <div class="projectDatum">
@@ -110,7 +110,7 @@
                     </div>
 
                     <div class="longInput">
-                        <input type="text" id="taal" name="taal" placeholder="Taal van het Project..." value="<?php echo $row['taal'] ?>">
+                        <input type="text" id="taal" name="taal" placeholder="Taal van het Project..." value="<?php echo $row['taal_nl'] ?>">
                     </div>
 
                     <div class="submit">

@@ -7,8 +7,10 @@
     <?php foreach ($projectDetails as $row) { ?>
         <title><?php echo $row['projectnaam_' . currentLanguage()] ?> | Mees Postma</title>
         <meta name="og:title" property="og:title" content="<?php echo $row['projectnaam'] ?> | Mees Postma">
-        <meta name="description" content="<?php echo limit_text($text=str_ireplace('<p>','',$row['content']), 30) ?> | Mees Postma">
-        <meta name="twitter:card" content="<?php echo limit_text($text=str_ireplace('<p>','',$row['content']), 30) ?> | Mees Postma">
+        <meta name="description" content="Mijn naam is Mees Postma, ik heb het project <?php echo $row['projectnaam_' . currentLanguage()] ?> gemaakt. Wil je meer weten?
+        Bekijk het dan hier | Mees Postma">
+        <meta name="twitter:card" content="Mijn naam is Mees Postma, ik heb het project <?php echo $row['projectnaam_' . currentLanguage()] ?> gemaakt. Wil je meer weten?
+        Bekijk het dan hier | Mees Postma">
         <meta name="keywords" content="Mees Postma, Mees, Postma, Mediacollege, Amsterdam, Mediacollege Amsterdam, Nederland, Software developer,
         Website developer, Hubsor, Hubsor website, Hubsor eigenaar, Hubsor Mees, Websites, Website, SEO, The Netherlands, Holland, Dutch">
     <?php } ?>
@@ -90,7 +92,7 @@
                 <?php foreach ($projectDetails as $row) : ?>
                     <h2 class="overProject"><?php getContentCurrentLang('aboutproject_title', $content)?></h2>
                     <h3 class="soortProject">
-                        <p><?php echo $row['soort'] ?></p>
+                        <p><?php echo $row['soort_' . currentLanguage()] ?></p>
                     </h3>
                     <div class="projectSamenvatting">
                         <?php echo limit_text($row['content_' . currentLanguage()], 30); ?>
@@ -110,7 +112,7 @@
 
                         <div class="taal">
                             <h3><?php getContentCurrentLang('language', $content)?>: </h3>
-                            <p><?php echo $row['taal']; ?></p>
+                            <p><?php echo $row['taal_' . currentLanguage()]; ?></p>
                         </div>
                     </div>
 

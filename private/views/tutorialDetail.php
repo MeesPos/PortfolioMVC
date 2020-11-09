@@ -17,8 +17,10 @@
     <?php foreach ($tutorial as $row) : ?>
         <title><?php echo $row['titel_' . currentLanguage()] ?> | Mees Postma</title>
         <meta name="og:title" property="og:title" content="<?php echo $row['titel'] ?> | Mees Postma">
-        <meta name="description" content="<?php echo limit_text($row['content'], 30) ?> | Mees Postma">
-        <meta name="twitter:card" content="<?php echo limit_text($row['content'], 30) ?> | Mees Postma">
+        <meta name="description" content="Mijn naam is Mees Postma, ik leg je hier alles uit over: <?php echo $row['titel_' . currentLanguage()] ?>. Wil je meer weten?
+        Bekijk het dan hier | Mees Postma">
+        <meta name="twitter:card" content="Mijn naam is Mees Postma, ik leg je hier alles uit over: <?php echo $row['titel_' . currentLanguage()] ?>. Wil je meer weten?
+        Bekijk het dan hier | Mees Postma">
         <meta name="keywords" content="Mees Postma, Mees, Postma, Mediacollege, Amsterdam, Mediacollege Amsterdam, Nederland, Software developer,
         Website developer, Hubsor, Hubsor website, Hubsor eigenaar, Hubsor Mees, Websites, Website, SEO, The Netherlands, Holland, Dutch">
     <?php endforeach; ?>

@@ -16,10 +16,8 @@
     <link rel="apple-touch-icon" sizes="152x152" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-152x152.png') ?>" />
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url('/img/logo/favicon/apple-touch-icon-180x180.png') ?>" />
     <meta name="og:title" property="og:title" content="Contact | Mees Postma">
-    <meta name="description" content="Mijn naam is Mees Postma, ik ben een Software Developer en studeer aan het Mediacollege.
-    Ook beheer ik mijn eigen bedrijf: Hubsor. Neem hier contact met me op.">
-    <meta name="twitter:card" content="Mijn naam is Mees Postma, ik ben een Software Developer en studeer aan het Mediacollege.
-    Ook beheer ik mijn eigen bedrijf: Hubsor. Neem hier contact met me op.">
+    <meta name="description" content="<?php getContentCurrentLang('about_header', $content)?>">
+    <meta name="twitter:card" content="<?php getContentCurrentLang('about_header', $content)?>">
     <meta name="keywords" content="Mees Postma, Mees, Postma, Mediacollege, Amsterdam, Mediacollege Amsterdam, Nederland, Software developer,
     Website developer, Hubsor, Hubsor website, Hubsor eigenaar, Hubsor Mees, Websites, Website, SEO, The Netherlands, Holland, Dutch">
     <link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>">

@@ -54,7 +54,7 @@
             <div class="project-card">
                 <img src="<?php echo site_url('/img/projectImages/' . $row['headerimage']) ?>" alt="">
                 <div class="projectContent">
-                    <p class="soortproject"><?php echo $row['soort'] ?></p>
+                    <p class="soortproject"><?php echo $row['soort_' . currentLanguage()] ?></p>
                     <h2 class="projecttitel"><?php echo $row['projectnaam_' . currentLanguage()] ?></h2>
                     <div class="projectsamenvatting">
                         <?php echo limit_text($row['content_' . currentLanguage()], 20); ?>

@@ -352,8 +352,8 @@ function createProject($results, $headerImage, $errors)
     $url_en = $stringURL = strtolower(str_replace(' ', '-', $results['title_en']));
 
     $connection = dbConnect();
-    $sql = 'INSERT INTO `projecten` ( `projectnaam_nl`, `projectnaam_en`, `link_nl`, `link_en`, `datum`, `content_nl`, `content_en`, `headerimage`, `soort`, `taal`, `liveversie`, `github`)
-         VALUES (:titel_nl, :titel_en, :link_nl, :link_en, :datum, :content_nl, :content_en, :headerimage, :soort, :taal, :liveversie, :github)';
+    $sql = 'INSERT INTO `projecten` ( `projectnaam_nl`, `projectnaam_en`, `link_nl`, `link_en`, `datum`, `content_nl`, `content_en`, `headerimage`, `soort_nl`, `taal_nl`, `liveversie`, `github`)
+         VALUES (:titel_nl, :titel_en, :link_nl, :link_en, :datum, :content_nl, :content_en, :headerimage, :soort_nl, :taal, :liveversie, :github)';
 
     $params = [
         'titel_nl'     => $results['title_nl'],
@@ -364,7 +364,7 @@ function createProject($results, $headerImage, $errors)
         'content_nl'   => $results['mytextarea'],
         'content_en'   => $results['entextarea'],
         'headerimage'  => $headerImage,
-        'soort'        => $results['soortproject'],
+        'soort_nl'     => $results['soortproject'],
         'taal'         => $results['taal'],
         'liveversie'   => $results['liveversie'],
         'github'       => $results['github']
@@ -553,7 +553,7 @@ function updateTheProject($results, $id)
 
     $connection = dbConnect();
 
-    $sql = 'UPDATE projecten SET projectnaam_nl = :titel_nl, projectnaam_en = :titel_en, link_nl = :link_nl, link_en = :link_en, content_nl = :content_nl, content_en = :content_en, soort = :soort, taal = :taal, liveversie = :liveversie, github = :github WHERE id = :id';
+    $sql = 'UPDATE projecten SET projectnaam_nl = :titel_nl, projectnaam_en = :titel_en, link_nl = :link_nl, link_en = :link_en, content_nl = :content_nl, content_en = :content_en, soort_nl = :soort, taal_nl = :taal, liveversie = :liveversie, github = :github WHERE id = :id';
     $statement = $connection->prepare($sql);
 
     $params = [
