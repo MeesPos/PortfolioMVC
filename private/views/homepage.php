@@ -75,20 +75,20 @@
 		<h2><?php getContentCurrentLang('projects_title', $content)?></h2>
 		<p><?php getContentCurrentLang('projects_desc', $content)?></p>
 		<div class="projects">
-			<?php foreach ($project as $row) : ?>
-				<div class="cardProject" onclick="this.classList.toggle('expanded')">
-					<img src="<?php echo site_url('/img/postImages/headers/' . $row['headerimage']) ?>" class="label" alt="Project (Nummer) van Mees Postma">
+			<?php foreach ($project as $proj) { ?>
+				<section class="cardProject" onclick="this.classList.toggle('expanded')">
+					<img src="<?php echo site_url('/img/postImages/headers/' . $proj['headerimage']) ?>" class="label" alt="Project <?php $proj['id'] ?> van Mees Postma">
 					<div class="text">
 						<div class="text-content">
-							<h1 class="title"><?php echo $row['projectnaam_' . $_SESSION['lang']] ?></h1>
-							<div class="body-text"><?php echo limit_text($row['content_' . $_SESSION['lang']], 15); ?></div>
-							<a href="<?php echo url('projectenDetail') . $row['link_' . $_SESSION['lang']] ?>" class="leesMeerProject"><?php getContentCurrentLang('read_more', $content)?> ></a>
+							<h1 class="title"><?php echo $proj['projectnaam_' . $_SESSION['lang']] ?></h1>
+							<div class="body-text"><?php echo limit_text($proj['content_' . $_SESSION['lang']], 15); ?></div>
+							<a href="<?php echo url('projectenDetail') . $proj['id'] . '/' . $proj['link_' . $_SESSION['lang']] ?>" class="leesMeerProject"><?php getContentCurrentLang('read_more', $content)?> ></a>
 						</div>
 					</div>
 					<svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" width="80">
 						<path d="M5 30L50 5l45 25" fill="none" stroke="#fff" stroke-width="10" /></svg>
-				</div>
-			<?php endforeach ?>
+				</section>
+			<?php } ?>
 		</div>
 
 		<a href="<?php echo url('projecten') ?>" class="meerProjecten">
